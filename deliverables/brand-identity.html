@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yes Studio — Brand Identity / Dark Luxe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+<style>
+  /* ═══ RESET + BASE ═══ */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --noir: #1A1614;
+    --noir-light: #2A2420;
+    --silk: #F4EDE5;
+    --silk-dim: #E8DFD4;
+    --gold: #C19B6C;
+    --gold-dark: #A6834F;
+    --umber: #7A6B5D;
+    --cocoa: #2A2420;
+  }
+
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  body { font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; background: var(--noir); color: var(--silk); }
+  ::selection { background: var(--gold); color: var(--noir); }
+
+  /* ═══ SLIDE LAYOUT ═══ */
+  .slide {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px clamp(32px, 8vw, 120px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slide--dark { background: var(--noir); color: var(--silk); }
+  .slide--cocoa { background: var(--cocoa); color: var(--silk); }
+  .slide--silk { background: var(--silk); color: var(--noir); }
+  .slide--gold { background: var(--gold); color: var(--noir); }
+
+  /* ═══ TYPOGRAPHY ═══ */
+  .f-display { font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; font-weight: 700; }
+  .f-serif { font-family: 'Forum', serif; }
+  .f-body { font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; }
+
+  .label {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--umber);
+    margin-bottom: 24px;
+  }
+
+  h2 {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+
+  h2 em {
+    font-family: 'Forum', serif;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+  }
+
+  .body-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--umber);
+    max-width: 560px;
+  }
+
+  .slide--dark .body-text { color: rgba(244,237,229,0.45); }
+  .slide--silk .body-text { color: var(--umber); }
+  .slide--silk h2 em { color: var(--gold-dark); }
+
+  /* ═══ GRID ═══ */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+
+  @media (max-width: 768px) {
+    .grid-2, .grid-3, .grid-5 { grid-template-columns: 1fr; }
+    .grid-5 { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  /* ═══ COLOR SWATCH ═══ */
+  .swatch {
+    aspect-ratio: 1;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  .swatch:hover { transform: scale(1.05); }
+  .swatch-info {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 12px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.5));
+    color: #fff;
+  }
+  .swatch-info .hex { font-family: 'Helvetica Neue', 'Helvetica', sans-serif; font-size: 13px; font-weight: 600; }
+  .swatch-info .name { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.7; margin-top: 2px; }
+
+  /* ═══ LOGO DISPLAY ═══ */
+  .logo-card {
+    padding: 56px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    min-height: 220px;
+  }
+
+  /* ═══ TYPE SPECIMEN ═══ */
+  .specimen {
+    padding: 32px;
+    background: rgba(244,237,229,0.04);
+    border-radius: 4px;
+    border: 1px solid rgba(244,237,229,0.06);
+  }
+  .specimen-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--umber);
+    margin-bottom: 16px;
+  }
+  .specimen-sample {
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .specimen-meta {
+    font-size: 11px;
+    color: var(--umber);
+    opacity: 0.5;
+    margin-top: 12px;
+  }
+
+  /* ═══ RATIO BAR ═══ */
+  .ratio-bar {
+    display: flex;
+    height: 48px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 24px 0;
+  }
+  .ratio-segment { display: flex; align-items: center; justify-content: center; }
+  .ratio-segment span {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ═══ BUTTONS ═══ */
+  .button-example {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .btn-gold { background: var(--gold); color: var(--noir); }
+  .btn-gold:hover { background: var(--gold-dark); }
+  .btn-outline-silk { background: transparent; border: 1px solid rgba(244,237,229,0.2); color: var(--silk); }
+  .btn-outline-dark { background: transparent; border: 1px solid var(--noir); color: var(--noir); }
+
+  /* ═══ DIVIDER ═══ */
+  .divider { width: 48px; height: 1px; background: var(--gold); margin: 32px 0; }
+
+  /* ═══ NAVIGATION ═══ */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px clamp(32px, 8vw, 120px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: var(--noir);
+    border-bottom: 1px solid rgba(244,237,229,0.06);
+    backdrop-filter: blur(20px);
+  }
+  .nav a { color: var(--umber); text-decoration: none; transition: color 0.3s; }
+  .nav a:hover { color: var(--gold); }
+  .nav-links { display: flex; gap: 32px; }
+
+  /* ═══ PHOTO STYLE ═══ */
+  .photo-treatment {
+    aspect-ratio: 3/4;
+    background: linear-gradient(135deg, var(--cocoa), var(--noir));
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(244,237,229,0.06);
+  }
+  .photo-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--umber);
+  }
+
+  /* ═══ PREVIEW FRAME ═══ */
+  .preview-frame {
+    background: var(--noir);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    border: 1px solid rgba(244,237,229,0.08);
+  }
+  .preview-nav {
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(244,237,229,0.06);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--umber);
+  }
+  .preview-hero {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    min-height: 300px;
+  }
+  .preview-content {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .preview-photo {
+    background: linear-gradient(135deg, var(--cocoa), rgba(193,155,108,0.15));
+    position: relative;
+  }
+
+  /* ═══ SLIDE COUNTER ═══ */
+  .slide-number {
+    position: absolute;
+    bottom: 32px;
+    right: clamp(32px, 8vw, 120px);
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 700;
+    font-size: 8rem;
+    line-height: 1;
+    opacity: 0.03;
+    color: var(--silk);
+  }
+
+  /* ═══ TAG ═══ */
+  .tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(193,155,108,0.12);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    border-radius: 100px;
+  }
+
+  /* ═══ BRIEF CARD ═══ */
+  .brief-card {
+    background: rgba(244,237,229,0.04);
+    border: 1px solid rgba(244,237,229,0.08);
+    padding: 24px;
+    border-radius: 4px;
+    font-family: 'Helvetica Neue', 'Helvetica', monospace;
+    font-size: 13px;
+    line-height: 1.8;
+    color: rgba(244,237,229,0.6);
+    white-space: pre-wrap;
+  }
+
+  /* ═══ SOCIAL CARD ═══ */
+  .social-card {
+    padding: 40px 24px;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  /* ═══ GOLD LINE ACCENT ═══ */
+  .gold-line {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 40px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════ -->
+<nav class="nav">
+  <div style="display:flex; align-items:baseline; gap:4px;">
+    <span style="font-weight:700; font-size:1rem; letter-spacing:0.15em; color:var(--silk);">YES</span><span style="font-weight:700; font-size:1rem; color:var(--gold);">.</span>
+  </div>
+  <div class="nav-links">
+    <a href="#concept">Concept</a>
+    <a href="#logo">Logo</a>
+    <a href="#palette">Palette</a>
+    <a href="#type">Type</a>
+    <a href="#usage">Usage</a>
+    <a href="#recraft">Logo brief</a>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════
+     01 — COVER
+     ═══════════════════════════════════ -->
+<section class="slide slide--dark" style="justify-content:space-between; padding-top:120px;">
+  <div>
+    <p class="label" style="color:var(--gold);">Brand Identity / 2025</p>
+  </div>
+  <div>
+    <h2 style="font-size:clamp(3.5rem,8vw,8rem); margin-bottom:16px; letter-spacing:0.05em;">
+      YES<span style="color:var(--gold);">.</span><br>STUDIO
+    </h2>
+    <p class="body-text" style="max-width:400px;">
+      Фирменный стиль. Направление "Dark Luxe".<br>
+      Для презентации клиенту.
+    </p>
+  </div>
+  <div style="display:flex; justify-content:space-between; align-items:end;">
+    <p style="font-size:11px; color:var(--umber); opacity:0.5;">Stream Model Agency</p>
+    <p style="font-size:11px; color:var(--umber); opacity:0.5;">Москва &middot; Ростов-на-Дону</p>
+  </div>
+  <div class="slide-number">01</div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     02 — BRAND CONCEPT
+     ═══════════════════════════════════ -->
+<section class="slide slide--cocoa" id="concept">
+  <p class="label" style="color:var(--gold);">02 / Концепция бренда</p>
+  <div class="grid-2">
+    <div>
+      <h2>
+        РОСКОШЬ
+        <br><em>БЕЗ ПАФОСА,</em>
+        <br>ДОВЕРИЕ
+      </h2>
+      <div class="divider"></div>
+      <p class="body-text">
+        Yes Studio — не просто студия. Это медиа-бренд для девушек, которые хотят зарабатывать на своей харизме. Дизайн построен на контрасте: warm dark base + золотые акценты. Ощущение бутик-отеля: уютно, дорого, но не высокомерно. Референсы: Tom Ford, Saint Laurent, W Hotels.
+      </p>
+    </div>
+    <div>
+      <div style="margin-bottom:32px;">
+        <h3>Позиционирование</h3>
+        <p class="body-text">Единственная non-nude студия в России. Премиальный сервис для амбициозных девушек 18-35. Тёплый тёмный визуал снимает барьер "слишком luxury" для ЦА.</p>
+      </div>
+      <div style="margin-bottom:32px;">
+        <h3>Тон коммуникации</h3>
+        <p class="body-text">Прямой, уверенный, без воды. "Ты можешь" вместо "попробуй". Говорим на "ты". Без эвфемизмов — честно о деньгах и условиях. Тёплый, не холодный.</p>
+      </div>
+      <div>
+        <h3>Ключевое сообщение</h3>
+        <p class="body-text">Зарабатывай на общении, не переступая через себя. Non-nude. До 300 000 &#8381;/мес. С поддержкой на каждом этапе.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">02</div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     03 — LOGO
+     ═══════════════════════════════════ -->
+<section class="slide slide--dark" id="logo">
+  <p class="label" style="color:var(--gold);">03 / Логотип</p>
+  <h2>LOGO <em>SYSTEM</em></h2>
+
+  <div class="grid-3" style="margin-top:40px;">
+    <!-- Dark bg -->
+    <div>
+      <p style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--umber); margin-bottom:12px;">На тёмном фоне</p>
+      <div class="logo-card" style="background:var(--noir); border:1px solid rgba(244,237,229,0.06);">
+        <div style="text-align:center;">
+          <div style="font-weight:700; font-size:2rem; letter-spacing:0.25em; color:var(--silk);">
+            YES<span style="color:var(--gold);">.</span>
+          </div>
+          <div style="font-size:8px; letter-spacing:0.35em; text-transform:uppercase; color:var(--umber); margin-top:4px;">STUDIO</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Light bg -->
+    <div>
+      <p style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--umber); margin-bottom:12px;">На светлом фоне</p>
+      <div class="logo-card" style="background:var(--silk);">
+        <div style="text-align:center;">
+          <div style="font-weight:700; font-size:2rem; letter-spacing:0.25em; color:var(--noir);">
+            YES<span style="color:var(--gold-dark);">.</span>
+          </div>
+          <div style="font-size:8px; letter-spacing:0.35em; text-transform:uppercase; color:var(--umber); margin-top:4px;">STUDIO</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gold accent bg -->
+    <div>
+      <p style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--umber); margin-bottom:12px;">На акцентном фоне</p>
+      <div class="logo-card" style="background:var(--gold);">
+        <div style="text-align:center;">
+          <div style="font-weight:700; font-size:2rem; letter-spacing:0.25em; color:var(--noir);">
+            YES<span style="color:var(--noir);">.</span>
+          </div>
+          <div style="font-size:8px; letter-spacing:0.35em; text-transform:uppercase; color:rgba(26,22,20,0.5); margin-top:4px;">STUDIO</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gold-line"></div>
+
+  <div class="grid-3">
+    <div>
+      <h3 style="color:var(--silk);">Конструкция</h3>
+      <p class="body-text">"YES." — wordmark с точкой как акцентный элемент. Точка всегда в цвете Gold. Это одновременно точка-утверждение ("YES.") и знак бренда. "STUDIO" под ним — тонкий, разрежённый.</p>
+    </div>
+    <div>
+      <h3 style="color:var(--silk);">Охранное поле</h3>
+      <p class="body-text">Минимальный отступ = высота буквы "Y" в логотипе. Марка не должна касаться краёв, других элементов или текста. Точка — часть лого, не отделяется.</p>
+    </div>
+    <div>
+      <h3 style="color:var(--silk);">Запрещено</h3>
+      <p class="body-text">Менять цвет точки на что-то кроме Gold / Noir / White. Растягивать, вращать, добавлять тени или градиенты. Убирать точку. Использовать курсив.</p>
+    </div>
+  </div>
+  <div class="slide-number">03</div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     04 — COLOR PALETTE
+     ═══════════════════════════════════ -->
+<section class="slide slide--cocoa" id="palette">
+  <p class="label" style="color:var(--gold);">04 / Цветовая палитра</p>
+  <h2>PALETTE <em>& RATIOS</em></h2>
+
+  <div class="grid-5" style="margin-top:40px;">
+    <div>
+      <div class="swatch" style="background:#1A1614;">
+        <div class="swatch-info">
+          <div class="hex">#1A1614</div>
+          <div class="name">Noir</div>
+        </div>
+      </div>
+      <p style="font-size:11px; color:var(--umber); margin-top:8px;">Основной фон<br><strong style="color:var(--silk);">50%</strong></p>
+    </div>
+    <div>
+      <div class="swatch" style="background:#F4EDE5;">
+        <div class="swatch-info" style="background:linear-gradient(transparent, rgba(0,0,0,0.2));">
+          <div class="hex" style="color:var(--noir);">#F4EDE5</div>
+          <div class="name" style="color:var(--umber);">Silk</div>
+        </div>
+      </div>
+      <p style="font-size:11px; color:var(--umber); margin-top:8px;">Текст, контраст<br><strong style="color:var(--silk);">25%</strong></p>
+    </div>
+    <div>
+      <div class="swatch" style="background:#C19B6C;">
+        <div class="swatch-info">
+          <div class="hex">#C19B6C</div>
+          <div class="name">Gold</div>
+        </div>
+      </div>
+      <p style="font-size:11px; color:var(--umber); margin-top:8px;">Акцент, CTA, антиква<br><strong style="color:var(--silk);">10%</strong></p>
+    </div>
+    <div>
+      <div class="swatch" style="background:#7A6B5D;">
+        <div class="swatch-info">
+          <div class="hex">#7A6B5D</div>
+          <div class="name">Umber</div>
+        </div>
+      </div>
+      <p style="font-size:11px; color:var(--umber); margin-top:8px;">Подписи, мелкий текст<br><strong style="color:var(--silk);">10%</strong></p>
+    </div>
+    <div>
+      <div class="swatch" style="background:#2A2420;">
+        <div class="swatch-info">
+          <div class="hex">#2A2420</div>
+          <div class="name">Cocoa</div>
+        </div>
+      </div>
+      <p style="font-size:11px; color:var(--umber); margin-top:8px;">Карточки, подложки<br><strong style="color:var(--silk);">5%</strong></p>
+    </div>
+  </div>
+
+  <!-- Ratio bar -->
+  <div style="margin-top:48px;">
+    <h3 style="color:var(--silk);">Пропорция 50 / 25 / 10 / 10 / 5</h3>
+    <div class="ratio-bar">
+      <div class="ratio-segment" style="flex:50; background:var(--noir);"><span style="color:var(--umber);">Noir 50%</span></div>
+      <div class="ratio-segment" style="flex:25; background:var(--silk);"><span style="color:var(--noir);">Silk 25%</span></div>
+      <div class="ratio-segment" style="flex:10; background:var(--gold);"><span style="color:var(--noir);">Gold 10%</span></div>
+      <div class="ratio-segment" style="flex:10; background:var(--umber);"><span style="color:#fff; font-size:9px;">Umber 10%</span></div>
+      <div class="ratio-segment" style="flex:5; background:var(--cocoa);"><span style="color:var(--umber); font-size:8px;">5%</span></div>
+    </div>
+  </div>
+
+  <!-- Usage rules -->
+  <div class="grid-3" style="margin-top:40px;">
+    <div>
+      <h3 style="color:var(--silk);">Noir — главная база</h3>
+      <p class="body-text">Тёмный фон (#1A1614) — не чёрный, а тёплый тёмно-коричневый. Ощущение бутик-лобби. Уют + премиум. Для всех основных секций.</p>
+    </div>
+    <div>
+      <h3 style="color:var(--silk);">Gold — только акценты</h3>
+      <p class="body-text">CTA-кнопки, точка в логотипе, антиквенные акценты в заголовках, важные цифры. Никогда для крупных плашек (кроме спецблоков). Aged, не блестящий.</p>
+    </div>
+    <div>
+      <h3 style="color:var(--silk);">Silk — тёплый свет</h3>
+      <p class="body-text">#F4EDE5 вместо белого. Цвет натурального шёлка. Для основного текста, светлых секций-контрастов, лёгкость на тёмном фоне.</p>
+    </div>
+  </div>
+  <div class="slide-number">04</div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     05 — TYPOGRAPHY
+     ═══════════════════════════════════ -->
+<section class="slide slide--dark" id="type">
+  <p class="label" style="color:var(--gold);">05 / Типографика</p>
+  <h2>TYPE <em>SYSTEM</em></h2>
+
+  <div class="grid-3" style="margin-top:40px;">
+    <!-- Display / Headings -->
+    <div class="specimen">
+      <p class="specimen-label">Display / Заголовки</p>
+      <p class="specimen-sample" style="font-family:'Forum', serif; font-size:3rem; color:var(--gold); text-transform:uppercase;">
+        Forum
+      </p>
+      <p class="specimen-sample" style="font-family:'Forum', serif; font-size:1.5rem; color:var(--gold); letter-spacing:0.05em; text-transform:uppercase;">
+        ABCDEFGHIJKLM
+      </p>
+      <p class="specimen-sample" style="font-family:'Forum', serif; font-size:1.5rem; color:var(--gold); letter-spacing:0.05em; text-transform:uppercase;">
+        АБВГДЕЖЗИКЛМН
+      </p>
+      <p class="specimen-meta">Weight 400 &middot; Uppercase &middot; Антиква / Serif &middot; Кириллица &#10003;</p>
+    </div>
+
+    <!-- Sans / Display + Body -->
+    <div class="specimen">
+      <p class="specimen-label">Sans / Основной шрифт</p>
+      <p class="specimen-sample" style="font-family:'Helvetica Neue', 'Helvetica', sans-serif; font-weight:700; font-size:3rem; color:var(--silk); letter-spacing:-0.02em; text-transform:uppercase;">
+        Helvetica
+      </p>
+      <p class="specimen-sample" style="font-family:'Helvetica Neue', 'Helvetica', sans-serif; font-weight:700; font-size:1.5rem; color:var(--silk); letter-spacing:0.1em; text-transform:uppercase;">
+        ABCDEFGHIJKLM
+      </p>
+      <p class="specimen-sample" style="font-family:'Helvetica Neue', 'Helvetica', sans-serif; font-weight:700; font-size:1.5rem; color:var(--silk); letter-spacing:0.1em; text-transform:uppercase;">
+        АБВГДЕЖЗИКЛМН
+      </p>
+      <p class="specimen-meta">Weights 300&#8211;700 &middot; Display + Body &middot; Кириллица &#10003;</p>
+    </div>
+
+    <!-- Body -->
+    <div class="specimen">
+      <p class="specimen-label">Body / Основной текст</p>
+      <p class="specimen-sample" style="font-family:'Helvetica Neue', 'Helvetica', sans-serif; font-weight:400; font-size:2.5rem; color:var(--silk);">
+        Helvetica Neue
+      </p>
+      <p class="specimen-sample" style="font-family:'Helvetica Neue', 'Helvetica', sans-serif; font-size:1rem; line-height:1.7; color:var(--umber);">
+        Быстрая коричневая лиса перепрыгнула через ленивую собаку. 0123456789
+      </p>
+      <p class="specimen-meta">Weight 400 &middot; Mixed case &middot; line-height 1.6&#8211;1.8 &middot; Кириллица &#10003;</p>
+    </div>
+  </div>
+
+  <!-- Heading pattern example -->
+  <div style="margin-top:56px;">
+    <p style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--umber); margin-bottom:20px;">Паттерн заголовка</p>
+    <p style="font-family:'Helvetica Neue', 'Helvetica', sans-serif; font-weight:700; font-size:clamp(2rem,5vw,4rem); line-height:0.92; color:var(--silk); letter-spacing:-0.02em; text-transform:uppercase;">
+      ЕДИНСТВЕННАЯ
+      <br><span style="font-family:'Forum', serif; font-weight:400; color:var(--gold); text-transform:uppercase;">NON-NUDE</span> СТУДИЯ
+    </p>
+    <p style="font-size:11px; color:var(--umber); margin-top:16px;">
+      Helvetica Neue 700, UPPERCASE, silk &nbsp;&nbsp;|&nbsp;&nbsp; Forum 400, UPPERCASE, gold
+    </p>
+  </div>
+
+  <!-- Type scale -->
+  <div style="margin-top:56px;">
+    <p style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--umber); margin-bottom:20px;">Шкала размеров</p>
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <div style="display:flex; align-items:baseline; gap:16px;">
+        <span style="font-size:10px; color:var(--umber); width:40px;">H1</span>
+        <span style="font-family:'Helvetica Neue', 'Helvetica', sans-serif; font-weight:700; font-size:clamp(2rem,5vw,4.5rem); color:var(--silk); line-height:1; text-transform:uppercase;">DISPLAY</span>
+      </div>
+      <div style="display:flex; align-items:baseline; gap:16px;">
+        <span style="font-size:10px; color:var(--umber); width:40px;">H2</span>
+        <span style="font-family:'Helvetica Neue', 'Helvetica', sans-serif; font-weight:700; font-size:clamp(1.5rem,3.5vw,3rem); color:var(--silk); line-height:1; text-transform:uppercase;">SECTION HEAD</span>
+      </div>
+      <div style="display:flex; align-items:baseline; gap:16px;">
+        <span style="font-size:10px; color:var(--umber); width:40px;">Accent</span>
+        <span style="font-family:'Forum', serif; font-size:clamp(1.5rem,3.5vw,3rem); color:var(--gold); line-height:1; text-transform:uppercase;">АНТИКВА FORUM</span>
+      </div>
+      <div style="display:flex; align-items:baseline; gap:16px;">
+        <span style="font-size:10px; color:var(--umber); width:40px;">H3</span>
+        <span style="font-family:'Helvetica Neue', 'Helvetica', sans-serif; font-weight:700; font-size:1.25rem; color:var(--silk); line-height:1;">Card Title</span>
+      </div>
+      <div style="display:flex; align-items:baseline; gap:16px;">
+        <span style="font-size:10px; color:var(--umber); width:40px;">Body</span>
+        <span style="font-family:'Helvetica Neue', 'Helvetica', sans-serif; font-size:1rem; color:var(--umber); line-height:1;">Основной текст, параграфы, описания карточек</span>
+      </div>
+      <div style="display:flex; align-items:baseline; gap:16px;">
+        <span style="font-size:10px; color:var(--umber); width:40px;">Label</span>
+        <span style="font-family:'Helvetica Neue', 'Helvetica', sans-serif; font-size:11px; letter-spacing:0.3em; text-transform:uppercase; color:var(--umber); opacity:0.5; line-height:1;">МЕТКИ СЕКЦИЙ, НАВИГАЦИЯ</span>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">05</div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     06 — APPLICATION PREVIEW
+     ═══════════════════════════════════ -->
+<section class="slide slide--cocoa" id="usage">
+  <p class="label" style="color:var(--gold);">06 / Применение</p>
+  <h2>В <em>ДЕЛЕ</em></h2>
+
+  <!-- Website preview -->
+  <div style="margin-top:24px;">
+    <p style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--umber); margin-bottom:16px;">Лендинг &#8212; Hero-секция</p>
+    <div class="preview-frame">
+      <div class="preview-nav">
+        <div style="display:flex; align-items:baseline; gap:3px;">
+          <span style="font-weight:700; font-size:10px; letter-spacing:0.15em; color:var(--silk);">YES</span><span style="color:var(--gold); font-weight:700; font-size:10px;">.</span>
+        </div>
+        <div style="display:flex; gap:20px;">
+          <span>О нас</span>
+          <span>Доход</span>
+          <span>FAQ</span>
+          <span style="background:var(--gold); color:var(--noir); padding:4px 12px; font-weight:600;">ЗАЯВКА</span>
+        </div>
+      </div>
+      <div class="preview-hero">
+        <div class="preview-content">
+          <p style="font-size:8px; letter-spacing:0.2em; color:var(--umber); text-transform:uppercase; margin-bottom:16px;">Вебкам студия в Москве &#8212; Yes Studio</p>
+          <p style="font-weight:700; font-size:clamp(1.2rem,3vw,2.2rem); line-height:0.9; color:var(--silk); margin-bottom:8px; text-transform:uppercase;">
+            ЕДИНСТВЕННАЯ
+            <br><span style="font-family:'Forum', serif; font-weight:400; color:var(--gold); text-transform:uppercase;">NON-NUDE</span> СТУДИЯ
+            <br>В МОСКВЕ
+          </p>
+          <p style="font-size:10px; color:var(--umber); margin-bottom:16px; line-height:1.5;">
+            Где зарабатывают на общении от 70 000 &#8381;.<br>Средняя зарплата &#8212; 150 000 &#8381;.
+          </p>
+          <div style="display:flex; gap:8px;">
+            <span style="background:var(--gold); color:var(--noir); padding:6px 16px; font-weight:700; font-size:8px; letter-spacing:0.1em; text-transform:uppercase;">Узнать подробнее</span>
+            <span style="border:1px solid rgba(244,237,229,0.15); color:var(--silk); padding:6px 16px; font-weight:700; font-size:8px; letter-spacing:0.1em; text-transform:uppercase;">Telegram</span>
+          </div>
+        </div>
+        <div class="preview-photo">
+          <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center;">
+            <span class="photo-label">Фото модели</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div style="margin-top:56px;">
+    <p style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--umber); margin-bottom:16px;">Кнопки</p>
+    <div style="display:flex; flex-wrap:wrap; gap:16px; align-items:center;">
+      <button class="button-example btn-gold">Оставить заявку &rarr;</button>
+      <button class="button-example btn-outline-silk">Написать в Telegram</button>
+      <div style="background:var(--silk); padding:16px; border-radius:4px;">
+        <button class="button-example btn-outline-dark">Узнать подробнее</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social mockups -->
+  <div style="margin-top:56px;">
+    <p style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--umber); margin-bottom:16px;">Соцсети</p>
+    <div class="grid-3">
+      <div class="social-card" style="background:var(--noir); border:1px solid rgba(244,237,229,0.06);">
+        <div style="font-weight:700; letter-spacing:0.15em; font-size:0.8rem; color:var(--silk); margin-bottom:16px;">YES<span style="color:var(--gold);">.</span></div>
+        <p style="font-weight:700; font-size:1.5rem; color:var(--silk); letter-spacing:0.05em;">ОТ 70 000 &#8381;</p>
+        <p style="font-family:'Forum', serif; color:var(--gold); font-size:1.1rem; margin-top:4px; text-transform:uppercase;">В МЕСЯЦ</p>
+        <p style="font-size:10px; color:var(--umber); margin-top:16px;">YES STUDIO &middot; NON-NUDE</p>
+      </div>
+      <div class="social-card" style="background:var(--silk); color:var(--noir);">
+        <p style="font-weight:700; font-size:1.8rem; line-height:0.9; color:var(--noir); text-transform:uppercase;">РАБОТА<br><span style="font-family:'Forum', serif; font-weight:400; color:var(--gold-dark); text-transform:uppercase;">МЕЧТЫ</span></p>
+        <p style="font-size:11px; color:var(--umber); margin-top:12px; line-height:1.5;">Гибкий график &middot; Обучение<br>Еженедельные выплаты</p>
+        <div style="margin-top:16px;">
+          <span style="background:var(--gold-dark); color:var(--silk); padding:6px 16px; font-weight:700; font-size:9px; letter-spacing:0.1em;">ПОДРОБНЕЕ</span>
+        </div>
+      </div>
+      <div class="social-card" style="background:var(--gold); color:var(--noir);">
+        <p style="font-weight:700; font-size:2.5rem; line-height:1;">$100</p>
+        <p style="font-family:'Forum', serif; font-size:1.2rem; margin-top:4px; text-transform:uppercase;">ЗА ПОДРУГУ</p>
+        <p style="font-size:10px; opacity:0.6; margin-top:16px; line-height:1.5;">Приведи подругу в Yes Studio<br>и получи вознаграждение</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">06</div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     07 — PHOTO STYLE
+     ═══════════════════════════════════ -->
+<section class="slide slide--dark">
+  <p class="label" style="color:var(--gold);">07 / Фото-стиль</p>
+  <h2>PHOTO <em>DIRECTION</em></h2>
+  <div class="grid-2">
+    <div>
+      <p class="body-text" style="margin-bottom:32px;">
+        Editorial, журнальное качество. Тёплая цветокоррекция: shadows в тёплые коричневые тона, highlights — золотистые. Настроение: уверенность, стиль, тёплый свет. Без откровенности — фокус на характер и lifestyle. Ощущение фотосессии для Vogue или Harper's Bazaar.
+      </p>
+      <div style="display:flex; flex-wrap:wrap; gap:8px;">
+        <span class="tag">Warm tones</span>
+        <span class="tag">Golden hour</span>
+        <span class="tag">Editorial</span>
+        <span class="tag">Confident</span>
+        <span class="tag">Lifestyle</span>
+        <span class="tag">Non-revealing</span>
+      </div>
+      <div style="margin-top:32px;">
+        <h3 style="color:var(--silk);">Цветокоррекция</h3>
+        <p class="body-text">Тени &rarr; тёплые коричневые (#2A2420). Средние тона &rarr; натуральные. Highlights &rarr; золотистый оттенок (#C19B6C). Десатурация зелёных/синих. Контраст мягкий.</p>
+      </div>
+    </div>
+    <div class="grid-2" style="gap:8px;">
+      <div class="photo-treatment"><span class="photo-label">Editorial portrait</span></div>
+      <div class="photo-treatment"><span class="photo-label">Golden hour</span></div>
+      <div class="photo-treatment"><span class="photo-label">Lifestyle</span></div>
+      <div class="photo-treatment"><span class="photo-label">Studio warm</span></div>
+    </div>
+  </div>
+  <div class="slide-number">07</div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     08 — RECRAFT BRIEF
+     ═══════════════════════════════════ -->
+<section class="slide slide--cocoa" id="recraft">
+  <p class="label" style="color:var(--gold);">08 / Генерация логотипа</p>
+  <h2>RECRAFT.AI <em>BRIEF</em></h2>
+
+  <div class="grid-2" style="margin-top:32px;">
+    <div>
+      <h3 style="color:var(--silk);">Промпт: Wordmark "YES."</h3>
+      <div class="brief-card">Bold sans-serif wordmark "YES." with a distinctive period/dot, minimal, flat vector style, no gradients, heavy weight, wide letter-spacing, modern luxury branding, clean geometric letterforms, works at small sizes, monochrome, single color
+
+Color: warm cream #F4EDE5 on dark #1A1614 background
+Period dot in gold #C19B6C</div>
+      <p style="font-size:11px; color:var(--umber); margin-top:12px;">Recraft.ai &rarr; Vector &rarr; Style: Flat &rarr; Background: #1A1614</p>
+    </div>
+    <div>
+      <h3 style="color:var(--silk);">Промпт: Полный логотип</h3>
+      <div class="brief-card">Logo for "YES STUDIO" with bold geometric sans-serif "YES." wordmark on top and thin spaced "STUDIO" subtitle below, flat vector, no gradients, no decorations, premium minimal branding, works at small sizes, wide tracking, modern luxury feel
+
+Two-line stacked layout, centered alignment</div>
+      <p style="font-size:11px; color:var(--umber); margin-top:12px;">Генерировать 5+ вариантов. Доработать tracking и alignment в Figma.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:40px;">
+    <h3 style="color:var(--silk);">Альтернатива: Y-марка</h3>
+    <div class="brief-card" style="max-width:700px;">Stylized letter Y as a standalone logomark, bold minimal geometric, flat vector, no gradients, sharp clean lines, modern luxury aesthetic, works at 16px favicon size, monochrome, single color, inspired by fashion house marks like YSL simplified
+
+Can be used as favicon, social media avatar, watermark</div>
+    <p style="font-size:11px; color:var(--umber); margin-top:12px;">
+      Отдельная марка для favicon, аватаров соцсетей, водяных знаков на фото. Стиль: fashion house.
+    </p>
+  </div>
+  <div class="slide-number">08</div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     09 — GRID & UI PATTERNS
+     ═══════════════════════════════════ -->
+<section class="slide slide--dark">
+  <p class="label" style="color:var(--gold);">09 / UI Паттерны</p>
+  <h2>GRID <em>& PATTERNS</em></h2>
+
+  <div class="grid-2" style="margin-top:32px;">
+    <div>
+      <h3 style="color:var(--silk);">1px разделители</h3>
+      <p class="body-text" style="margin-bottom:24px;">Вместо gap/padding между карточками — grid с gap 1px и полупрозрачной подложкой silk/5%. Создаёт тонкую сетку-разделитель. Визуал: ювелирная витрина.</p>
+      <!-- Mini grid demo -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(244,237,229,0.05); border-radius:4px; overflow:hidden;">
+        <div style="background:var(--noir); padding:24px; text-align:center;">
+          <p style="font-weight:700; font-size:1.5rem; color:var(--silk);">70K</p>
+          <p style="font-size:10px; color:var(--umber); margin-top:4px;">Старт</p>
+        </div>
+        <div style="background:var(--noir); padding:24px; text-align:center;">
+          <p style="font-weight:700; font-size:1.5rem; color:var(--gold);">150K</p>
+          <p style="font-size:10px; color:var(--umber); margin-top:4px;">Средняя</p>
+        </div>
+        <div style="background:var(--noir); padding:24px; text-align:center;">
+          <p style="font-weight:700; font-size:1.5rem; color:var(--silk);">300K+</p>
+          <p style="font-size:10px; color:var(--umber); margin-top:4px;">Топ</p>
+        </div>
+        <div style="background:var(--noir); padding:24px; text-align:center;">
+          <p style="font-weight:700; font-size:1.5rem; color:var(--silk);">$100</p>
+          <p style="font-size:10px; color:var(--umber); margin-top:4px;">За подругу</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 style="color:var(--silk);">Gold-line акценты</h3>
+      <p class="body-text" style="margin-bottom:24px;">Горизонтальные линии-разделители с градиентом: transparent &rarr; gold &rarr; transparent. Используются между секциями. Тонкие, 1px.</p>
+      <div style="padding:32px; background:var(--noir); border-radius:4px; border:1px solid rgba(244,237,229,0.06);">
+        <p style="font-size:10px; color:var(--umber); letter-spacing:0.2em; text-transform:uppercase; margin-bottom:12px;">Секция A</p>
+        <p style="font-weight:700; color:var(--silk); font-size:1.2rem; text-transform:uppercase;">УСЛОВИЯ <span style="font-family:'Forum', serif; font-weight:400; color:var(--gold); text-transform:uppercase;">РАБОТЫ</span></p>
+        <div style="width:100%; height:1px; background:linear-gradient(90deg, transparent, var(--gold), transparent); margin:20px 0;"></div>
+        <p style="font-size:10px; color:var(--umber); letter-spacing:0.2em; text-transform:uppercase; margin-bottom:12px;">Секция B</p>
+        <p style="font-weight:700; color:var(--silk); font-size:1.2rem; text-transform:uppercase;">ПРЕИМУЩЕСТВА <span style="font-family:'Forum', serif; font-weight:400; color:var(--gold); text-transform:uppercase;">СТУДИИ</span></p>
+      </div>
+      <div style="margin-top:32px;">
+        <h3 style="color:var(--silk);">Карточки</h3>
+        <p class="body-text">Фон карточек: Cocoa #2A2420 или Noir с border 1px rgba(silk, 0.06). Без скруглений или минимальные (4px). Без теней &#8212; разделение через цвет.</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">09</div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     10 — SUMMARY
+     ═══════════════════════════════════ -->
+<section class="slide slide--dark">
+  <p class="label" style="color:var(--gold);">10 / Итого</p>
+  <h2>BRAND <em>SUMMARY</em></h2>
+
+  <div class="grid-3" style="margin-top:32px;">
+    <div>
+      <h3 style="color:var(--silk);">Палитра</h3>
+      <div style="display:flex; gap:4px; margin:12px 0;">
+        <div style="width:40px; height:40px; background:var(--noir); border-radius:2px; border:1px solid rgba(244,237,229,0.1);"></div>
+        <div style="width:40px; height:40px; background:var(--silk); border-radius:2px;"></div>
+        <div style="width:40px; height:40px; background:var(--gold); border-radius:2px;"></div>
+        <div style="width:40px; height:40px; background:var(--umber); border-radius:2px;"></div>
+        <div style="width:40px; height:40px; background:var(--cocoa); border-radius:2px;"></div>
+      </div>
+      <p class="body-text">5 цветов. Пропорция 50/25/10/10/5. Тёмная база + золотые акценты.</p>
+    </div>
+    <div>
+      <h3 style="color:var(--silk);">Типографика</h3>
+      <div style="margin:12px 0;">
+        <p style="font-family:'Forum', serif; font-size:1.2rem; color:var(--gold); text-transform:uppercase;">FORUM</p>
+        <p style="font-family:'Helvetica Neue', 'Helvetica', sans-serif; font-weight:700; font-size:1.2rem; color:var(--silk); text-transform:uppercase;">HELVETICA NEUE 700</p>
+        <p style="font-family:'Helvetica Neue', 'Helvetica', sans-serif; font-size:0.9rem; color:var(--umber);">Helvetica Neue 400</p>
+      </div>
+      <p class="body-text">Forum &#8212; антиква для заголовков (золотой, UPPERCASE). Helvetica Neue &#8212; основной шрифт.</p>
+    </div>
+    <div>
+      <h3 style="color:var(--silk);">Логотип</h3>
+      <div style="margin:12px 0; text-align:left;">
+        <div style="font-weight:700; font-size:1.5rem; letter-spacing:0.2em; color:var(--silk);">
+          YES<span style="color:var(--gold);">.</span>
+        </div>
+        <div style="font-size:7px; letter-spacing:0.35em; text-transform:uppercase; color:var(--umber); margin-top:2px;">STUDIO</div>
+      </div>
+      <p class="body-text">Wordmark "YES." с золотой точкой. Генерация вектора &#8212; Recraft.ai.</p>
+    </div>
+  </div>
+
+  <div class="divider" style="margin-top:48px;"></div>
+
+  <div style="margin-top:24px;">
+    <p class="body-text">
+      <strong style="color:var(--silk);">Настроение:</strong> Tom Ford meets boutique hotel. Тёплый, тёмный, уютный premium. Не холодный luxury &#8212; approachable для ЦА 18-28.
+    </p>
+  </div>
+
+  <div style="margin-top:24px;">
+    <p class="body-text">
+      <strong style="color:var(--silk);">Следующий шаг:</strong> генерация векторного логотипа в Recraft.ai по промптам из слайда 08, доработка в Figma, финализация лендинга с реальными фото клиента.
+    </p>
+  </div>
+  <div class="slide-number">10</div>
+</section>
+
+
+</body>
+</html>

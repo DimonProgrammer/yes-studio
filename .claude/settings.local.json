@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:yes-studio.agency)",
+      "WebFetch(domain:dometrain.com)",
+      "WebFetch(domain:www.builder.io)",
+      "WebFetch(domain:webcache.googleusercontent.com)",
+      "WebFetch(domain:www.figma.com)",
+      "Bash(open \"https://www.awwwards.com/websites/red/\")",
+      "Bash(open:*)",
+      "Bash(open \"https://www.siteinspire.com/websites?categories=57+63\")",
+      "Bash(npx:*)",
+      "Bash(env:*)",
+      "Bash(find:*)",
+      "Bash(git clone:*)",
+      "Read(//Users/admin/.claude-mem-src/**)",
+      "Bash(npm run worker:start:*)",
+      "Bash(bash:*)",
+      "WebFetch(domain:skillsmp.com)",
+      "Bash(lsof:*)",
+      "Bash(pdftotext:*)",
+      "Bash(python3:*)",
+      "Bash(grep:*)",
+      "Bash(wc:*)",
+      "Bash(file:*)"
+    ],
+    "additionalDirectories": [
+      "/Users/admin/.kiro/settings"
+    ]
+  }
+}
