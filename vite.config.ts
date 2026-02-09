@@ -13,9 +13,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        red: resolve(__dirname, 'red.html'),
-        cartier: resolve(__dirname, 'cartier.html'),
-        heritage: resolve(__dirname, 'heritage.html'),
       },
     },
   },
