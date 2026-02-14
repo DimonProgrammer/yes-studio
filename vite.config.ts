@@ -12,7 +12,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
+        // index.html is located in the `public` folder in this repo
+        main: resolve(__dirname, 'public', 'index.html'),
       },
     },
   },
