@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YES Studio — Moodboard & Style Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Manrope:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #F5F0EB;
+      --bg-dark: #EDE5DC;
+      --text: #1A1A1A;
+      --text-muted: #7A716B;
+      --burgundy: #8B1F31;
+      --burgundy-light: #A52840;
+      --burgundy-dark: #6B1726;
+      --burgundy-deep: #4A1019;
+      --gold: #C9A84C;
+      --gold-light: #D4B95E;
+      --gold-muted: #B89A3F;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ═══ NAV ═══ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(245, 240, 235, 0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(139, 31, 49, 0.08);
+      padding: 16px 48px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .nav-title {
+      font-family: 'Forum', serif;
+      font-size: 20px;
+      color: var(--burgundy);
+      letter-spacing: 2px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--burgundy); }
+
+    /* ═══ SECTIONS ═══ */
+    .section {
+      padding: 100px 64px 80px;
+      border-bottom: 1px solid rgba(139, 31, 49, 0.06);
+    }
+
+    .section:first-of-type { padding-top: 140px; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: 'Forum', serif;
+      font-size: 42px;
+      color: var(--burgundy);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin-bottom: 48px;
+      line-height: 1.7;
+    }
+
+    /* ═══ 01. COVER ═══ */
+    .cover {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 50% 40% at 30% 70%, rgba(139, 31, 49, 0.04) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 50% at 70% 30%, rgba(201, 168, 76, 0.04) 0%, transparent 70%);
+    }
+
+    .cover-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 32px;
+      position: relative;
+    }
+
+    .cover h1 {
+      font-family: 'Forum', serif;
+      font-size: clamp(48px, 6vw, 80px);
+      color: var(--burgundy);
+      letter-spacing: 4px;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .cover-sub {
+      font-size: 18px;
+      color: var(--text-muted);
+      font-weight: 300;
+      max-width: 500px;
+      position: relative;
+    }
+
+    .cover-meta {
+      position: absolute;
+      bottom: 48px;
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+    }
+
+    /* ═══ 02. PALETTE ═══ */
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .color-card {
+      border: 1px solid rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+
+    .color-swatch {
+      height: 160px;
+      position: relative;
+    }
+
+    .color-swatch::after {
+      content: attr(data-hex);
+      position: absolute;
+      bottom: 12px;
+      left: 16px;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: 'Manrope', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    .color-swatch.light-text::after { color: rgba(255,255,255,0.8); }
+    .color-swatch.dark-text::after { color: rgba(0,0,0,0.4); }
+
+    .color-info {
+      padding: 16px;
+      background: white;
+    }
+
+    .color-name {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .color-role {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Gradient combos */
+    .gradient-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .gradient-card {
+      height: 120px;
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .gradient-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.8);
+      letter-spacing: 1px;
+    }
+
+    /* ═══ 03. TYPOGRAPHY ═══ */
+    .type-pair {
+      margin-bottom: 64px;
+      padding-bottom: 64px;
+      border-bottom: 1px solid rgba(139, 31, 49, 0.06);
+    }
+
+    .type-pair:last-child { border-bottom: none; }
+
+    .type-pair-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .type-pair-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+    }
+
+    .type-pair-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .type-specimen {
+      margin: 24px 0;
+    }
+
+    .type-specimen-h1 {
+      font-size: 72px;
+      line-height: 1.05;
+      color: var(--burgundy);
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+
+    .type-specimen-h2 {
+      font-size: 42px;
+      line-height: 1.15;
+      color: var(--burgundy);
+      margin-bottom: 16px;
+    }
+
+    .type-specimen-body {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text);
+      max-width: 600px;
+    }
+
+    .type-specimen-meta {
+      display: flex;
+      gap: 32px;
+      margin-top: 16px;
+    }
+
+    .type-specimen-meta span {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    /* ═══ 04. TEXTURES ═══ */
+    .texture-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .texture-card {
+      aspect-ratio: 4/3;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .texture-card canvas {
+      width: 100%;
+      height: 100%;
+    }
+
+    .texture-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 16px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.5));
+      color: white;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    /* ═══ 05. PRINCIPLES ═══ */
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .principle-card {
+      padding: 40px;
+      background: white;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .principle-number {
+      font-family: 'Forum', serif;
+      font-size: 48px;
+      color: var(--gold);
+      opacity: 0.5;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .principle-title {
+      font-family: 'Forum', serif;
+      font-size: 24px;
+      color: var(--burgundy);
+      margin-bottom: 12px;
+    }
+
+    .principle-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ═══ 06. REFERENCES ═══ */
+    .ref-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .ref-card {
+      background: white;
+      border: 1px solid rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+
+    .ref-visual {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .ref-visual-text {
+      font-family: 'Forum', serif;
+      font-size: 32px;
+      letter-spacing: 4px;
+      z-index: 1;
+    }
+
+    .ref-body {
+      padding: 24px;
+    }
+
+    .ref-name {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .ref-take {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .ref-tags {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .ref-tag {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      background: var(--bg);
+      color: var(--text-muted);
+    }
+
+    /* ═══ 07. COMPONENTS ═══ */
+    .comp-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .comp-card {
+      background: white;
+      border: 1px solid rgba(0,0,0,0.06);
+      padding: 32px;
+    }
+
+    .comp-card-title {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    /* Button specimens */
+    .btn-specimen {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .btn-demo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 36px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      width: fit-content;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--burgundy-deep);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3);
+    }
+
+    .btn-burgundy {
+      background: var(--burgundy);
+      color: var(--bg);
+    }
+
+    .btn-burgundy:hover {
+      background: var(--burgundy-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(139, 31, 49, 0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--burgundy);
+      border: 1.5px solid rgba(139, 31, 49, 0.2);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--burgundy);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost-light {
+      background: transparent;
+      color: var(--bg);
+      border: 1px solid rgba(245, 240, 235, 0.25);
+    }
+
+    /* Input specimens */
+    .input-demo {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .input-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .input-field {
+      padding: 14px 20px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 15px;
+      border: 1.5px solid rgba(139, 31, 49, 0.12);
+      background: white;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .input-field:focus {
+      border-color: var(--burgundy);
+    }
+
+    .input-field::placeholder {
+      color: var(--text-muted);
+      opacity: 0.5;
+    }
+
+    /* ═══ 08. DO/DON'T ═══ */
+    .dodont-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .dodont-card {
+      padding: 32px;
+    }
+
+    .dodont-card.do {
+      background: rgba(46, 204, 113, 0.06);
+      border: 1px solid rgba(46, 204, 113, 0.15);
+    }
+
+    .dodont-card.dont {
+      background: rgba(231, 76, 60, 0.06);
+      border: 1px solid rgba(231, 76, 60, 0.15);
+    }
+
+    .dodont-label {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .dodont-card.do .dodont-label { color: #27ae60; }
+    .dodont-card.dont .dodont-label { color: #c0392b; }
+
+    .dodont-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .dodont-list li {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.5;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .dodont-card.do .dodont-list li::before { content: '+'; color: #27ae60; position: absolute; left: 0; font-weight: 700; }
+    .dodont-card.dont .dodont-list li::before { content: '—'; color: #c0392b; position: absolute; left: 0; font-weight: 700; }
+
+    /* ═══ FOOTER ═══ */
+    .moodboard-footer {
+      padding: 48px 64px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-title">YES Moodboard</div>
+    <div class="nav-links">
+      <a href="#palette">Палитра</a>
+      <a href="#typography">Типографика</a>
+      <a href="#textures">Текстуры</a>
+      <a href="#principles">Принципы</a>
+      <a href="#references">Референсы</a>
+      <a href="#components">UI</a>
+      <a href="#dodont">Do / Don't</a>
+    </div>
+  </nav>
+
+  <!-- COVER -->
+  <section class="cover">
+    <div class="cover-label">Visual Direction & Moodboard</div>
+    <h1>YES Studio</h1>
+    <p class="cover-sub">
+      Quiet luxury. Бордовый шёлк. Золотые акценты.<br>
+      Aesop meets Cartier для аудитории 18-26.
+    </p>
+    <div class="cover-meta">Февраль 2026 / v1.0</div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       02. PALETTE
+  ═══════════════════════════════════════ -->
+  <section class="section" id="palette">
+    <div class="section-label">01 / Палитра</div>
+    <div class="section-title">Цветовая система</div>
+    <p class="section-desc">
+      Основа — насыщенный бургунди (Cartier-inspired), золото для акцентов,
+      тёплый крем для фонов. Никакого чистого чёрного или белого.
+    </p>
+
+    <div class="palette-grid">
+      <!-- Primary -->
+      <div class="color-card">
+        <div class="color-swatch light-text" style="background: #8B1F31;" data-hex="#8B1F31"></div>
+        <div class="color-info">
+          <div class="color-name">Burgundy</div>
+          <div class="color-role">Основной / Заголовки / CTA</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch light-text" style="background: #A52840;" data-hex="#A52840"></div>
+        <div class="color-info">
+          <div class="color-name">Burgundy Light</div>
+          <div class="color-role">Hover-состояния / Акценты</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch light-text" style="background: #6B1726;" data-hex="#6B1726"></div>
+        <div class="color-info">
+          <div class="color-name">Burgundy Dark</div>
+          <div class="color-role">Тёмные секции / Глубина</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch light-text" style="background: #4A1019;" data-hex="#4A1019"></div>
+        <div class="color-info">
+          <div class="color-name">Burgundy Deep</div>
+          <div class="color-role">Текст на золоте / Контраст</div>
+        </div>
+      </div>
+
+      <!-- Gold -->
+      <div class="color-card">
+        <div class="color-swatch dark-text" style="background: #C9A84C;" data-hex="#C9A84C"></div>
+        <div class="color-info">
+          <div class="color-name">Gold</div>
+          <div class="color-role">Акцентный / CTA-кнопки / Иконки</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch dark-text" style="background: #D4B95E;" data-hex="#D4B95E"></div>
+        <div class="color-info">
+          <div class="color-name">Gold Light</div>
+          <div class="color-role">Hover на золоте</div>
+        </div>
+      </div>
+
+      <!-- Neutrals -->
+      <div class="color-card">
+        <div class="color-swatch dark-text" style="background: #F5F0EB;" data-hex="#F5F0EB"></div>
+        <div class="color-info">
+          <div class="color-name">Cream</div>
+          <div class="color-role">Основной фон</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch dark-text" style="background: #EDE5DC;" data-hex="#EDE5DC"></div>
+        <div class="color-info">
+          <div class="color-name">Cream Dark</div>
+          <div class="color-role">Чередование секций / Карточки</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch dark-text" style="background: #1A1A1A;" data-hex="#1A1A1A">
+          <span style="color: rgba(255,255,255,0.6); position: absolute; bottom: 12px; left: 16px; font-size: 13px; font-weight: 600; letter-spacing: 1px;">#1A1A1A</span>
+        </div>
+        <div class="color-info">
+          <div class="color-name">Warm Black</div>
+          <div class="color-role">Body text / Вместо #000</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch dark-text" style="background: #7A716B;" data-hex="#7A716B"></div>
+        <div class="color-info">
+          <div class="color-name">Warm Gray</div>
+          <div class="color-role">Мутный текст / Подписи</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gradient combinations -->
+    <h3 style="font-family: 'Forum', serif; font-size: 24px; color: var(--burgundy); margin-bottom: 20px;">Градиенты</h3>
+    <div class="gradient-row">
+      <div class="gradient-card" style="background: linear-gradient(135deg, #4A1019, #8B1F31, #A52840);">
+        <span class="gradient-label">Hero Background (Dark)</span>
+      </div>
+      <div class="gradient-card" style="background: linear-gradient(135deg, #8B1F31, #C9A84C);">
+        <span class="gradient-label">CTA Gradient</span>
+      </div>
+      <div class="gradient-card" style="background: linear-gradient(180deg, #F5F0EB, #EDE5DC, #F5F0EB);">
+        <span class="gradient-label" style="color: var(--text-muted);">Section Transition</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       03. TYPOGRAPHY
+  ═══════════════════════════════════════ -->
+  <section class="section" id="typography">
+    <div class="section-label">02 / Типографика</div>
+    <div class="section-title">Шрифтовая система</div>
+    <p class="section-desc">
+      Основная пара: Forum (заголовки) + Manrope (body).
+      Обе поддерживают кириллицу. Forum — элегантная антиква с характером.
+      Manrope — чистый геометрический гротеск.
+    </p>
+
+    <!-- PAIR: Forum + Manrope (CHOSEN) -->
+    <div class="type-pair">
+      <div class="type-pair-header">
+        <span class="type-pair-badge">Выбрано</span>
+        <span class="type-pair-name">Forum + Manrope</span>
+      </div>
+      <div class="type-specimen">
+        <div class="type-specimen-h1" style="font-family: 'Forum', serif;">
+          Stream Model Agency
+        </div>
+        <div class="type-specimen-h2" style="font-family: 'Forum', serif;">
+          Почему мы лучшие на рынке?
+        </div>
+        <div class="type-specimen-body" style="font-family: 'Manrope', sans-serif;">
+          Единственная NON-NUDE студия в Москве, где зарабатывают
+          <strong>на общении от 90 000 ₽</strong> уже в первый месяц.
+          Мы создаём из тебя Personal Brand, который приносит деньги,
+          поклонников и независимость.
+        </div>
+        <div class="type-specimen-meta">
+          <span>H1: Forum 72px / 400</span>
+          <span>H2: Forum 42px / 400</span>
+          <span>Body: Manrope 17px / 400</span>
+          <span>Caps: Manrope 12px / 600 / 2px tracking</span>
+        </div>
+      </div>
+
+      <!-- Cyrillic specimen -->
+      <div style="margin-top: 32px; padding: 32px; background: white; border: 1px solid rgba(0,0,0,0.06);">
+        <div style="font-family: 'Forum', serif; font-size: 48px; color: var(--burgundy); margin-bottom: 16px;">
+          Абвгдежзиклмн
+        </div>
+        <div style="font-family: 'Forum', serif; font-size: 48px; color: var(--burgundy); margin-bottom: 16px;">
+          Опрстуфхцчшщъ
+        </div>
+        <div style="font-family: 'Manrope', sans-serif; font-size: 18px; color: var(--text); line-height: 1.8;">
+          Работа стрим-моделью в YES — это не просто заработок. Это карьера,
+          в которой мы ценим каждую девушку. Абвгдежзийклмнопрстуфхцчшщъыьэюя. 0123456789.
+        </div>
+      </div>
+    </div>
+
+    <!-- ALTERNATIVES -->
+    <h3 style="font-family: 'Forum', serif; font-size: 24px; color: var(--text-muted); margin-bottom: 32px;">Альтернативные пары (для сравнения)</h3>
+
+    <div class="type-pair">
+      <div class="type-pair-header">
+        <span class="type-pair-name">Cormorant Garamond + Manrope</span>
+      </div>
+      <div class="type-specimen">
+        <div class="type-specimen-h1" style="font-family: 'Cormorant Garamond', serif; font-weight: 500;">
+          Stream Model Agency
+        </div>
+        <div class="type-specimen-h2" style="font-family: 'Cormorant Garamond', serif; font-weight: 500;">
+          Почему мы лучшие на рынке?
+        </div>
+        <div class="type-specimen-body" style="font-family: 'Manrope', sans-serif;">
+          Единственная NON-NUDE студия в Москве, где зарабатывают
+          <strong>на общении от 90 000 ₽</strong> уже в первый месяц.
+        </div>
+        <div class="type-specimen-meta">
+          <span>Тоньше и элегантнее Forum</span>
+          <span>Ближе к Cartier</span>
+          <span>Может быть слишком деликатным</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="type-pair">
+      <div class="type-pair-header">
+        <span class="type-pair-name">Playfair Display + Montserrat</span>
+      </div>
+      <div class="type-specimen">
+        <div class="type-specimen-h1" style="font-family: 'Playfair Display', serif; font-weight: 500;">
+          Stream Model Agency
+        </div>
+        <div class="type-specimen-h2" style="font-family: 'Playfair Display', serif; font-weight: 500;">
+          Почему мы лучшие на рынке?
+        </div>
+        <div class="type-specimen-body" style="font-family: 'Montserrat', sans-serif; font-weight: 400;">
+          Единственная NON-NUDE студия в Москве, где зарабатывают
+          <strong>на общении от 90 000 ₽</strong> уже в первый месяц.
+        </div>
+        <div class="type-specimen-meta">
+          <span>Более массивная антиква</span>
+          <span>Montserrat — геометричнее Manrope</span>
+          <span>Возможно слишком «тяжёлая»</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="type-pair">
+      <div class="type-pair-header">
+        <span class="type-pair-name">PT Serif + Raleway</span>
+      </div>
+      <div class="type-specimen">
+        <div class="type-specimen-h1" style="font-family: 'PT Serif', serif; font-weight: 700;">
+          Stream Model Agency
+        </div>
+        <div class="type-specimen-h2" style="font-family: 'PT Serif', serif; font-weight: 700;">
+          Почему мы лучшие на рынке?
+        </div>
+        <div class="type-specimen-body" style="font-family: 'Raleway', sans-serif; font-weight: 400;">
+          Единственная NON-NUDE студия в Москве, где зарабатывают
+          <strong>на общении от 90 000 ₽</strong> уже в первый месяц.
+        </div>
+        <div class="type-specimen-meta">
+          <span>PT Serif — «русский» характер</span>
+          <span>Raleway — тонкий, воздушный</span>
+          <span>Менее luxury, более editorial</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       04. TEXTURES & MATERIALS
+  ═══════════════════════════════════════ -->
+  <section class="section" id="textures">
+    <div class="section-label">03 / Текстуры</div>
+    <div class="section-title">Материалы и настроение</div>
+    <p class="section-desc">
+      Вдохновение: бургунди шёлк, приглушённое золото, плёночная зернистость.
+      Ощущение роскоши через текстуру, не через блеск.
+    </p>
+
+    <div class="texture-grid">
+      <!-- Silk Burgundy -->
+      <div class="texture-card">
+        <canvas id="tex1" width="400" height="300"></canvas>
+        <div class="texture-label">Шёлк бургунди — Hero фон</div>
+      </div>
+      <!-- Dark Silk -->
+      <div class="texture-card">
+        <canvas id="tex2" width="400" height="300"></canvas>
+        <div class="texture-label">Тёмный шёлк — Footer / Dark секции</div>
+      </div>
+      <!-- Warm Cream -->
+      <div class="texture-card">
+        <canvas id="tex3" width="400" height="300"></canvas>
+        <div class="texture-label">Тёплый крем — Основной фон</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 48px;">
+      <h3 style="font-family: 'Forum', serif; font-size: 24px; color: var(--burgundy); margin-bottom: 24px;">
+        Зернистость (Film Grain)
+      </h3>
+      <p style="font-size: 14px; color: var(--text-muted); max-width: 600px; margin-bottom: 24px; line-height: 1.7;">
+        Тонкий SVG noise-паттерн поверх всего сайта (2-3% opacity).
+        Добавляет тактильность, убирает «цифровую гладкость».
+        Референс: Aesop.com, Cartier.com — оба используют grain.
+      </p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+        <div style="height: 120px; background: var(--bg); display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--text-muted); border: 1px solid rgba(0,0,0,0.06);">
+          Без grain
+        </div>
+        <div style="height: 120px; background: var(--bg); display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--text-muted); border: 1px solid rgba(0,0,0,0.06); position: relative;">
+          С grain (2.5%)
+          <div style="position: absolute; inset: 0; opacity: 0.04; background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E');"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       05. DESIGN PRINCIPLES
+  ═══════════════════════════════════════ -->
+  <section class="section" id="principles">
+    <div class="section-label">04 / Принципы</div>
+    <div class="section-title">Дизайн-принципы YES</div>
+    <p class="section-desc">
+      Каждое решение проверяется через эти 6 принципов.
+      Если элемент противоречит хотя бы одному — пересматриваем.
+    </p>
+
+    <div class="principles-grid">
+      <div class="principle-card">
+        <div class="principle-number">01</div>
+        <div class="principle-title">Quiet Luxury</div>
+        <div class="principle-desc">
+          Роскошь через сдержанность, не через крик. Много воздуха,
+          тонкие линии, приглушённые текстуры. Как Aesop — дорого
+          выглядит именно потому, что не кричит о цене.
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-number">02</div>
+        <div class="principle-title">Доверие через прозрачность</div>
+        <div class="principle-desc">
+          Реальные цифры, честные истории, конкретные условия.
+          Никаких «до 500 000 ₽». Калькулятор, а не обещания.
+          FAQ с прямыми ответами. Фото реальной студии.
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-number">03</div>
+        <div class="principle-title">Безопасность в каждом пикселе</div>
+        <div class="principle-desc">
+          NON-NUDE — не просто слово, а визуальная константа.
+          Никаких провокационных фото. Девушки в одежде,
+          интерьеры как коворкинг. Ощущение защищённости.
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-number">04</div>
+        <div class="principle-title">Тёплая цветовая температура</div>
+        <div class="principle-desc">
+          Вместо холодных синих/серых тонов — бургунди, золото, крем.
+          Тёплый свет на фото. Тёплый white (#F5F0EB).
+          Ассоциация: уют, забота, женственность.
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-number">05</div>
+        <div class="principle-title">Анимации со смыслом</div>
+        <div class="principle-desc">
+          Каждая анимация решает задачу: счётчик показывает рост,
+          spotlight создаёт атмосферу, fade-up управляет вниманием.
+          Никаких «красивостей ради красивостей».
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-number">06</div>
+        <div class="principle-title">Empowerment, не objectification</div>
+        <div class="principle-desc">
+          Визуальный язык: сила, независимость, уверенность.
+          Не «приди к нам, девочка». А «вот инструмент —
+          возьми контроль над своей жизнью».
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       06. REFERENCES
+  ═══════════════════════════════════════ -->
+  <section class="section" id="references">
+    <div class="section-label">05 / Референсы</div>
+    <div class="section-title">Вдохновение</div>
+    <p class="section-desc">
+      Что берём у каждого бренда и почему это работает для YES.
+    </p>
+
+    <div class="ref-grid">
+      <div class="ref-card">
+        <div class="ref-visual" style="background: #F3EDE7;">
+          <span class="ref-visual-text" style="color: #2A2520; font-family: 'Cormorant Garamond', serif;">Aesop</span>
+        </div>
+        <div class="ref-body">
+          <div class="ref-name">Aesop</div>
+          <div class="ref-take">
+            Главный референс. Кремовые фоны, тонкая типографика,
+            обилие whitespace, текстуры натуральных материалов.
+            Ощущение: спокойствие, качество, внимание к деталям.
+          </div>
+          <div class="ref-tags">
+            <span class="ref-tag">Фоны</span>
+            <span class="ref-tag">Whitespace</span>
+            <span class="ref-tag">Тон</span>
+            <span class="ref-tag">Grain</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ref-card">
+        <div class="ref-visual" style="background: #8B1F31;">
+          <span class="ref-visual-text" style="color: rgba(255,255,255,0.9); font-family: 'Forum', serif; letter-spacing: 8px;">CARTIER</span>
+        </div>
+        <div class="ref-body">
+          <div class="ref-name">Cartier</div>
+          <div class="ref-take">
+            Цветовая палитра: красный (бургунди) как символ страсти и силы.
+            Золотые акценты — не блестящее, а приглушённое. Симметричные
+            композиции, ритм, большие отступы.
+          </div>
+          <div class="ref-tags">
+            <span class="ref-tag">Палитра</span>
+            <span class="ref-tag">Золото</span>
+            <span class="ref-tag">Ритм</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ref-card">
+        <div class="ref-visual" style="background: #000;">
+          <span class="ref-visual-text" style="color: white; font-family: 'Playfair Display', serif; font-size: 28px;">CHANEL</span>
+        </div>
+        <div class="ref-body">
+          <div class="ref-name">Chanel</div>
+          <div class="ref-take">
+            Минимализм доведённый до совершенства. Фотостиль:
+            драматический свет, контраст, пустое пространство как элемент.
+            Сдержанные анимации (fade, не bounce).
+          </div>
+          <div class="ref-tags">
+            <span class="ref-tag">Фотостиль</span>
+            <span class="ref-tag">Контраст</span>
+            <span class="ref-tag">Анимации</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ref-card">
+        <div class="ref-visual" style="background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);">
+          <span class="ref-visual-text" style="color: rgba(255,255,255,0.7); font-family: 'Manrope', sans-serif; font-size: 18px; letter-spacing: 6px; font-weight: 300;">PREMIUM SAAS</span>
+        </div>
+        <div class="ref-body">
+          <div class="ref-name">Aceternity / Magic UI</div>
+          <div class="ref-take">
+            Микроанимации: spotlight, background beams, number ticker.
+            Эти элементы добавляют «вау» без перегруза.
+            Бесплатные, адаптируем под нашу палитру.
+          </div>
+          <div class="ref-tags">
+            <span class="ref-tag">Анимации</span>
+            <span class="ref-tag">Components</span>
+            <span class="ref-tag">Free</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       07. UI COMPONENTS
+  ═══════════════════════════════════════ -->
+  <section class="section" id="components">
+    <div class="section-label">06 / UI</div>
+    <div class="section-title">Компоненты</div>
+    <p class="section-desc">
+      Кнопки, инпуты и базовые элементы в палитре YES.
+    </p>
+
+    <div class="comp-grid">
+      <!-- Buttons on Light -->
+      <div class="comp-card">
+        <div class="comp-card-title">Кнопки (на светлом фоне)</div>
+        <div class="btn-specimen">
+          <button class="btn-demo btn-burgundy">Начать зарабатывать →</button>
+          <button class="btn-demo btn-gold">Хочу столько же →</button>
+          <button class="btn-demo btn-outline">Написать в Telegram</button>
+        </div>
+      </div>
+
+      <!-- Buttons on Dark -->
+      <div class="comp-card" style="background: #1A0A10;">
+        <div class="comp-card-title" style="color: rgba(245,240,235,0.4);">Кнопки (на тёмном фоне)</div>
+        <div class="btn-specimen">
+          <button class="btn-demo btn-gold">Начать зарабатывать →</button>
+          <button class="btn-demo btn-ghost-light" style="color: #F5F0EB;">Написать в Telegram</button>
+        </div>
+      </div>
+
+      <!-- Inputs -->
+      <div class="comp-card">
+        <div class="comp-card-title">Формы</div>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="input-demo">
+            <label class="input-label">Имя</label>
+            <input type="text" class="input-field" placeholder="Как тебя зовут?">
+          </div>
+          <div class="input-demo">
+            <label class="input-label">Telegram</label>
+            <input type="text" class="input-field" placeholder="@username">
+          </div>
+        </div>
+      </div>
+
+      <!-- Badge / Tags -->
+      <div class="comp-card">
+        <div class="comp-card-title">Badges & Tags</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+          <span style="padding: 6px 16px; border: 1px solid rgba(201,168,76,0.3); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold);">NON-NUDE</span>
+          <span style="padding: 6px 16px; background: rgba(139,31,49,0.06); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--burgundy);">7 лет</span>
+          <span style="padding: 6px 16px; background: rgba(46,204,113,0.08); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #27ae60;">3 места</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       08. DO / DON'T
+  ═══════════════════════════════════════ -->
+  <section class="section" id="dodont">
+    <div class="section-label">07 / Правила</div>
+    <div class="section-title">Do / Don't</div>
+
+    <div class="dodont-grid">
+      <div class="dodont-card do">
+        <div class="dodont-label">Do</div>
+        <ul class="dodont-list">
+          <li>Тёплые кремовые фоны (#F5F0EB, #EDE5DC)</li>
+          <li>Бургунди для заголовков и акцентов</li>
+          <li>Золото для CTA-кнопок и важных элементов</li>
+          <li>Обилие whitespace (padding 48-80px)</li>
+          <li>Фото девушек в одежде, уверенные позы</li>
+          <li>Реальные фото студии (чистые, светлые)</li>
+          <li>Плавные fade/slide анимации (0.3-0.8s)</li>
+          <li>Film grain overlay (2-3% opacity)</li>
+          <li>Forum для заголовков, Manrope для body</li>
+          <li>Конкретные цифры вместо обещаний</li>
+        </ul>
+      </div>
+      <div class="dodont-card dont">
+        <div class="dodont-label">Don't</div>
+        <ul class="dodont-list">
+          <li>Чистый чёрный (#000) или чистый белый (#FFF)</li>
+          <li>Яркое неоновое золото (#FFD700)</li>
+          <li>3D-эффекты, tilt, parallax, custom cursors</li>
+          <li>Провокационные / откровенные фотографии</li>
+          <li>Scroll hijacking</li>
+          <li>Marquee-бегущие строки</li>
+          <li>Bounce/elastic анимации</li>
+          <li>Гигантская типографика (200px+ заголовки)</li>
+          <li>Карточки с hover-переворотом</li>
+          <li>Неоправданные анимации «ради красоты»</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="moodboard-footer">
+    YES STUDIO / MOODBOARD V1.0 / FEBRUARY 2026
+  </div>
+
+  <!-- ═══════ TEXTURE GENERATION ═══════ -->
+  <script>
+    function drawSilk(canvas, colors, baseAlpha) {
+      const ctx = canvas.getContext('2d');
+      const w = canvas.width;
+      const h = canvas.height;
+
+      // Base color
+      ctx.fillStyle = colors.base;
+      ctx.fillRect(0, 0, w, h);
+
+      // Silk folds
+      function noise(x, y) {
+        const s1 = Math.sin(x * 1.5) * Math.cos(y * 0.9);
+        const s2 = Math.sin(x * 0.7 + y * 1.3);
+        const s3 = Math.cos((x + y) * 0.6);
+        return (s1 + s2 + s3) / 3;
+      }
+
+      const step = 3;
+      for (let x = 0; x < w; x += step) {
+        for (let y = 0; y < h; y += step) {
+          const nx = x / w * 3;
+          const ny = y / h * 2.5;
+          const n = noise(nx, ny);
+          const fold = Math.pow(Math.abs(Math.sin(n * Math.PI * 3)), 0.5);
+          const alpha = fold * baseAlpha;
+
+          if (alpha > 0.01) {
+            ctx.fillStyle = `rgba(${colors.highlight[0]},${colors.highlight[1]},${colors.highlight[2]},${alpha})`;
+            ctx.fillRect(x, y, step, step);
+          }
+        }
+      }
+
+      // Vignette
+      const g = ctx.createRadialGradient(w/2, h/2, 0, w/2, h/2, w * 0.6);
+      g.addColorStop(0, 'rgba(0,0,0,0)');
+      g.addColorStop(1, 'rgba(0,0,0,0.3)');
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, w, h);
+    }
+
+    // Burgundy silk
+    drawSilk(document.getElementById('tex1'),
+      { base: '#6B1726', highlight: [180, 50, 70] }, 0.4);
+
+    // Dark silk
+    drawSilk(document.getElementById('tex2'),
+      { base: '#1A0A10', highlight: [139, 31, 49] }, 0.35);
+
+    // Cream texture
+    drawSilk(document.getElementById('tex3'),
+      { base: '#F5F0EB', highlight: [220, 210, 195] }, 0.25);
+  </script>
+
+</body>
+</html>
