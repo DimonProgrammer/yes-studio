@@ -4,3 +4,4 @@ dist/
 .env.local
 *.mp4
 public/photos/Фото студии/
+public/Сжатое*

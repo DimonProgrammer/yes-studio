@@ -206,6 +206,21 @@
 
     .nav-links a:hover { opacity: 1; }
 
+    .nav-metro {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      margin-top: 32px;
+      font-size: 14px;
+      color: rgba(245, 240, 235, 0.45);
+      font-weight: 400;
+    }
+    .nav-metro svg { opacity: 0.5; }
+
+    @media (max-width: 768px) {
+      .nav-metro { display: flex; }
+    }
+
     /* ═══════════════════════════════════════════════════
        HEADINGS — Forum, UPPERCASE, красный
        Акцент: opacity 0.2
@@ -658,6 +673,12 @@
     .studio-photos-item {
       border-radius: 12px;
       overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .studio-photos-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
     }
 
     .studio-photos-big { grid-column: span 2; }
@@ -1798,10 +1819,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      background: rgba(139, 31, 49, 0.15);
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(139, 31, 49, 0.35);
       color: var(--text-cream);
       transition: background 0.2s;
       text-decoration: none;
@@ -1856,6 +1877,50 @@
       .req-grid { grid-template-columns: 1fr; }
       .header-metro { display: none; }
       .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+
+      /* H2 — remove hard breaks on mobile */
+      .h2 br { display: none; }
+      .h2 { font-size: clamp(28px, 7vw, 52px); }
+
+      /* Sticky widget mobile */
+      .sticky-widget {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        padding: 10px 14px;
+        gap: 6px;
+        font-size: 12px;
+        white-space: nowrap;
+        justify-content: space-between;
+      }
+      .sticky-widget strong {
+        font-size: 13px;
+      }
+      .sticky-cta {
+        font-size: 11px;
+        margin-left: auto;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      /* Process mobile */
+      .process-step { gap: 18px; padding: 18px 0; }
+      .process-step-num { width: 44px; height: 44px; min-width: 44px; font-size: 16px; }
+      .process-step-title { font-size: 18px; }
+      .process-timeline::before { left: 22px; }
+
+      /* About work mobile */
+      .about-work-grid { grid-template-columns: 1fr; gap: 16px; }
+      .about-work-card { padding: 28px 24px; }
+
+      /* Vacancies mobile */
+      .vacancy-tabs { flex-wrap: wrap; }
+      .vacancy-panel-inner { padding: 24px 20px; }
+      .vacancy-title { font-size: 22px; }
+
+      /* Referral mobile */
+      .referral-inner { flex-direction: column; padding: 32px 24px; gap: 24px; text-align: center; }
+      .referral-amount { font-size: 80px; }
     }
 
     /* ═══════════════════════════════════════════════════
@@ -2206,6 +2271,56 @@
       .video-play-btn { width: 60px; height: 60px; }
       .video-play-btn svg { width: 22px; height: 22px; }
     }
+
+    /* ═══════════════════════════════════════════════════
+       LIGHTBOX
+    ═══════════════════════════════════════════════════ */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      cursor: zoom-out;
+    }
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 8px;
+      transform: scale(0.92);
+      transition: transform 0.3s ease;
+    }
+    .lightbox.active img {
+      transform: scale(1);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.2); }
   </style>
 
   <!-- Structured Data: LocalBusiness -->
@@ -2275,9 +2390,9 @@
     </div>
     <div class="header-right">
       <div class="header-meta">
-        <span class="header-metro"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 12h3v8h4v-6h6v6h4v-8h3L12 2z"/></svg>м. Котельники</span>
+        <span class="header-metro"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 12h3v8h4v-6h6v6h4v-8h3L12 2z"/></svg>Москва, м.&nbsp;Котельники</span>
         <a href="tel:+79639380267" class="header-phone"><span class="pulse-dot"></span>+7 (963) 938-02-67</a>
-        <a href="https://t.me/yesstudio" target="_blank" class="header-tg"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.06-.49-.83-.27-1.49-.42-1.43-.88.03-.24.37-.49 1.02-.75 3.98-1.73 6.64-2.88 7.97-3.44 3.8-1.58 4.59-1.86 5.1-1.87.11 0 .37.03.54.17.14.12.18.28.2.47-.01.06.01.24 0 .37z"/></svg></a>
+        <a href="https://t.me/studio_yes" target="_blank" class="header-tg"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.06-.49-.83-.27-1.49-.42-1.43-.88.03-.24.37-.49 1.02-.75 3.98-1.73 6.64-2.88 7.97-3.44 3.8-1.58 4.59-1.86 5.1-1.87.11 0 .37.03.54.17.14.12.18.28.2.47-.01.06.01.24 0 .37z"/></svg></a>
       </div>
       <div class="burger" id="burgerBtn">
         <span></span><span></span><span></span>
@@ -2299,8 +2414,12 @@
       <a href="#studio">студия</a>
       <a href="#requirements">требования</a>
       <a href="#faq">FAQ</a>
-      <a href="https://t.me/yesstudio" target="_blank">контакты</a>
+      <a href="https://t.me/studio_yes" target="_blank">контакты</a>
     </nav>
+    <div class="nav-metro">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2L2 12h3v8h4v-6h6v6h4v-8h3L12 2z"/></svg>
+      Москва, м.&nbsp;Котельники
+    </div>
   </div>
 
   <!-- ═══════════════════════════════════════════════════
@@ -2328,8 +2447,8 @@
       </p>
 
       <div class="hero-ctas hero-enter hero-enter-5">
-        <a href="https://t.me/yesstudio" target="_blank" class="btn btn--cream">Начать зарабатывать <span class="btn-dot"></span></a>
-        <a href="https://t.me/yesstudio" target="_blank" class="btn btn--ghost-light">Telegram</a>
+        <a href="https://t.me/studio_yes" target="_blank" class="btn btn--cream">Начать зарабатывать <span class="btn-dot"></span></a>
+        <a href="https://t.me/studio_yes" target="_blank" class="btn btn--ghost-light">Telegram</a>
       </div>
 
       <div class="hero-stats hero-enter hero-enter-6">
@@ -2405,7 +2524,7 @@
       </p>
 
       <div class="section-cta reveal">
-        <a href="https://t.me/yesstudio" target="_blank" class="btn btn--accent">Хочу узнать больше <span class="btn-dot"></span></a>
+        <a href="https://t.me/studio_yes" target="_blank" class="btn btn--accent">Хочу узнать больше <span class="btn-dot"></span></a>
       </div>
     </div>
   </section>
@@ -2443,7 +2562,7 @@
           <span class="h-accent">Преимущества работы</span><br>
           стрим-моделью
         </h2>
-        <h3 class="section-sub" style="font-family: var(--font-heading); font-size: 22px; color: var(--text-body); margin-top: 16px;">Мы работаем с девушками любого типа</h3>
+        <h3 class="section-sub" style="font-family: var(--font-body); font-size: 20px; font-weight: 400; color: var(--text-body); margin-top: 12px;">Мы работаем с девушками любого типа</h3>
       </div>
 
       <div class="diversity-layout reveal">
@@ -2592,7 +2711,7 @@
       </div>
 
       <div class="section-cta reveal">
-        <a href="https://t.me/yesstudio" target="_blank" class="btn btn--dark">Начать зарабатывать <span class="btn-dot"></span></a>
+        <a href="https://t.me/studio_yes" target="_blank" class="btn btn--dark">Начать зарабатывать <span class="btn-dot"></span></a>
       </div>
     </div>
   </section>
@@ -2658,7 +2777,7 @@
             <div class="calc-result-sub">
               При графике <span id="calcShifts">4</span> смены × <span id="calcHours">6</span> часов
             </div>
-            <a href="https://t.me/yesstudio" target="_blank" class="btn btn--accent">Хочу столько же <span class="btn-dot"></span></a>
+            <a href="https://t.me/studio_yes" target="_blank" class="btn btn--accent">Хочу столько же <span class="btn-dot"></span></a>
           </div>
         </div>
       </div>
@@ -2795,7 +2914,7 @@
       </div>
 
       <div class="section-cta reveal" style="margin-top: 56px;">
-        <a href="https://t.me/yesstudio" target="_blank" class="btn btn--dark">Я тоже хочу изменить свою жизнь <span class="btn-dot"></span></a>
+        <a href="https://t.me/studio_yes" target="_blank" class="btn btn--dark">Я тоже хочу изменить свою жизнь <span class="btn-dot"></span></a>
       </div>
     </div>
   </section>
@@ -2818,10 +2937,11 @@
       </div>
 
       <!-- Видео студии -->
-      <h3 class="studio-sub reveal" style="font-family: var(--font-heading); font-size: 22px; text-align: center; margin-bottom: 24px; color: var(--text-body);">Видео нашей студии</h3>
+      <h3 class="studio-sub reveal" style="font-family: var(--font-body); font-size: 18px; font-weight: 400; text-align: center; margin-bottom: 24px; color: var(--text-muted);">Видео нашей студии</h3>
       <div class="studio-video reveal" style="margin-bottom: 48px;">
         <div class="video-wrapper" id="studioVideoWrap">
           <video id="studioVideo" muted loop playsinline preload="metadata">
+            <source src="public/photos/studio-promo.webm" type="video/webm">
             <source src="public/photos/studio-promo.mp4" type="video/mp4">
           </video>
           <button class="video-play-btn" id="studioPlayBtn" aria-label="Воспроизвести со звуком">
@@ -2831,29 +2951,29 @@
       </div>
 
       <!-- Фото-грид комнат -->
-      <h3 class="studio-sub reveal" style="font-family: var(--font-heading); font-size: 22px; text-align: center; margin-bottom: 24px; color: var(--text-body);">Реальные фотографии комнат</h3>
+      <h3 class="studio-sub reveal" style="font-family: var(--font-body); font-size: 18px; font-weight: 400; text-align: center; margin-bottom: 24px; color: var(--text-muted);">Реальные фотографии комнат</h3>
       <div class="studio-photos reveal">
         <div class="studio-photos-grid">
-          <div class="studio-photos-item studio-photos-big reveal">
+          <div class="studio-photos-item studio-photos-big reveal" onclick="openLightbox(this.querySelector('img').src)">
             <img src="public/photos/studio-room-3.jpg" alt="Комната студии — элегантный интерьер" loading="lazy">
           </div>
-          <div class="studio-photos-item reveal reveal-delay-1">
+          <div class="studio-photos-item reveal reveal-delay-1" onclick="openLightbox(this.querySelector('img').src)">
             <img src="public/photos/studio-room-2.jpg" alt="Комната студии — зелёная зона" loading="lazy">
           </div>
-          <div class="studio-photos-item reveal reveal-delay-2">
+          <div class="studio-photos-item reveal reveal-delay-2" onclick="openLightbox(this.querySelector('img').src)">
             <img src="public/photos/studio-room-1.jpg" alt="Зона отдыха с книжным шкафом" loading="lazy">
           </div>
-          <div class="studio-photos-item reveal reveal-delay-3">
+          <div class="studio-photos-item reveal reveal-delay-3" onclick="openLightbox(this.querySelector('img').src)">
             <img src="public/photos/studio-room-5.jpg" alt="Тропическая комната" loading="lazy">
           </div>
-          <div class="studio-photos-item reveal reveal-delay-4">
+          <div class="studio-photos-item reveal reveal-delay-4" onclick="openLightbox(this.querySelector('img').src)">
             <img src="public/photos/studio-room-4.jpg" alt="Комната с неоновыми вывесками" loading="lazy">
           </div>
         </div>
       </div>
 
       <div class="section-cta reveal" style="margin-top: 48px;">
-        <a href="https://t.me/yesstudio" target="_blank" class="btn btn--dark">Посмотреть студию вживую <span class="btn-dot"></span></a>
+        <a href="https://t.me/studio_yes" target="_blank" class="btn btn--dark">Посмотреть студию вживую <span class="btn-dot"></span></a>
       </div>
     </div>
   </section>
@@ -2914,7 +3034,7 @@
       </div>
 
       <div class="section-cta reveal">
-        <a href="https://t.me/yesstudio" target="_blank" class="btn btn--accent">Оставить заявку <span class="btn-dot"></span></a>
+        <a href="https://t.me/studio_yes" target="_blank" class="btn btn--accent">Оставить заявку <span class="btn-dot"></span></a>
       </div>
     </div>
   </section>
@@ -3042,7 +3162,7 @@
       </div>
 
       <div class="section-cta reveal">
-        <a href="https://t.me/yesstudio" target="_blank" class="btn btn--accent">Подхожу! Хочу начать <span class="btn-dot"></span></a>
+        <a href="https://t.me/studio_yes" target="_blank" class="btn btn--accent">Подхожу! Хочу начать <span class="btn-dot"></span></a>
       </div>
     </div>
   </section>
@@ -3055,7 +3175,7 @@
       <div class="section-header reveal">
         <div class="label label--accent">вопросы</div>
         <h2 class="h2">FAQ</h2>
-        <h3 style="font-family: var(--font-heading); font-size: 22px; color: var(--text-body); margin-top: 12px;">Ответы на часто задаваемые вопросы</h3>
+        <h3 style="font-family: var(--font-body); font-size: 18px; font-weight: 400; color: var(--text-muted); margin-top: 8px;">Ответы на часто задаваемые вопросы</h3>
       </div>
 
       <div class="faq-list">
@@ -3198,7 +3318,7 @@
                 <li>обучение, сопровождение</li>
               </ul>
             </div>
-            <a href="https://t.me/yesstudio" target="_blank" class="btn btn--accent">Откликнуться <span class="btn-dot"></span></a>
+            <a href="https://t.me/studio_yes" target="_blank" class="btn btn--accent">Откликнуться <span class="btn-dot"></span></a>
           </div>
         </div>
 
@@ -3223,7 +3343,7 @@
               </ul>
             </div>
             <p class="vacancy-note">Более подробные условия на собеседовании</p>
-            <a href="https://t.me/yesstudio" target="_blank" class="btn btn--accent">Откликнуться <span class="btn-dot"></span></a>
+            <a href="https://t.me/studio_yes" target="_blank" class="btn btn--accent">Откликнуться <span class="btn-dot"></span></a>
           </div>
         </div>
 
@@ -3260,7 +3380,7 @@
                 <li>контроль и соблюдение правил студии</li>
               </ul>
             </div>
-            <a href="https://t.me/yesstudio" target="_blank" class="btn btn--accent">Откликнуться <span class="btn-dot"></span></a>
+            <a href="https://t.me/studio_yes" target="_blank" class="btn btn--accent">Откликнуться <span class="btn-dot"></span></a>
           </div>
         </div>
       </div>
@@ -3281,7 +3401,7 @@
           <p class="section-lead" style="margin-bottom: 32px;">
             Знаешь, кому подойдёт работа в&nbsp;YES? Мы ценим рекомендации и&nbsp;платим <strong>300$</strong> за каждую приведённую модель (при условии заработка ею первых 300$).
           </p>
-          <a href="https://t.me/yesstudio" target="_blank" class="btn btn--accent">Узнать подробности <span class="btn-dot"></span></a>
+          <a href="https://t.me/studio_yes" target="_blank" class="btn btn--accent">Узнать подробности <span class="btn-dot"></span></a>
         </div>
         <div class="referral-visual">
           <div class="referral-amount">300<span>$</span></div>
@@ -3300,8 +3420,8 @@
         Одно сообщение отделяет тебя от финансовой свободы, нового окружения и жизни, о которой ты мечтаешь.
       </p>
       <div class="final-cta-actions">
-        <a href="https://t.me/yesstudio" target="_blank" class="btn btn--accent">Написать в Telegram <span class="btn-dot"></span></a>
-        <a href="https://t.me/yesstudio" target="_blank" class="btn btn--ghost-light">Задать вопрос</a>
+        <a href="https://t.me/studio_yes" target="_blank" class="btn btn--accent">Написать в Telegram <span class="btn-dot"></span></a>
+        <a href="https://t.me/studio_yes" target="_blank" class="btn btn--ghost-light">Задать вопрос</a>
       </div>
       <div class="final-cta-note">Бесплатная консультация · Без обязательств</div>
     </div>
@@ -3311,7 +3431,7 @@
   <div class="sticky-widget">
     <span class="sticky-dot"></span>
     В феврале осталось <strong>&nbsp;3 из 5&nbsp;</strong> мест
-    <a href="https://t.me/yesstudio" target="_blank" class="sticky-cta">Занять своё место <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <a href="https://t.me/studio_yes" target="_blank" class="sticky-cta">Занять своё место <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
   </div>
 
   </main>
@@ -3352,7 +3472,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
               +7 (963) 938-02-67
             </a>
-            <a href="https://t.me/yesstudio" target="_blank">
+            <a href="https://t.me/studio_yes" target="_blank">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.06-.49-.83-.27-1.49-.42-1.43-.88.03-.24.37-.49 1.02-.75 3.98-1.73 6.64-2.88 7.97-3.44 3.8-1.58 4.59-1.86 5.1-1.87.11 0 .37.03.54.17.14.12.18.28.2.47-.01.06.01.24 0 .37z"/></svg>
               Telegram
             </a>
@@ -3670,7 +3790,27 @@
       document.querySelectorAll('.vacancy-tab').forEach((t, i) => t.classList.toggle('active', i === idx));
       document.querySelectorAll('.vacancy-panel').forEach((p, i) => p.classList.toggle('active', i === idx));
     }
+
+    // Lightbox
+    function openLightbox(src) {
+      const lb = document.getElementById('lightbox');
+      lb.querySelector('img').src = src;
+      lb.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      const lb = document.getElementById('lightbox');
+      lb.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
   </script>
+
+  <!-- Lightbox overlay -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img src="" alt="Фото студии в полном размере" onclick="event.stopPropagation()">
+  </div>
 
 </body>
 </html>
