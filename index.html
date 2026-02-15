@@ -187,6 +187,13 @@
 
     .nav-overlay-close svg { stroke: var(--text-cream); width: 24px; height: 24px; }
 
+    .nav-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
     .nav-links {
       display: flex;
       flex-direction: column;
@@ -1822,14 +1829,15 @@
       width: 36px;
       height: 36px;
       border-radius: 10px;
-      background: rgba(139, 31, 49, 0.35);
+      background: var(--accent);
       color: var(--text-cream);
-      transition: background 0.2s;
+      transition: background 0.2s, transform 0.2s;
       text-decoration: none;
     }
 
     .header-tg:hover {
-      background: var(--accent);
+      transform: scale(1.08);
+      background: #9B2537;
     }
 
     .header-tg svg {
@@ -2405,20 +2413,22 @@
     <div class="nav-overlay-close" id="navClose">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </div>
-    <nav class="nav-links">
-      <a href="#hook">твоя история</a>
-      <a href="#diversity">для всех</a>
-      <a href="#services">почему мы</a>
-      <a href="#calc">калькулятор</a>
-      <a href="#stories">истории</a>
-      <a href="#studio">студия</a>
-      <a href="#requirements">требования</a>
-      <a href="#faq">FAQ</a>
-      <a href="https://t.me/studio_yes" target="_blank">контакты</a>
-    </nav>
-    <div class="nav-metro">
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2L2 12h3v8h4v-6h6v6h4v-8h3L12 2z"/></svg>
-      Москва, м.&nbsp;Котельники
+    <div class="nav-content">
+      <nav class="nav-links">
+        <a href="#hook">твоя история</a>
+        <a href="#diversity">для всех</a>
+        <a href="#services">почему мы</a>
+        <a href="#calc">калькулятор</a>
+        <a href="#stories">истории</a>
+        <a href="#studio">студия</a>
+        <a href="#requirements">требования</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://t.me/studio_yes" target="_blank">контакты</a>
+      </nav>
+      <div class="nav-metro">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2L2 12h3v8h4v-6h6v6h4v-8h3L12 2z"/></svg>
+        Москва, м.&nbsp;Котельники
+      </div>
     </div>
   </div>
 
@@ -2520,7 +2530,7 @@
       </div>
 
       <p class="hook-text reveal">
-        Если ты узнала себя — мы те, кто поможет<br>и проведёт к новой классной жизни за руку
+        Если ты узнала себя — мы те, кто поможет и проведёт к новой классной жизни за руку
       </p>
 
       <div class="section-cta reveal">
@@ -2559,10 +2569,10 @@
       <div class="section-header reveal">
         <div class="label label--accent">для всех</div>
         <h2 class="h2">
-          <span class="h-accent">Преимущества работы</span><br>
-          стрим-моделью
+          <span class="h-accent">Мы работаем</span><br>
+          с девушками любого типа
         </h2>
-        <h3 class="section-sub" style="font-family: var(--font-body); font-size: 20px; font-weight: 400; color: var(--text-body); margin-top: 12px;">Мы работаем с девушками любого типа</h3>
+        <h3 class="section-sub" style="font-family: var(--font-body); font-size: 20px; font-weight: 400; color: var(--text-body); margin-top: 12px;">Твоя внешность — твоё преимущество</h3>
       </div>
 
       <div class="diversity-layout reveal">
@@ -2937,7 +2947,7 @@
       </div>
 
       <!-- Видео студии -->
-      <h3 class="studio-sub reveal" style="font-family: var(--font-body); font-size: 18px; font-weight: 400; text-align: center; margin-bottom: 24px; color: var(--text-muted);">Видео нашей студии</h3>
+      <h3 class="studio-sub reveal" style="font-family: var(--font-body); font-size: 18px; font-weight: 500; text-align: center; margin-bottom: 24px; color: var(--text-body);">Видео нашей студии</h3>
       <div class="studio-video reveal" style="margin-bottom: 48px;">
         <div class="video-wrapper" id="studioVideoWrap">
           <video id="studioVideo" muted loop playsinline preload="metadata">
@@ -2951,7 +2961,7 @@
       </div>
 
       <!-- Фото-грид комнат -->
-      <h3 class="studio-sub reveal" style="font-family: var(--font-body); font-size: 18px; font-weight: 400; text-align: center; margin-bottom: 24px; color: var(--text-muted);">Реальные фотографии комнат</h3>
+      <h3 class="studio-sub reveal" style="font-family: var(--font-body); font-size: 18px; font-weight: 500; text-align: center; margin-bottom: 24px; color: var(--text-body);">Реальные фотографии комнат</h3>
       <div class="studio-photos reveal">
         <div class="studio-photos-grid">
           <div class="studio-photos-item studio-photos-big reveal" onclick="openLightbox(this.querySelector('img').src)">
