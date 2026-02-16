@@ -9,10 +9,12 @@ const { posts } = Astro.props
 ---
 
 {posts.length > 0 && (
-  <section class="related-posts">
+  <section class="related">
     <div class="container">
-      <h2 class="related-posts__title">Читай также</h2>
-      <div class="related-posts__grid">
+      <div class="related__header">
+        <span class="related__label">Читай также</span>
+      </div>
+      <div class="related__grid">
         {posts.map((post) => (
           <BlogCard post={post} />
         ))}
@@ -22,23 +24,29 @@ const { posts } = Astro.props
 )}
 
 <style>
-  .related-posts {
-    padding: 80px 0;
-    border-top: 1px solid var(--divider);
-    margin-top: 80px;
+  .related {
+    padding: var(--section-pad) 0;
+    background: var(--bg-alt);
   }
-  .related-posts__title {
-    font-family: var(--font-heading);
-    font-size: 2rem;
+  .related__header {
     margin-bottom: 40px;
-    text-align: center;
   }
-  .related-posts__grid {
+  .related__label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .related__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    gap: 20px;
   }
-  @media (max-width: 768px) {
-    .related-posts__grid { grid-template-columns: 1fr; }
+  @media (max-width: 1024px) {
+    .related__grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .related__grid { grid-template-columns: 1fr; }
   }
 </style>

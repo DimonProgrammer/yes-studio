@@ -54,7 +54,7 @@ const bodyHtml = post.body ? toHTML(post.body, {
   ogType="article"
   canonical={`https://yes-studio.agency/blog/${slug}/`}
 >
-  <article class="article">
+  <article class="article-page">
     <div class="container">
       <!-- Breadcrumb -->
       <nav class="breadcrumb" aria-label="Навигация">
@@ -68,9 +68,9 @@ const bodyHtml = post.body ? toHTML(post.body, {
       <!-- Article Header -->
       <header class="article-header">
         <div class="article-meta">
-          {post.category && <span class="article-meta__category">{post.category.title}</span>}
-          <span>{date}</span>
-          {post.readTime && <span> · {post.readTime} мин чтения</span>}
+          {post.category && <span class="article-meta__tag">{post.category.title}</span>}
+          <span class="article-meta__date">{date}</span>
+          {post.readTime && <span class="article-meta__date"> · {post.readTime} мин</span>}
         </div>
         <h1 class="article-title">{post.title}</h1>
         <p class="article-excerpt">{post.excerpt}</p>
@@ -91,18 +91,20 @@ const bodyHtml = post.body ? toHTML(post.body, {
           <div class="sidebar-cta">
             <p class="sidebar-cta__title">Хочешь попробовать?</p>
             <p class="sidebar-cta__text">Оставь заявку — мы всему научим и поддержим на старте</p>
-            <a href="https://t.me/studio_yes" class="sidebar-cta__button">Написать в Telegram</a>
+            <a href="https://t.me/studio_yes" class="sidebar-cta__btn">
+              <span class="btn-dot"></span>Написать
+            </a>
           </div>
 
-          <div class="sidebar-contact">
-            <p class="sidebar-contact__label">Позвонить</p>
-            <a href="tel:+79282348339" class="sidebar-contact__phone">+7 (928) 234-83-39</a>
+          <div class="sidebar-block">
+            <p class="sidebar-block__label">Позвонить</p>
+            <a href="tel:+79639380267" class="sidebar-block__phone">+7 (963) 938-02-67</a>
           </div>
 
           {post.tags && post.tags.length > 0 && (
-            <div class="sidebar-tags">
-              <p class="sidebar-tags__label">Теги</p>
-              <div class="sidebar-tags__list">
+            <div class="sidebar-block">
+              <p class="sidebar-block__label">Теги</p>
+              <div class="sidebar-tags">
                 {post.tags.map((tag: string) => (
                   <span class="sidebar-tag">{tag}</span>
                 ))}
@@ -118,12 +120,15 @@ const bodyHtml = post.body ? toHTML(post.body, {
   <RelatedPosts posts={relatedPosts} />
 
   <!-- CTA Block -->
-  <section class="post-cta">
+  <section class="section section--dark post-cta-section">
     <div class="container">
       <div class="post-cta__inner">
-        <h2 class="post-cta__title">Готова начать зарабатывать?</h2>
+        <span class="label--muted">Начать</span>
+        <h2 class="post-cta__h2">Готова начать зарабатывать?</h2>
         <p class="post-cta__text">Оставь заявку — мы расскажем всё на личной встрече</p>
-        <a href="https://t.me/studio_yes" class="post-cta__button">Написать в Telegram</a>
+        <a href="https://t.me/studio_yes" class="btn btn--cream">
+          <span class="btn-dot"></span>Написать в Telegram
+        </a>
       </div>
     </div>
   </section>
@@ -159,62 +164,77 @@ const bodyHtml = post.body ? toHTML(post.body, {
 </BlogLayout>
 
 <style>
+  /* ── Breadcrumb ── */
   .breadcrumb {
     padding: 24px 0;
-    font-size: 0.8rem; color: var(--text-muted);
+    font-size: 12px; color: var(--text-muted);
+    letter-spacing: 0.02em;
   }
   .breadcrumb a { transition: color 0.2s; }
   .breadcrumb a:hover { color: var(--accent); }
   .breadcrumb__sep { margin: 0 8px; }
 
+  /* ── Article Header ── */
+  .article-page { padding-top: 16px; }
   .article-header { max-width: 800px; margin-bottom: 40px; }
   .article-meta {
-    font-size: 0.8rem; color: var(--text-muted);
-    display: flex; gap: 8px; align-items: center;
-    margin-bottom: 16px;
+    display: flex; gap: 10px; align-items: center;
+    margin-bottom: 20px;
   }
-  .article-meta__category {
-    background: var(--accent);
-    color: #fff;
-    padding: 3px 12px;
+  .article-meta__tag {
+    display: inline-block;
+    padding: 5px 14px;
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    border: 1px solid var(--text);
     border-radius: var(--radius-btn);
-    font-size: 0.7rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--text); line-height: 1;
+  }
+  .article-meta__date {
+    font-size: 12px; color: var(--text-muted);
+    letter-spacing: 0.02em;
   }
   .article-title {
     font-family: var(--font-heading);
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.15;
-    margin-bottom: 16px;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 400; line-height: 1.1;
+    letter-spacing: 0.02em; text-transform: uppercase;
+    color: var(--text); margin-bottom: 16px;
   }
   .article-excerpt {
-    font-size: 1.15rem; color: var(--text-body);
+    font-size: 16px; color: var(--text-body);
     line-height: 1.65; max-width: 640px;
   }
 
+  /* ── Cover Image ── */
   .article-cover {
     margin-bottom: 48px;
-    border-radius: var(--radius-card);
+    border-radius: var(--radius-photo);
     overflow: hidden;
   }
   .article-cover img { width: 100%; height: auto; }
 
+  /* ── Layout: Content + Sidebar ── */
   .article-layout {
     display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 60px;
-    align-items: start;
+    grid-template-columns: 1fr 300px;
+    gap: 60px; align-items: start;
   }
 
-  /* Article Body Typography */
-  .article-body { font-size: 1.05rem; line-height: 1.75; color: var(--text-body); }
+  /* ── Article Body Typography ── */
+  .article-body { font-size: 15px; line-height: 1.75; color: var(--text-body); }
   .article-body :global(h2) {
-    font-family: var(--font-heading); font-size: 1.8rem;
+    font-family: var(--font-heading); font-size: 28px;
+    font-weight: 400; text-transform: uppercase;
+    letter-spacing: 0.01em;
     margin: 48px 0 16px; line-height: 1.2;
+    color: var(--text);
   }
   .article-body :global(h3) {
-    font-family: var(--font-heading); font-size: 1.4rem;
+    font-family: var(--font-heading); font-size: 22px;
+    font-weight: 400;
     margin: 36px 0 12px; line-height: 1.3;
+    color: var(--text);
   }
   .article-body :global(p) { margin-bottom: 20px; }
   .article-body :global(a) { color: var(--accent); text-decoration: underline; }
@@ -222,8 +242,9 @@ const bodyHtml = post.body ? toHTML(post.body, {
   .article-body :global(strong) { font-weight: 600; color: var(--text); }
   .article-body :global(blockquote) {
     border-left: 3px solid var(--accent);
-    padding-left: 20px; margin: 24px 0;
+    padding: 16px 0 16px 24px; margin: 28px 0;
     font-style: italic; color: var(--text-muted);
+    background: var(--bg-alt); border-radius: 0 12px 12px 0;
   }
   .article-body :global(ul), .article-body :global(ol) {
     margin: 16px 0; padding-left: 24px;
@@ -232,67 +253,100 @@ const bodyHtml = post.body ? toHTML(post.body, {
   .article-body :global(.article-image) { margin: 32px 0; }
   .article-body :global(.article-image img) { border-radius: 12px; }
   .article-body :global(.article-image figcaption) {
-    font-size: 0.85rem; color: var(--text-muted);
+    font-size: 12px; color: var(--text-muted);
     text-align: center; margin-top: 8px;
   }
 
-  /* Sidebar */
+  /* ── Sidebar ── */
   .article-sidebar { position: sticky; top: 88px; }
+
   .sidebar-cta {
     background: var(--bg-dark); color: var(--text-cream);
     padding: 28px; border-radius: var(--radius-card);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
   .sidebar-cta__title {
-    font-family: var(--font-heading); font-size: 1.3rem;
-    margin-bottom: 8px;
+    font-family: var(--font-heading); font-size: 20px;
+    margin-bottom: 8px; letter-spacing: 0.01em;
   }
-  .sidebar-cta__text { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.5; }
-  .sidebar-cta__button {
-    display: block; text-align: center;
-    background: var(--accent); color: #fff;
+  .sidebar-cta__text {
+    font-size: 13px; color: rgba(245,240,235,0.6);
+    margin-bottom: 20px; line-height: 1.5;
+  }
+  .sidebar-cta__btn {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    width: 100%;
+    background: var(--text-cream); color: var(--text);
     padding: 12px 20px; border-radius: var(--radius-btn);
-    font-size: 0.8rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.04em;
-    transition: background 0.2s;
+    font-size: 12px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    transition: opacity 0.2s;
   }
-  .sidebar-cta__button:hover { background: var(--accent-light); }
+  .sidebar-cta__btn:hover { opacity: 0.88; }
 
-  .sidebar-contact {
+  .sidebar-block {
     padding: 20px; border-radius: var(--radius-card);
-    border: 1px solid var(--divider); margin-bottom: 24px;
+    border: 1px solid var(--divider); margin-bottom: 20px;
   }
-  .sidebar-contact__label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
-  .sidebar-contact__phone { font-size: 1.1rem; font-weight: 600; }
+  .sidebar-block__label {
+    font-size: 11px; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    font-weight: 500; margin-bottom: 8px;
+  }
+  .sidebar-block__phone { font-size: 16px; font-weight: 600; }
 
-  .sidebar-tags { padding: 20px; border-radius: var(--radius-card); border: 1px solid var(--divider); }
-  .sidebar-tags__label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
-  .sidebar-tags__list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .sidebar-tags { display: flex; flex-wrap: wrap; gap: 6px; }
   .sidebar-tag {
-    padding: 4px 12px; border-radius: var(--radius-btn);
-    font-size: 0.75rem; background: var(--bg-alt); color: var(--text-body);
-  }
-
-  /* CTA Block */
-  .post-cta { margin-bottom: 40px; }
-  .post-cta__inner {
-    background: var(--bg-dark); color: var(--text-cream);
-    text-align: center; padding: 64px 40px;
-    border-radius: var(--radius-card);
-  }
-  .post-cta__title { font-family: var(--font-heading); font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: 12px; }
-  .post-cta__text { font-size: 1rem; color: var(--text-muted); margin-bottom: 28px; }
-  .post-cta__button {
-    display: inline-block; background: var(--accent); color: #fff;
-    padding: 14px 36px; border-radius: var(--radius-btn);
-    font-size: 0.85rem; font-weight: 600;
+    padding: 5px 14px; border-radius: var(--radius-btn);
+    font-size: 11px; font-weight: 500;
     letter-spacing: 0.04em; text-transform: uppercase;
-    transition: background 0.2s;
+    background: var(--bg-alt); color: var(--text-body);
   }
-  .post-cta__button:hover { background: var(--accent-light); }
 
+  .btn-dot {
+    width: 6px; height: 6px;
+    background: currentColor; border-radius: 50%; flex-shrink: 0;
+  }
+
+  /* ── CTA Section ── */
+  .section { padding: var(--section-pad) 0; }
+  .section--dark { background: var(--bg-dark); }
+  .post-cta-section { position: relative; overflow: hidden; }
+  .post-cta__inner { text-align: center; }
+  .label--muted {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(245,240,235,0.4);
+    display: block; margin-bottom: 12px;
+  }
+  .post-cta__h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(28px, 3.5vw, 48px);
+    font-weight: 400; line-height: 1.1;
+    letter-spacing: 0.02em; text-transform: uppercase;
+    color: var(--text-cream); margin-bottom: 16px;
+  }
+  .post-cta__text {
+    font-size: 16px; color: rgba(245,240,235,0.7);
+    margin-bottom: 32px; line-height: 1.65;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 15px 32px;
+    font-family: var(--font); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    border: none; border-radius: var(--radius-btn);
+    cursor: pointer; text-decoration: none; transition: all 0.3s ease;
+  }
+  .btn--cream { background: var(--text-cream); color: var(--text); }
+  .btn--cream:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  /* ── Responsive ── */
   @media (max-width: 1024px) {
     .article-layout { grid-template-columns: 1fr; gap: 40px; }
     .article-sidebar { position: static; }
+  }
+  @media (max-width: 768px) {
+    .article-title { font-size: clamp(24px, 7vw, 48px); }
   }
 </style>
