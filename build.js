@@ -1,5 +1,6 @@
 import { cpSync, mkdirSync, rmSync, existsSync, readdirSync, statSync } from 'fs';
 import { join, extname } from 'path';
+import { execSync } from 'child_process';
 
 const DIST = 'dist';
 const MAX_FILE_SIZE = 90 * 1024 * 1024; // 90MB (Vercel limit ~100MB, keep margin)
@@ -8,9 +9,20 @@ const MAX_FILE_SIZE = 90 * 1024 * 1024; // 90MB (Vercel limit ~100MB, keep margi
 if (existsSync(DIST)) rmSync(DIST, { recursive: true });
 mkdirSync(DIST, { recursive: true });
 
-// Copy index.html
+// Copy index.html (main landing page)
 cpSync('index.html', join(DIST, 'index.html'));
 console.log('✓ index.html');
+
+// Build Astro blog (outputs to dist/blog/)
+if (existsSync('blog/package.json')) {
+  console.log('\n📝 Building blog...');
+  try {
+    execSync('cd blog && npm install --silent && npm run build', { stdio: 'inherit' });
+    console.log('✓ Blog built → dist/blog/');
+  } catch (e) {
+    console.warn('⚠ Blog build skipped (error or not configured yet)');
+  }
+}
 
 // Copy logos
 for (const f of ['logo01.svg', 'logo02.svg']) {
@@ -48,5 +60,14 @@ function copyPublic(src, dest) {
 }
 
 copyPublic('public', join(DIST, 'public'));
+
+// Copy SEO root files (must be at domain root)
+for (const f of ['robots.txt', 'sitemap.xml']) {
+  const src = join('public', f);
+  if (existsSync(src)) {
+    cpSync(src, join(DIST, f));
+    console.log(`✓ ${f} → dist/ (root)`);
+  }
+}
 
 console.log('\n✅ Build complete → dist/');

@@ -1,0 +1,179 @@
+---
+interface Props {
+  title: string
+  description?: string
+  ogImage?: string
+  ogType?: string
+  canonical?: string
+}
+
+const { title, description, ogImage, ogType = 'website', canonical } = Astro.props
+const siteUrl = 'https://yes-studio.agency'
+const defaultDescription = 'Блог YES Studio — полезные статьи о работе стрим-моделью, доходе, безопасности и лайфстайле.'
+const metaDescription = description || defaultDescription
+---
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title} | YES Studio</title>
+  <meta name="description" content={metaDescription}>
+  {canonical && <link rel="canonical" href={canonical}>}
+
+  <!-- Open Graph -->
+  <meta property="og:type" content={ogType}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={metaDescription}>
+  <meta property="og:url" content={canonical || `${siteUrl}/blog/`}>
+  <meta property="og:site_name" content="YES Studio">
+  <meta property="og:locale" content="ru_RU">
+  {ogImage && <meta property="og:image" content={ogImage}>}
+  {ogImage && <meta property="og:image:width" content="1200">}
+  {ogImage && <meta property="og:image:height" content="630">}
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={metaDescription}>
+  {ogImage && <meta name="twitter:image" content={ogImage}>}
+
+  <!-- Fonts (same as main site) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #F5F0EB;
+      --bg-alt: #E8E2DA;
+      --bg-dark: #1E1C1A;
+      --bg-card: #FFFEFA;
+      --text: #2C2926;
+      --text-body: #3B3735;
+      --text-muted: #AAA89F;
+      --text-cream: #F5F0EB;
+      --divider: rgba(170, 168, 159, 0.3);
+      --accent: #8B1F31;
+      --accent-light: #A52840;
+      --font: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-heading: 'Forum', Georgia, 'Times New Roman', serif;
+      --container: 1280px;
+      --side-pad: 64px;
+      --radius-card: 20px;
+      --radius-btn: 50px;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 var(--side-pad); }
+
+    /* ── HEADER ── */
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+      padding: 0 var(--side-pad);
+      background: rgba(245, 240, 235, 0.92);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--divider);
+    }
+    .header-logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-heading); font-size: 1.3rem; letter-spacing: 0.08em; }
+    .header-logo svg { height: 28px; width: auto; }
+    .header-nav { display: flex; gap: 32px; align-items: center; }
+    .header-nav a { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+    .header-nav a:hover, .header-nav a.active { color: var(--accent); }
+    .header-cta {
+      background: var(--accent); color: #fff; padding: 10px 24px;
+      border-radius: var(--radius-btn); font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.04em; text-transform: uppercase; transition: background 0.2s;
+    }
+    .header-cta:hover { background: var(--accent-light); }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--bg-dark); color: var(--text-cream); padding: 80px 0 40px; margin-top: 100px; }
+    .footer-inner { max-width: var(--container); margin: 0 auto; padding: 0 var(--side-pad); }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+    .footer-brand { font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 16px; letter-spacing: 0.08em; }
+    .footer-desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; max-width: 360px; }
+    .footer-title { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px; color: var(--text-muted); }
+    .footer-links { display: flex; flex-direction: column; gap: 12px; }
+    .footer-links a { font-size: 0.9rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent-light); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--text-muted); }
+
+    /* ── MAIN CONTENT AREA ── */
+    .blog-main { padding-top: 60px; min-height: 70vh; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      :root { --side-pad: 20px; }
+      .header-nav { display: none; }
+      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <a href="/" class="header-logo">
+      <svg viewBox="0 0 120 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <text x="0" y="22" font-family="Forum, serif" font-size="24" letter-spacing="3">YES STUDIO</text>
+      </svg>
+    </a>
+    <nav class="header-nav">
+      <a href="/#why">О нас</a>
+      <a href="/#conditions">Условия</a>
+      <a href="/#jobs">Вакансии</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/blog/" class="active">Блог</a>
+      <a href="https://t.me/studio_yes" class="header-cta">Написать</a>
+    </nav>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="blog-main">
+    <slot />
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">YES STUDIO</div>
+          <p class="footer-desc">Premium NON-NUDE вебкам-студия. Работа стрим-моделью с доходом от 90 000 ₽ в первый месяц.</p>
+        </div>
+        <div>
+          <div class="footer-title">Навигация</div>
+          <div class="footer-links">
+            <a href="/">Главная</a>
+            <a href="/#why">О нас</a>
+            <a href="/#conditions">Условия</a>
+            <a href="/#jobs">Вакансии</a>
+            <a href="/blog/">Блог</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-title">Контакты</div>
+          <div class="footer-links">
+            <a href="tel:+79282348339">+7 (928) 234-83-39</a>
+            <a href="https://t.me/studio_yes">Telegram</a>
+            <a href="mailto:info@yes-studio.agency">info@yes-studio.agency</a>
+            <span style="color: var(--text-muted); font-size: 0.85rem;">Москва, м. Красносельская</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; {new Date().getFullYear()} YES Studio. Все права защищены.</span>
+        <a href="/blog/">Блог</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
