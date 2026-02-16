@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "init": "sanity init --env",
     "dev": "sanity dev",
     "build": "sanity build",
     "deploy": "sanity deploy"
