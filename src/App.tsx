@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView, useScroll, useTransform, AnimatePresence } from 'motion/react';
 import { ArrowRight, Shield, Clock, TrendingUp, ChevronDown, MapPin, Phone, MessageCircle, Check, Gift, Sparkles, BookOpen, Camera, Award, Banknote, Globe, Heart, UserCheck, Search, Lock, Play, Star, Quote } from 'lucide-react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { photos } from './src/photos';
 
 /* ═══════════════════════════════════════════════════════
@@ -761,7 +762,7 @@ export default function App() {
         <div className="glow-line" />
 
 
-        {/* ═══════════ ИСТОРИИ УСПЕХА ═══════════ */}
+        {/* ════���══════ ИСТОРИИ УСПЕХА ═══════════ */}
         <section className="py-20 md:py-28">
           <div className="max-w-[1440px] mx-auto px-5 md:px-10 lg:px-16">
             <Reveal className="text-center mb-12 md:mb-16">
@@ -1227,6 +1228,7 @@ export default function App() {
           </motion.div>
         )}
       </AnimatePresence>
+      <SpeedInsights />
     </>
   );
 }
