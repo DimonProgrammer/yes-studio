@@ -323,7 +323,7 @@ export default function App() {
 
 
         {/* ═══════════ HERO ═══════════ */}
-        <section ref={heroRef} className="relative min-h-[100svh] flex flex-col lg:flex-row">
+        <section ref={heroRef} className="relative min-h-[100svh] flex flex-col lg:flex-row max-w-[1440px] mx-auto w-full">
           <div className="relative z-10 w-full lg:w-[55%] flex flex-col justify-between px-5 md:px-10 lg:px-16 pt-24 md:pt-28 pb-8 lg:pb-14">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
               <h1 className="font-body text-xs tracking-[0.25em] uppercase text-umber">
