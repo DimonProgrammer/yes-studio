@@ -1455,6 +1455,222 @@
       margin-top: 16px;
     }
 
+    /* ═══════════════════════════════════════════════════
+       CTA FORM — блок с формой заявки
+    ═══════════════════════════════════════════════════ */
+    .cta-form-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(245, 240, 235, 0.6);
+      margin-bottom: 40px;
+    }
+
+    .cta-form-badge strong {
+      color: var(--text-cream);
+      font-weight: 600;
+    }
+
+    .cta-form-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .cta-form-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .cta-form-title {
+      font-family: var(--font-heading);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--text-cream);
+      margin-bottom: 12px;
+    }
+
+    .cta-form-title em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .cta-form-subtitle {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(245, 240, 235, 0.3);
+      margin-bottom: 24px;
+    }
+
+    .cta-form-desc {
+      font-size: 17px;
+      line-height: 1.65;
+      color: rgba(245, 240, 235, 0.55);
+      max-width: 420px;
+      margin-bottom: 32px;
+    }
+
+    .cta-form-desc strong {
+      color: var(--accent-light);
+      font-weight: 500;
+    }
+
+    .cta-form-trust {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .cta-form-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cta-form-trust-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(245, 240, 235, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .cta-form-trust-item span {
+      font-size: 14px;
+      color: rgba(245, 240, 235, 0.45);
+    }
+
+    .cta-form-card {
+      background: rgba(245, 240, 235, 0.04);
+      border: 1px solid rgba(245, 240, 235, 0.08);
+      border-radius: var(--radius-card);
+      padding: 36px 32px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .cta-form-field {
+      margin-bottom: 16px;
+    }
+
+    .cta-form-field label {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(245, 240, 235, 0.35);
+      margin-bottom: 8px;
+    }
+
+    .cta-form-field input {
+      width: 100%;
+      background: rgba(245, 240, 235, 0.04);
+      border: 1px solid rgba(245, 240, 235, 0.1);
+      border-radius: 12px;
+      color: var(--text-cream);
+      font-family: var(--font);
+      font-size: 15px;
+      padding: 14px 20px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    .cta-form-field input::placeholder {
+      color: rgba(245, 240, 235, 0.2);
+    }
+
+    .cta-form-field input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(139, 31, 49, 0.15);
+    }
+
+    .cta-form-field input.is-invalid {
+      border-color: #e53e3e;
+      animation: shake 0.4s ease;
+    }
+
+    .cta-form-field input.is-valid {
+      border-color: rgba(72, 187, 120, 0.4);
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-6px); }
+      40%, 80% { transform: translateX(6px); }
+    }
+
+    .cta-form-submit {
+      width: 100%;
+      justify-content: center;
+      padding: 16px 32px;
+      margin-top: 8px;
+      font-size: 13px;
+    }
+
+    .cta-form-disclaimer {
+      font-size: 12px;
+      color: rgba(245, 240, 235, 0.2);
+      text-align: center;
+      margin-top: 14px;
+      line-height: 1.5;
+    }
+
+    .cta-form-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .cta-form-success.visible {
+      display: block;
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    .cta-form-success-icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: rgba(139, 31, 49, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-light);
+    }
+
+    .cta-form-success-title {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      color: var(--text-cream);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .cta-form-success-text {
+      font-size: 15px;
+      color: rgba(245, 240, 235, 0.5);
+      line-height: 1.6;
+    }
+
     @media (max-width: 768px) {
       .photo-strip { height: 220px; background-attachment: scroll; }
       .final-cta { padding: 80px 0; }
@@ -1990,6 +2206,7 @@
       .req-grid { grid-template-columns: 1fr 1fr; }
       .footer-inner { flex-direction: column; }
       .footer-links { flex-direction: column; gap: 24px; }
+      .cta-form-layout { grid-template-columns: 1fr; gap: 40px; }
     }
 
     @media (max-width: 768px) {
@@ -2026,6 +2243,12 @@
         white-space: nowrap;
         flex-shrink: 0;
       }
+
+      /* CTA form mobile */
+      .cta-form-badge { margin-bottom: 28px; font-size: 13px; }
+      .cta-form-title { font-size: clamp(28px, 6vw, 40px); }
+      .cta-form-card { padding: 28px 20px; }
+      .cta-form-submit { font-size: 12px; padding: 14px 24px; }
 
       /* Process mobile */
       .process-step { gap: 18px; padding: 18px 0; }
@@ -3537,6 +3760,79 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════
+       BLOCK — CTA FORM
+  ═══════════════════════════════════════════════════ -->
+  <section class="section section--dark" id="apply" style="position: relative; overflow: hidden;">
+    <div class="cursor-glow" id="applyGlow"></div>
+    <div class="container">
+
+      <div class="cta-form-badge reveal">
+        <span class="cta-form-badge-dot"></span>
+        В&#160;феврале осталось <strong>3 из 5</strong> мест
+      </div>
+
+      <div class="cta-form-layout">
+        <!-- Текст -->
+        <div class="cta-form-text reveal">
+          <h2 class="cta-form-title">
+            ХОЧЕШЬ, ОТПРАВИМ<br>
+            <em>подробности</em><br>
+            В ТЕЛЕГРАМ?
+          </h2>
+          <p class="cta-form-subtitle">Только девушки 18+</p>
+          <p class="cta-form-desc">
+            Оставь заявку — перезвоним <strong>за&#160;час</strong> и&#160;пригласим на&#160;встречу в&#160;студии.
+          </p>
+          <div class="cta-form-trust">
+            <div class="cta-form-trust-item">
+              <div class="cta-form-trust-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <span>Конфиденциально — данные защищены</span>
+            </div>
+            <div class="cta-form-trust-item">
+              <div class="cta-form-trust-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <span>Перезвоним в&#160;течение 1&#160;часа</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Форма -->
+        <div class="cta-form-card reveal reveal-delay-2">
+          <form id="applyForm" novalidate>
+            <div class="cta-form-field">
+              <label for="applyName">Имя</label>
+              <input type="text" id="applyName" name="name" placeholder="Как тебя зовут?" autocomplete="given-name">
+            </div>
+            <div class="cta-form-field">
+              <label for="applyTg">Telegram *</label>
+              <input type="text" id="applyTg" name="telegram" placeholder="@username" autocomplete="off">
+            </div>
+            <div class="cta-form-field">
+              <label for="applyPhone">Номер телефона</label>
+              <input type="tel" id="applyPhone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel">
+            </div>
+            <button type="submit" class="btn btn--accent cta-form-submit">
+              Записаться — это бесплатно <span class="btn-dot"></span>
+            </button>
+            <p class="cta-form-disclaimer">Нажимая кнопку, вы&#160;даёте согласие на&#160;обработку персональных данных</p>
+          </form>
+          <div class="cta-form-success">
+            <div class="cta-form-success-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="cta-form-success-title">Заявка отправлена!</div>
+            <p class="cta-form-success-text">Перезвоним в&#160;течение часа.<br>Если не&#160;дозвонимся — напишем в&#160;Telegram.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
        BLOCK — FAQ
   ═══════════════════════════════════════════════════ -->
   <section class="section section--alt" id="faq">
@@ -4161,6 +4457,78 @@
           glow.style.left = (e.clientX - rect.left) + 'px';
           glow.style.top = (e.clientY - rect.top) + 'px';
         });
+      });
+    })();
+
+    // 11. CTA Form — валидация, маска телефона, success state
+    (function() {
+      var form = document.getElementById('applyForm');
+      if (!form) return;
+
+      // Phone mask
+      var phoneInput = document.getElementById('applyPhone');
+      if (phoneInput) {
+        phoneInput.addEventListener('input', function(e) {
+          var val = e.target.value.replace(/\D/g, '');
+          if (val.startsWith('7')) val = val.slice(1);
+          if (val.startsWith('8')) val = val.slice(1);
+          var f = '+7';
+          if (val.length > 0) f += ' (' + val.slice(0, 3);
+          if (val.length >= 3) f += ') ' + val.slice(3, 6);
+          if (val.length >= 6) f += '-' + val.slice(6, 8);
+          if (val.length >= 8) f += '-' + val.slice(8, 10);
+          e.target.value = f;
+        });
+        phoneInput.addEventListener('focus', function() {
+          if (!phoneInput.value) phoneInput.value = '+7';
+        });
+        phoneInput.addEventListener('blur', function() {
+          if (phoneInput.value === '+7') phoneInput.value = '';
+        });
+      }
+
+      // Clear validation on input
+      form.querySelectorAll('input').forEach(function(inp) {
+        inp.addEventListener('input', function() {
+          inp.classList.remove('is-invalid', 'is-valid');
+        });
+      });
+
+      // Submit
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var nameEl = document.getElementById('applyName');
+        var tgEl = document.getElementById('applyTg');
+        var phoneEl = document.getElementById('applyPhone');
+        var valid = true;
+
+        [nameEl, tgEl, phoneEl].forEach(function(el) { el.classList.remove('is-invalid', 'is-valid'); });
+
+        // Name required
+        if (!nameEl.value.trim()) { nameEl.classList.add('is-invalid'); valid = false; }
+        else { nameEl.classList.add('is-valid'); }
+
+        // Telegram required, starts with @
+        var tgVal = tgEl.value.trim();
+        if (!tgVal || tgVal.length < 2 || !tgVal.startsWith('@')) { tgEl.classList.add('is-invalid'); valid = false; }
+        else { tgEl.classList.add('is-valid'); }
+
+        // Phone optional but if filled — at least +7 (XXX) XXX-XX-XX
+        var phoneVal = phoneEl.value.replace(/\D/g, '');
+        if (phoneEl.value.trim() && phoneVal.length < 11) { phoneEl.classList.add('is-invalid'); valid = false; }
+        else if (phoneEl.value.trim()) { phoneEl.classList.add('is-valid'); }
+
+        if (!valid) return;
+
+        // Show success
+        var card = form.closest('.cta-form-card');
+        form.style.display = 'none';
+        var success = card.querySelector('.cta-form-success');
+        if (success) success.classList.add('visible');
+
+        // TODO: Replace with actual endpoint (Telegram bot webhook, Google Forms, etc.)
+        console.log('CTA Form submitted:', { name: nameEl.value, telegram: tgEl.value, phone: phoneEl.value });
       });
     })();
 
