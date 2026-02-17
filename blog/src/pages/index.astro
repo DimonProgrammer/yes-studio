@@ -39,14 +39,16 @@ if (categoryParam) {
 
       <!-- Posts Grid -->
       {posts.length > 0 ? (
-        <div class="bento">
+        <div class="bento" id="blogBento">
           {posts.map((post: any) => (
             <BlogCard post={post} />
           ))}
         </div>
       ) : (
-        <div class="blog-empty">
-          <p>Статьи скоро появятся. Подпишись на наш <a href="https://t.me/studio_yes">Telegram</a>, чтобы не пропустить!</p>
+        <div class="bento blog-bento-empty" id="blogBento">
+          <div class="blog-card blog-card--skeleton"><div class="blog-card__visual"></div><div class="blog-card__body"><div class="skel skel--tag"></div><div class="skel skel--title"></div><div class="skel skel--text"></div><div class="skel skel--meta"></div></div></div>
+          <div class="blog-card blog-card--skeleton"><div class="blog-card__visual"></div><div class="blog-card__body"><div class="skel skel--tag"></div><div class="skel skel--title"></div><div class="skel skel--text"></div><div class="skel skel--meta"></div></div></div>
+          <div class="blog-card blog-card--skeleton"><div class="blog-card__visual"></div><div class="blog-card__body"><div class="skel skel--tag"></div><div class="skel skel--title"></div><div class="skel skel--text"></div><div class="skel skel--meta"></div></div></div>
         </div>
       )}
     </div>
@@ -66,6 +68,63 @@ if (categoryParam) {
       </div>
     </div>
   </section>
+
+  <!-- Client-side refresh: ensures blog index always shows latest Sanity content -->
+  <script>
+    (function () {
+      var PROJECT_ID = 'n2knh3st';
+      var DATASET = 'production';
+
+      var urlParams = new URLSearchParams(window.location.search);
+      var categoryFilter = urlParams.get('category');
+
+      var groq = categoryFilter
+        ? '*[_type == "post" && category->slug.current == "' + categoryFilter + '"] | order(publishedAt desc) { title, slug, excerpt, coverImage, publishedAt, "category": category->{ title, slug }, "readTime": round(length(pt::text(body)) / 1200) }'
+        : '*[_type == "post"] | order(publishedAt desc) { title, slug, excerpt, coverImage, publishedAt, "category": category->{ title, slug }, "readTime": round(length(pt::text(body)) / 1200) }';
+
+      var query = encodeURIComponent(groq);
+      var url = 'https://' + PROJECT_ID + '.apicdn.sanity.io/v2024-01-01/data/query/' + DATASET + '?query=' + query;
+
+      function sanityImageUrl(img) {
+        if (!img || !img.asset || !img.asset._ref) return '';
+        var parts = img.asset._ref.split('-');
+        return 'https://cdn.sanity.io/images/' + PROJECT_ID + '/' + DATASET + '/' + parts[1] + '-' + parts[2] + '.' + parts[3] + '?w=600&h=400&fit=crop&auto=format';
+      }
+
+      function formatDate(d) {
+        if (!d) return '';
+        return new Date(d).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' });
+      }
+
+      function renderCard(p) {
+        var slug = p.slug && p.slug.current ? p.slug.current : '';
+        var imgUrl = sanityImageUrl(p.coverImage);
+        var imgHtml = imgUrl
+          ? '<img src="' + imgUrl + '" alt="' + p.title.replace(/"/g, '&quot;') + '" loading="lazy" width="600" height="400">'
+          : '<div class="blog-card__placeholder"></div>';
+        var catHtml = p.category ? '<span class="blog-card__tag">' + p.category.title + '</span>' : '';
+        var metaHtml = '<span>' + formatDate(p.publishedAt) + '</span>' + (p.readTime ? ' · ' + p.readTime + ' мин' : '');
+        var descHtml = p.excerpt ? '<p class="blog-card__desc">' + p.excerpt + '</p>' : '';
+
+        return '<a href="/blog/' + slug + '/" class="blog-card">'
+          + '<div class="blog-card__visual">' + imgHtml + '</div>'
+          + '<div class="blog-card__body">' + catHtml + '<h3 class="blog-card__title">' + p.title + '</h3>' + descHtml + '<div class="blog-card__meta">' + metaHtml + '</div></div>'
+          + '</a>';
+      }
+
+      fetch(url)
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          var posts = data.result;
+          if (!posts || !posts.length) return;
+          var grid = document.getElementById('blogBento');
+          if (!grid) return;
+          grid.innerHTML = posts.map(renderCard).join('');
+          grid.classList.remove('blog-bento-empty');
+        })
+        .catch(function () {}); // silently fail — static content remains
+    })();
+  </script>
 
   <!-- Schema.org -->
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -138,6 +197,27 @@ if (categoryParam) {
     line-height: 1.65;
   }
   .blog-empty a { color: var(--accent); text-decoration: underline; }
+
+  /* Skeleton loading state */
+  @keyframes shimmer {
+    0% { background-position: -400px 0; }
+    100% { background-position: 400px 0; }
+  }
+  .skel {
+    background: linear-gradient(90deg, rgba(139,31,49,0.12) 25%, rgba(139,31,49,0.28) 50%, rgba(139,31,49,0.12) 75%);
+    background-size: 800px 100%;
+    animation: shimmer 1.4s infinite linear;
+    border-radius: 4px;
+  }
+  .skel--tag { height: 24px; width: 80px; margin-bottom: 4px; }
+  .skel--title { height: 18px; width: 90%; margin-bottom: 6px; }
+  .skel--text { height: 14px; width: 75%; margin-bottom: 4px; }
+  .skel--meta { height: 12px; width: 50%; margin-top: 8px; }
+  .blog-card--skeleton .blog-card__visual {
+    aspect-ratio: 3 / 2;
+    background: rgba(139,31,49,0.08);
+  }
+  .blog-card--skeleton .blog-card__body { gap: 10px; }
 
   /* ── CTA Section ── */
   .blog-cta-section { position: relative; overflow: hidden; }
