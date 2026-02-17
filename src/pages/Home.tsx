@@ -276,33 +276,35 @@ export default function Home() {
     if (window.innerWidth < 768) return;
 
     const buttons = document.querySelectorAll('.btn');
-    const handleMouseMove = (e: MouseEvent, btn: HTMLElement) => {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      const moveX = x * 0.15;
-      const moveY = y * 0.15;
-      btn.style.transform = `translate(${moveX}px, ${moveY}px)`;
-    };
-
-    const handleMouseLeave = (btn: HTMLElement) => {
-      btn.style.transform = '';
-    };
+    const handlers: Array<{ btn: Element; move: (e: MouseEvent) => void; leave: () => void }> = [];
 
     buttons.forEach((btn) => {
       const element = btn as HTMLElement;
-      const moveHandler = (e: MouseEvent) => handleMouseMove(e, element);
-      const leaveHandler = () => handleMouseLeave(element);
 
-      element.addEventListener('mousemove', moveHandler);
-      element.addEventListener('mouseleave', leaveHandler);
+      const handleMouseMove = (e: MouseEvent) => {
+        const rect = element.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        element.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+      };
+
+      const handleMouseLeave = () => {
+        element.style.transform = 'translate(0, 0)';
+        element.style.transition = 'transform 0.3s ease';
+        setTimeout(() => {
+          element.style.transition = '';
+        }, 300);
+      };
+
+      element.addEventListener('mousemove', handleMouseMove);
+      element.addEventListener('mouseleave', handleMouseLeave);
+      handlers.push({ btn: element, move: handleMouseMove, leave: handleMouseLeave });
     });
 
     return () => {
-      buttons.forEach((btn) => {
-        const element = btn as HTMLElement;
-        element.removeEventListener('mousemove', () => {});
-        element.removeEventListener('mouseleave', () => {});
+      handlers.forEach(({ btn, move, leave }) => {
+        btn.removeEventListener('mousemove', move);
+        btn.removeEventListener('mouseleave', leave);
       });
     };
   }, []);
@@ -331,6 +333,118 @@ export default function Home() {
       })
       .catch(() => {})
       .finally(() => setBlogLoading(false));
+  }, []);
+
+  /* ── Text Split Animation ── */
+  useEffect(() => {
+    document.querySelectorAll('.split-text').forEach((el) => {
+      const html = el.innerHTML.replace(/&nbsp;/gi, ' ');
+      let result = '';
+      let inTag = false;
+      let charIndex = 0;
+      let wordBuf = '';
+
+      const flushWord = () => {
+        if (wordBuf) {
+          result += '<span style="display:inline-block;white-space:nowrap">' + wordBuf + '</span>';
+          wordBuf = '';
+        }
+      };
+
+      for (let i = 0; i < html.length; i++) {
+        if (html[i] === '<') {
+          flushWord();
+          inTag = true;
+          result += html[i];
+          continue;
+        }
+        if (html[i] === '>') {
+          inTag = false;
+          result += html[i];
+          continue;
+        }
+        if (inTag) {
+          result += html[i];
+          continue;
+        }
+        if (html[i] === ' ' || html[i] === '\n') {
+          flushWord();
+          result += html[i];
+        } else {
+          const delay = Math.min(charIndex * 25, 1200);
+          wordBuf += `<span class="char" style="transition-delay:${delay}ms">${html[i]}</span>`;
+          charIndex++;
+        }
+      }
+      flushWord();
+      el.innerHTML = result;
+    });
+  }, []);
+
+  /* ── Tilt 3D for cards ── */
+  useEffect(() => {
+    if (window.innerWidth < 768) return;
+
+    const cards = document.querySelectorAll('.tilt-card');
+    const handlers: Array<{ card: Element; move: (e: MouseEvent) => void; leave: () => void }> = [];
+
+    cards.forEach((card) => {
+      const element = card as HTMLElement;
+
+      const handleMouseMove = (e: MouseEvent) => {
+        const rect = element.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        element.style.transform = `perspective(600px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg)`;
+      };
+
+      const handleMouseLeave = () => {
+        element.style.transform = 'perspective(600px) rotateY(0) rotateX(0)';
+        element.style.transition = 'transform 0.4s ease';
+        setTimeout(() => {
+          element.style.transition = 'transform 0.15s ease-out';
+        }, 400);
+      };
+
+      element.addEventListener('mousemove', handleMouseMove);
+      element.addEventListener('mouseleave', handleMouseLeave);
+      handlers.push({ card: element, move: handleMouseMove, leave: handleMouseLeave });
+    });
+
+    return () => {
+      handlers.forEach(({ card, move, leave }) => {
+        card.removeEventListener('mousemove', move);
+        card.removeEventListener('mouseleave', leave);
+      });
+    };
+  }, []);
+
+  /* ── Cursor Glow ── */
+  useEffect(() => {
+    if (window.innerWidth < 768) return;
+
+    const glows = document.querySelectorAll('.cursor-glow');
+    const handlers: Array<{ parent: Element; move: (e: MouseEvent) => void }> = [];
+
+    glows.forEach((glow) => {
+      const parent = glow.parentElement;
+      if (!parent) return;
+
+      const handleMouseMove = (e: MouseEvent) => {
+        const rect = parent.getBoundingClientRect();
+        (glow as HTMLElement).style.left = e.clientX - rect.left + 'px';
+        (glow as HTMLElement).style.top = e.clientY - rect.top + 'px';
+      };
+
+      parent.addEventListener('mousemove', handleMouseMove);
+      handlers.push({ parent, move: handleMouseMove });
+    });
+
+    return () => {
+      handlers.forEach(({ parent, move }) => {
+        parent.removeEventListener('mousemove', move);
+      });
+    };
   }, []);
 
   /* ── Schema.org JSON-LD ── */
