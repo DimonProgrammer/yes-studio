@@ -253,7 +253,7 @@
       inset: 0;
       z-index: 0;
       background:
-        url('public/photos/hero-hearts.jpg') center/cover no-repeat;
+        url('/photos/hero-hearts.jpg') center/cover no-repeat;
     }
 
     /* Затемняющий overlay для читаемости текста */

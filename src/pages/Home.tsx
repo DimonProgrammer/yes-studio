@@ -246,6 +246,67 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  /* ── Parallax for diversity-visual & photo-strip ── */
+  useEffect(() => {
+    const parallaxEls = document.querySelectorAll('.diversity-visual, .photo-strip');
+    if (!parallaxEls.length) return;
+
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          parallaxEls.forEach((el) => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+              const offset = (rect.top - window.innerHeight / 2) * 0.06;
+              (el as HTMLElement).style.transform = `translateY(${offset}px)`;
+            }
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  /* ── Magnetic Buttons ── */
+  useEffect(() => {
+    if (window.innerWidth < 768) return;
+
+    const buttons = document.querySelectorAll('.btn');
+    const handleMouseMove = (e: MouseEvent, btn: HTMLElement) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      const moveX = x * 0.15;
+      const moveY = y * 0.15;
+      btn.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    };
+
+    const handleMouseLeave = (btn: HTMLElement) => {
+      btn.style.transform = '';
+    };
+
+    buttons.forEach((btn) => {
+      const element = btn as HTMLElement;
+      const moveHandler = (e: MouseEvent) => handleMouseMove(e, element);
+      const leaveHandler = () => handleMouseLeave(element);
+
+      element.addEventListener('mousemove', moveHandler);
+      element.addEventListener('mouseleave', leaveHandler);
+    });
+
+    return () => {
+      buttons.forEach((btn) => {
+        const element = btn as HTMLElement;
+        element.removeEventListener('mousemove', () => {});
+        element.removeEventListener('mouseleave', () => {});
+      });
+    };
+  }, []);
+
   /* ── Sticky widget scroll detection ── */
   useEffect(() => {
     const handleScroll = () => {
