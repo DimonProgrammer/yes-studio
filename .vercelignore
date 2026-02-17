@@ -1,0 +1,10 @@
+node_modules/
+sanity/
+blog/node_modules/
+blog/dist/
+blog/.astro/
+.DS_Store
+*.mp4
+public/photos/Фото студии/
+public/Сжатое*
+docs/

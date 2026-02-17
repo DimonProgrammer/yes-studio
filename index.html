@@ -1,0 +1,4296 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YES Studio — Вебкам студия в&#160;Москве | Работа стрим-моделью NON-NUDE от 90 000 ₽</title>
+  <meta name="description" content="YES Studio — premium NON-NUDE вебкам-студия в Москве, м. Красносельская. Работа стрим-моделью с доходом от 90 000 ₽ в первый месяц. Обучение с нуля, ежедневные выплаты, гибкий график. 7 лет на рынке, 527+ моделей.">
+  <meta name="keywords" content="вебкам студия, работа стрим-моделью, вебкам Москва, non-nude студия, работа моделью, webcam studio, YES Studio, заработок онлайн, работа для девушек">
+  <link rel="canonical" href="https://yes-studio.agency/">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="YES Studio — Вебкам студия в Москве | NON-NUDE">
+  <meta property="og:description" content="Premium NON-NUDE вебкам-студия. Доход от 90 000 ₽ в первый месяц. Обучение с нуля, ежедневные выплаты.">
+  <meta property="og:url" content="https://yes-studio.agency/">
+  <meta property="og:site_name" content="YES Studio">
+  <meta property="og:locale" content="ru_RU">
+  <link rel="icon" type="image/svg+xml" href="/public/images/logos/yes-studio-sparkle%20(2).svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════════════════
+       RESET
+    ═══════════════════════════════════════════════════ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --sparkle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath d='M91,84L100,4L109,84C107.65,86.4,105.11,85.88,106.01,83.38L139.6,60.4L116.62,93.99C114.12,94.89,113.6,92.35,116,91L196,100L116,109C113.6,107.65,114.12,105.11,116.62,106.01L139.6,139.6L106.01,116.62C105.11,114.12,107.65,113.6,109,116L100,196L91,116C92.35,113.6,94.89,114.12,93.99,116.62L60.4,139.6L83.38,106.01C85.88,105.11,86.4,107.65,84,109L4,100L84,91C86.4,92.35,85.88,94.89,83.38,93.99L60.4,60.4L93.99,83.38C94.89,85.88,92.35,86.4,91,84Z' fill='white'/%3E%3C/svg%3E");
+      --bg:           #F5F0EB;
+      --bg-alt:       #E8E2DA;
+      --bg-sand:      #C8B9A8;
+      --bg-dark:      #1E1C1A;
+      --bg-card:      #FFFEFA;
+
+      --text:         #2C2926;
+      --text-body:    #3B3735;
+      --text-muted:   #AAA89F;
+      --text-cream:   #F5F0EB;
+
+      --divider:      rgba(170, 168, 159, 0.3);
+
+      /* Акцент — красно-бордовый */
+      --accent:       #8B1F31;
+      --accent-light: #A52840;
+
+      --font:         'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-heading: 'Forum', Georgia, 'Times New Roman', serif;
+
+      --section-pad:  120px;
+      --container:    1280px;
+      --side-pad:     64px;
+      --radius-card:  20px;
+      --radius-btn:   50px;
+      --radius-photo: 20px;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+      word-break: normal;
+      overflow-wrap: break-word;
+      hyphens: manual;
+      -webkit-hyphens: manual;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      text-wrap: balance;
+    }
+    p, li {
+      text-wrap: pretty;
+    }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+    }
+
+    /* ═══════════════════════════════════════════════════
+       HEADER
+    ═══════════════════════════════════════════════════ */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--side-pad);
+      transition: all 0.4s ease;
+    }
+
+    .header--transparent { background: transparent; }
+
+    .header.scrolled {
+      background: rgba(245, 240, 235, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .header-left { display: flex; align-items: center; }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo-svg {
+      height: 38px;
+      width: auto;
+      color: var(--text-cream);
+      transition: color 0.4s ease;
+    }
+
+    .header.scrolled .logo-svg {
+      color: var(--accent);
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .header-phone {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-cream);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: all 0.3s;
+    }
+
+    .header.scrolled .header-phone { color: var(--text); opacity: 0.6; }
+    .header.scrolled .header-metro { color: var(--text-muted); }
+    .header-phone:hover { opacity: 1; }
+
+    .burger {
+      width: 32px;
+      height: 20px;
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .burger span {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background: var(--text-cream);
+      border-radius: 2px;
+      transition: all 0.4s;
+    }
+
+    .burger span:nth-child(2) { width: 70%; }
+    .header.scrolled .burger span { background: var(--text); }
+
+    /* Fullscreen overlay menu */
+    .nav-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-dark);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.45s ease;
+    }
+
+    .nav-overlay.open { opacity: 1; pointer-events: all; }
+
+    .nav-overlay-close {
+      position: absolute;
+      top: 22px;
+      right: var(--side-pad);
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-overlay-close svg { stroke: var(--text-cream); width: 24px; height: 24px; }
+
+    .nav-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .nav-links a {
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--text-cream);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+
+    .nav-metro {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      margin-top: 32px;
+      font-size: 14px;
+      color: rgba(245, 240, 235, 0.45);
+      font-weight: 400;
+    }
+    .nav-metro svg { opacity: 0.5; }
+
+    @media (max-width: 768px) {
+      .nav-metro { display: flex; }
+    }
+
+    /* ═══════════════════════════════════════════════════
+       HEADINGS — Forum, UPPERCASE, красный
+       Акцент: opacity 0.2
+    ═══════════════════════════════════════════════════ */
+    .h-accent {
+      color: #3B3735;
+    }
+
+    .hero-title .h-accent {
+      color: rgba(245, 240, 235, 0.35);
+    }
+
+    /* ═══════════════════════════════════════════════════
+       BLOCK 1 — HERO
+       Центральная композиция, бордовый шёлковый фон
+    ═══════════════════════════════════════════════════ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Фото-фон Hero */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        url('public/photos/hero-hearts.jpg') center/cover no-repeat;
+    }
+
+    /* Затемняющий overlay для читаемости текста */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        /* Центральное затемнение для текста */
+        radial-gradient(ellipse 60% 50% at 50% 50%, rgba(30, 5, 12, 0.55) 0%, transparent 80%),
+        /* Общее затемнение */
+        linear-gradient(180deg, rgba(30, 5, 12, 0.3) 0%, rgba(30, 5, 12, 0.15) 40%, rgba(30, 5, 12, 0.4) 100%);
+    }
+
+    /* Тонкий grain поверх фото */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      max-width: 780px;
+      padding: 0 24px;
+    }
+
+    /* Badge (из v3) */
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 16px;
+      border: 1px solid rgba(245, 240, 235, 0.15);
+      border-radius: var(--radius-btn);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(245, 240, 235, 0.6);
+    }
+
+    .hero-badge-dot {
+      width: 5px;
+      height: 5px;
+      background: #6BBF7B;
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    /* H1 — STREAM MODEL AGENCY */
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(48px, 7vw, 88px);
+      font-weight: 400;
+      line-height: 0.95;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text-cream);
+    }
+
+    /* Разделитель */
+    .hero-divider {
+      width: 16px;
+      height: 16px;
+      background: var(--text-cream);
+      opacity: 0.5;
+      -webkit-mask-image: var(--sparkle);
+      mask-image: var(--sparkle);
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+    }
+
+    /* Подзаголовок (текст из v3 — SEO) */
+    .hero-sub {
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(245, 240, 235, 0.7);
+      max-width: 480px;
+    }
+
+    .hero-sub strong {
+      font-weight: 600;
+      color: var(--text-cream);
+    }
+
+    /* CTAs */
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 15px 32px;
+      font-family: var(--font);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: var(--radius-btn);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn--cream {
+      background: var(--text-cream);
+      color: var(--text);
+    }
+
+    .btn--cream:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+
+    .btn--ghost-light {
+      background: transparent;
+      color: var(--text-cream);
+      border: 1px solid rgba(245, 240, 235, 0.2);
+    }
+
+    .btn--ghost-light:hover {
+      border-color: rgba(245, 240, 235, 0.45);
+    }
+
+    .btn--dark {
+      background: var(--text);
+      color: var(--text-cream);
+    }
+
+    .btn--dark:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+
+    .btn--accent {
+      background: var(--accent);
+      color: var(--text-cream);
+    }
+
+    .btn--accent:hover {
+      background: var(--accent-light);
+      transform: translateY(-1px);
+    }
+
+    .btn--outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--text);
+    }
+
+    .btn--outline:hover {
+      background: var(--text);
+      color: var(--text-cream);
+    }
+
+    .btn-dot {
+      width: 10px;
+      height: 10px;
+      background: currentColor;
+      flex-shrink: 0;
+      -webkit-mask-image: var(--sparkle);
+      mask-image: var(--sparkle);
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+    }
+
+    /* Фактоиды (центрированные, разделители) */
+    .hero-stats {
+      display: flex;
+      align-items: flex-end;
+      gap: 40px;
+      margin-top: 48px;
+    }
+
+    .hero-stat {
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-stat:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: -26px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      background: var(--text-cream);
+      opacity: 0.2;
+      -webkit-mask-image: var(--sparkle);
+      mask-image: var(--sparkle);
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+    }
+
+    .hero-stat-num {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--text-cream);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .hero-stat-num .sfx {
+      font-size: 20px;
+      opacity: 0.4;
+    }
+
+    .hero-stat-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(245, 240, 235, 0.35);
+    }
+
+
+    /* ═══════════════════════════════════════════════════
+       SECTIONS
+    ═══════════════════════════════════════════════════ */
+    .section { padding: var(--section-pad) 0; }
+    .section--alt { background: var(--bg-alt); }
+    .section--sand { background: var(--bg-sand); }
+
+    .section-header { margin-bottom: 56px; }
+    .section-header .label { margin-bottom: 12px; }
+
+    .label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .label::before {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: currentColor;
+      flex-shrink: 0;
+      -webkit-mask-image: var(--sparkle);
+      mask-image: var(--sparkle);
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .label--accent { color: var(--accent); }
+
+    /* H2 — Forum, UPPERCASE, красный, two-tone */
+    .h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(32px, 3.5vw, 52px);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .section-lead {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: var(--text-body);
+      max-width: 560px;
+    }
+
+    /* Pill tag */
+    .pill-tag {
+      display: inline-block;
+      padding: 7px 18px;
+      font-family: var(--font);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid var(--text);
+      border-radius: var(--radius-btn);
+      color: var(--text);
+      line-height: 1;
+    }
+
+    /* ═══════════════════════════════════════════════════
+       BLOCK 2 — BENTO GRID
+    ═══════════════════════════════════════════════════ */
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .bento-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .bento-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    .bento-visual {
+      aspect-ratio: 4 / 3;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--bg-alt);
+    }
+
+    .bento-body {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .bento-title {
+      font-family: var(--font);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1.3;
+      color: var(--text);
+    }
+
+    .bento-desc {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--text-body);
+    }
+
+    .section-cta {
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    /* Placeholder */
+    .placeholder {
+      width: 100%;
+      height: 100%;
+      background: var(--bg-alt);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .placeholder-icon {
+      width: 36px;
+      height: 36px;
+      border: 1.5px solid currentColor;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      opacity: 0.5;
+    }
+
+    /* ═══════════════════════════════════════════════════
+       BLOCK 3 — СТУДИЯ
+    ═══════════════════════════════════════════════════ */
+    .studio-layout {
+      display: grid;
+      grid-template-columns: 55% 1fr;
+      gap: 64px;
+      align-items: center;
+      margin-bottom: 72px;
+    }
+
+    .studio-layout--reverse { grid-template-columns: 1fr 55%; }
+    .studio-layout--reverse .studio-visual { order: 2; }
+    .studio-layout--reverse .studio-text { order: 1; }
+
+    .studio-visual {
+      border-radius: var(--radius-photo);
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+    }
+
+    .studio-text {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .h3 {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .body-text {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--text-body);
+    }
+
+    /* ── Studio Mosaic Grid ── */
+    .studio-mosaic {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 280px 220px;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    .studio-mosaic__item {
+      border-radius: var(--radius-photo);
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+    .studio-mosaic__item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    .studio-mosaic__item:hover img { transform: scale(1.06); }
+    .studio-mosaic__hero { grid-column: 1 / 3; grid-row: 1 / 2; }
+    .studio-mosaic__tall { grid-column: 4 / 5; grid-row: 1 / 3; }
+    .studio-mosaic__wide { grid-column: 2 / 4; grid-row: 2 / 3; }
+
+    .studio-mosaic__overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 20px 24px;
+      background: linear-gradient(to top, rgba(30,28,26,0.7) 0%, transparent 100%);
+    }
+    .studio-mosaic__tag {
+      font-size: 12px; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--text-cream);
+    }
+
+    .studio-features {
+      display: flex; justify-content: center; gap: 40px;
+      flex-wrap: wrap; margin-top: 32px;
+    }
+    .studio-feat {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 14px; color: var(--text-body); font-weight: 500;
+    }
+    .studio-feat svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+    /* ═══════════════════════════════════════════════════
+       BLOCK 4 — КАЛЬКУЛЯТОР
+    ═══════════════════════════════════════════════════ */
+    .calc-layout {
+      display: grid;
+      grid-template-columns: 42% 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .calc-text {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-top: 16px;
+    }
+
+    .calc-panel {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 28px 32px 32px;
+    }
+
+    .calc-panel-title {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .calc-group { margin-bottom: 16px; }
+    .calc-group:last-child { margin-bottom: 0; }
+
+    .calc-group-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
+    .calc-tabs { display: flex; gap: 8px; }
+
+    .calc-tab {
+      padding: 10px 20px;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: var(--bg);
+      border: 1px solid transparent;
+      border-radius: var(--radius-btn);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .calc-tab:hover { color: var(--text); border-color: var(--divider); }
+    .calc-tab.active { background: var(--text); color: var(--text-cream); }
+
+    .calc-panel-body {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0 32px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .calc-result {
+      padding-top: 24px;
+      border-top: 1px solid var(--divider);
+    }
+
+    .calc-result-label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .calc-result-value {
+      font-family: var(--font-heading);
+      font-size: clamp(36px, 3.5vw, 52px);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .calc-result-value .nowrap { white-space: nowrap; }
+
+    .calc-result-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    /* ═══════════════════════════════════════════════════
+       STICKY WIDGET — левый нижний угол
+    ═══════════════════════════════════════════════════ */
+    .sticky-widget {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      z-index: 50;
+      background: var(--bg-card);
+      border: 1px solid var(--divider);
+      border-radius: var(--radius-btn);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-body);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      opacity: 0;
+      transform: translateY(12px);
+      animation: slideUp 0.5s ease 2.5s forwards;
+    }
+
+    .sticky-dot {
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      flex-shrink: 0;
+      -webkit-mask-image: var(--sparkle);
+      mask-image: var(--sparkle);
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .sticky-widget strong {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ═══════════════════════════════════════════════════
+       ANIMATIONS
+    ═══════════════════════════════════════════════════ */
+    @keyframes slideUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* Hero entrance */
+    .hero-enter {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .hero-enter-1 { animation: slideUp 0.7s ease 0.3s forwards; }
+    .hero-enter-2 { animation: slideUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.45s forwards; }
+    .hero-enter-3 { animation: slideUp 0.6s ease 0.8s forwards; }
+    .hero-enter-4 { animation: slideUp 0.7s ease 0.95s forwards; }
+    .hero-enter-5 { animation: slideUp 0.7s ease 1.1s forwards; }
+    .hero-enter-6 { animation: slideUp 0.7s ease 1.3s forwards; }
+
+    @keyframes fadeIn { to { opacity: 1; } }
+
+    /* ═══════════════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      :root { --side-pad: 32px; --section-pad: 80px; }
+      .bento { grid-template-columns: 1fr 1fr; }
+
+      .studio-layout,
+      .studio-layout--reverse {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .calc-layout { grid-template-columns: 1fr; gap: 40px; }
+      .studio-mosaic {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 220px;
+      }
+      .studio-mosaic__hero { grid-column: 1 / 3; grid-row: auto; }
+      .studio-mosaic__tall { grid-column: auto; grid-row: auto; }
+      .studio-mosaic__wide { grid-column: auto; grid-row: auto; }
+      .studio-features { gap: 24px; }
+      .story-card { flex-direction: column; }
+      .story-photo { width: 56px; }
+      .story-photo .placeholder { width: 56px; height: 56px; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --side-pad: 20px; }
+      .bento { grid-template-columns: 1fr; }
+
+      .hero-stats { flex-wrap: wrap; gap: 24px; justify-content: center; }
+      .hero-stat:not(:last-child)::after { display: none; }
+      .hero-ctas { flex-direction: column; width: 100%; }
+      .hero-ctas .btn { width: 100%; justify-content: center; }
+
+      .studio-mosaic {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 180px;
+      }
+      .studio-mosaic__hero { grid-column: 1 / 3; grid-row: auto; }
+      .studio-mosaic__tall { grid-column: auto; grid-row: auto; }
+      .studio-mosaic__wide { grid-column: auto; grid-row: auto; }
+      .studio-features { gap: 16px; }
+      .studio-feat { font-size: 13px; }
+
+      .calc-tabs { flex-wrap: wrap; }
+      .calc-panel-body { grid-template-columns: 1fr; gap: 20px; }
+      .calc-ring { width: 100px; height: 100px; margin: 0 auto; }
+    }
+
+    /* ═══════════════════════════════════════════════════
+       НОВЫЕ БЛОКИ V5
+    ═══════════════════════════════════════════════════ */
+
+    /* Emotional Hook — Pain Points */
+    .hook-section {
+      text-align: center;
+    }
+
+    .pain-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 580px;
+      margin: 0 auto 44px;
+    }
+
+    .pain-card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 22px 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-align: left;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      border: 1px solid rgba(139, 31, 49, 0.06);
+    }
+
+    .pain-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(139, 31, 49, 0.08);
+    }
+
+    .pain-card-icon {
+      flex-shrink: 0;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, rgba(139, 31, 49, 0.1), rgba(139, 31, 49, 0.04));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+    }
+
+    .pain-card-body {
+      flex: 1;
+    }
+
+    .pain-card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+      letter-spacing: 0.01em;
+    }
+
+    .pain-card-text {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--text-body);
+    }
+
+    .hook-text {
+      text-align: center;
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--text);
+      max-width: 560px;
+      margin: 0 auto 32px;
+      letter-spacing: 0.01em;
+    }
+
+    /* Diversity Block */
+    .diversity-layout {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .diversity-visual {
+      border-radius: var(--radius-photo);
+      overflow: hidden;
+    }
+
+    .diversity-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .diversity-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .diversity-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--accent);
+      color: var(--text-cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .diversity-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .diversity-content h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .diversity-content p {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text-body);
+    }
+
+    .diversity-footer {
+      text-align: center;
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--text);
+      margin-top: 40px;
+    }
+
+    /* Stories section grain */
+    .section--textured {
+      position: relative;
+    }
+
+    .section--textured::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* Social Proof — Stories */
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .story-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 32px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .story-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    }
+
+    .story-photo {
+      width: 72px;
+      flex-shrink: 0;
+    }
+
+    .story-photo .placeholder {
+      border-radius: 50%;
+      width: 72px;
+      height: 72px;
+      font-size: 10px;
+    }
+
+    .story-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .story-name {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .story-before-after {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .story-ba-item {
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--text-body);
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+    .story-ba-before {
+      background: rgba(139, 31, 49, 0.06);
+    }
+
+    .story-ba-after {
+      background: rgba(107, 191, 123, 0.1);
+    }
+
+    .story-ba-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-right: 8px;
+    }
+
+    .story-ba-before .story-ba-label { color: var(--accent); }
+    .story-ba-after .story-ba-label { color: #4A9B5A; }
+
+    .story-expandable {
+      overflow: hidden;
+    }
+
+    .story-full-text {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-body);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.3s ease;
+      opacity: 0;
+    }
+
+    .story-expandable[data-expanded="true"] .story-full-text {
+      max-height: 400px;
+      opacity: 1;
+      margin-bottom: 8px;
+    }
+
+    .story-full-text strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .story-toggle {
+      background: none;
+      border: none;
+      font-family: var(--font);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      cursor: pointer;
+      padding: 0;
+      transition: opacity 0.2s;
+    }
+
+    .story-toggle:hover { opacity: 0.7; }
+
+    /* ═══════════════════════════════════════════════════
+       PHOTO STRIP — full-bleed parallax interlude
+    ═══════════════════════════════════════════════════ */
+    .photo-strip {
+      position: relative;
+      height: 300px;
+      background: center/cover no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .photo-strip::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(30, 28, 26, 0.45) 0%, rgba(30, 28, 26, 0.3) 50%, rgba(30, 28, 26, 0.5) 100%);
+    }
+
+    .photo-strip-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 24px;
+    }
+
+    .photo-strip-text {
+      font-family: var(--font-heading);
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 400;
+      line-height: 1.3;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--text-cream);
+    }
+
+    .photo-strip-sub {
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(245, 240, 235, 0.6);
+      margin-top: 12px;
+      letter-spacing: 0.04em;
+    }
+
+    /* Placeholder for strips without photos yet */
+    .photo-strip--placeholder {
+      background: linear-gradient(135deg, #3D2C29 0%, #1E1C1A 50%, #3D2C29 100%);
+      background-attachment: scroll;
+    }
+
+    .photo-strip--placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ═══════════════════════════════════════════════════
+       SECTION DARK — тёмная секция (Calculator)
+    ═══════════════════════════════════════════════════ */
+    .section--dark {
+      background: var(--bg-dark);
+    }
+
+    .section--dark .label--accent {
+      color: rgba(245, 240, 235, 0.4);
+    }
+
+    .section--dark .h2 {
+      color: var(--text-cream);
+    }
+
+    .section--dark .h2 .h-accent {
+      color: rgba(245, 240, 235, 0.35);
+    }
+
+    .section--dark .body-text {
+      color: rgba(245, 240, 235, 0.7);
+    }
+
+    .section--dark .calc-result-sub {
+      color: rgba(245, 240, 235, 0.4);
+    }
+
+    /* ═══════════════════════════════════════════════════
+       FINAL CTA — завершающий блок
+    ═══════════════════════════════════════════════════ */
+    .final-cta {
+      position: relative;
+      padding: 120px 0;
+      background: var(--bg-dark);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* Декоративное кольцо */
+    .final-cta::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      border: 1px solid rgba(139, 31, 49, 0.15);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .final-cta-inner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .final-cta-title {
+      font-family: var(--font-heading);
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--text-cream);
+    }
+
+    .final-cta-title em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .final-cta-title em.gradient-text {
+      -webkit-text-fill-color: transparent;
+    }
+
+    .final-cta-sub {
+      font-size: 17px;
+      line-height: 1.65;
+      color: rgba(245, 240, 235, 0.6);
+      max-width: 420px;
+    }
+
+    .final-cta-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .final-cta-note {
+      font-size: 12px;
+      color: rgba(245, 240, 235, 0.25);
+      letter-spacing: 0.06em;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .photo-strip { height: 220px; background-attachment: scroll; }
+      .final-cta { padding: 80px 0; }
+      .final-cta::after { width: 300px; height: 300px; }
+      .final-cta-actions { flex-direction: column; width: 100%; }
+      .final-cta-actions .btn { width: 100%; justify-content: center; }
+    }
+
+    @media (max-width: 1024px) {
+      .stories-grid {
+        grid-template-columns: 1fr;
+      }
+      .diversity-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .diversity-visual {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+    }
+
+    /* ═══════════════════════════════════════════════════
+       ANIMATION EFFECTS
+    ═══════════════════════════════════════════════════ */
+
+    /* 1. Marquee / Бегущая строка */
+    .marquee {
+      overflow: hidden;
+      white-space: nowrap;
+      background: var(--bg-dark);
+      padding: 18px 0;
+      border-top: 1px solid rgba(139, 31, 49, 0.15);
+      border-bottom: 1px solid rgba(139, 31, 49, 0.15);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 30s linear infinite;
+    }
+
+    .marquee-track span {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(245, 240, 235, 0.35);
+      padding: 0 24px;
+    }
+
+    .marquee-track .marquee-dot {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      background: var(--accent);
+      opacity: 0.5;
+      margin: 0 8px;
+      vertical-align: middle;
+      -webkit-mask-image: var(--sparkle);
+      mask-image: var(--sparkle);
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* 3. Gradient Text */
+    .gradient-text {
+      background: linear-gradient(135deg, var(--accent) 0%, #c9495e 40%, var(--text) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* 5. Image Clip Reveal */
+    .clip-reveal {
+      clip-path: inset(100% 0 0 0);
+      transition: clip-path 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .clip-reveal.visible {
+      clip-path: inset(0 0 0 0);
+    }
+
+    .clip-reveal-left {
+      clip-path: inset(0 100% 0 0);
+      transition: clip-path 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .clip-reveal-left.visible {
+      clip-path: inset(0 0 0 0);
+    }
+
+    /* 7. Text Split Animation */
+    .split-text .char {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .split-text.visible .char,
+    .visible .split-text .char {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 8. Tilt 3D */
+    .tilt-card {
+      transform-style: preserve-3d;
+      transition: transform 0.15s ease-out;
+    }
+
+    .tilt-card .bento-body {
+      transform: translateZ(20px);
+    }
+
+    /* 9. Counter Ring */
+    .calc-ring {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      margin: 0;
+    }
+
+    .calc-ring svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+    }
+
+    .calc-ring-bg {
+      fill: none;
+      stroke: rgba(139, 31, 49, 0.12);
+      stroke-width: 4;
+    }
+
+    .calc-ring-fill {
+      fill: none;
+      stroke: var(--accent);
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-dasharray: 339.3;
+      stroke-dashoffset: 339.3;
+      transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .calc-ring.visible .calc-ring-fill {
+      stroke-dashoffset: 91.6; /* ~73% filled */
+    }
+
+    .calc-ring-value {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 24px;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    /* 10. Cursor Glow */
+    .cursor-glow {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139, 31, 49, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 0;
+    }
+
+    .section--dark:hover .cursor-glow,
+    .final-cta:hover .cursor-glow {
+      opacity: 1;
+    }
+
+    /* Photo as real image (not background) */
+    .diversity-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .story-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    /* Photo Strip with real photo */
+    .photo-strip--real {
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* Final CTA with photo background */
+    .final-cta--photo {
+      background: url('public/photos/model-2.jpg') center/cover no-repeat;
+    }
+
+    .final-cta--photo::before {
+      background: linear-gradient(180deg, rgba(30,28,26,0.7) 0%, rgba(30,28,26,0.85) 100%);
+      opacity: 1;
+    }
+
+    /* 4. Magnetic Button hover area */
+    .btn {
+      position: relative;
+      overflow: visible;
+    }
+
+    /* ═══════════════════════════════════════════════════
+       REQUIREMENTS BLOCK
+    ═══════════════════════════════════════════════════ */
+    .req-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .req-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 32px 28px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .req-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+    }
+
+    .req-card-icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 16px;
+      background: linear-gradient(135deg, rgba(139, 31, 49, 0.1), rgba(139, 31, 49, 0.04));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+    }
+
+    .req-card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+      letter-spacing: 0.01em;
+    }
+
+    .req-card-text {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--text-body);
+    }
+
+    /* ═══════════════════════════════════════════════════
+       FAQ BLOCK
+    ═══════════════════════════════════════════════════ */
+    .faq-list {
+      max-width: 740px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(139, 31, 49, 0.06);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      user-select: none;
+      gap: 16px;
+    }
+    .faq-question h4 {
+      margin: 0;
+      font-size: inherit;
+      font-weight: inherit;
+      font-family: var(--font-body);
+      color: inherit;
+    }
+
+    .faq-question svg {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      color: var(--accent);
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.open .faq-question svg {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+
+    .faq-answer-inner {
+      padding: 0 24px 20px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-body);
+    }
+
+    /* ═══════════════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════════════ */
+    .site-footer {
+      background: var(--bg-dark);
+      padding: 48px 0 32px;
+      border-top: 1px solid rgba(139, 31, 49, 0.15);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      margin-bottom: 32px;
+    }
+
+    .footer-brand {
+      max-width: 200px;
+    }
+
+    .footer-brand svg {
+      height: 28px;
+      width: auto;
+      color: var(--text-cream);
+      opacity: 0.5;
+    }
+
+    .footer-brand p {
+      font-size: 12px;
+      color: rgba(245,240,235,0.3);
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 48px;
+    }
+
+    .footer-col h4 {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(245,240,235,0.3);
+      margin-bottom: 12px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      color: rgba(245,240,235,0.6);
+      text-decoration: none;
+      margin-bottom: 8px;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--text-cream);
+    }
+
+    .footer-contact a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: rgba(245,240,235,0.6);
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+
+    .footer-contact a:hover {
+      color: var(--text-cream);
+    }
+
+    .footer-contact svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(245,240,235,0.06);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: rgba(245,240,235,0.2);
+    }
+
+    /* Header extras */
+    .header-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .header-metro {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
+      color: rgba(245,240,235,0.9);
+      letter-spacing: 0.02em;
+    }
+
+    .header-metro svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .header-phone {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .header-phone .pulse-dot {
+      width: 6px;
+      height: 6px;
+      background: #e53935;
+      border-radius: 50%;
+      animation: pulse-blink 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse-blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+
+    .header-tg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: var(--text-cream);
+      transition: background 0.2s, transform 0.2s;
+      text-decoration: none;
+    }
+
+    .header-tg:hover {
+      transform: scale(1.08);
+      background: #9B2537;
+    }
+
+    .header-tg svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Sticky Widget CTA */
+    .sticky-widget {
+      gap: 10px;
+    }
+
+    .sticky-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      margin-left: 8px;
+      transition: opacity 0.2s;
+    }
+
+    .sticky-cta:hover {
+      opacity: 0.7;
+    }
+
+    .sticky-cta svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    @media (max-width: 1024px) {
+      .req-grid { grid-template-columns: 1fr 1fr; }
+      .footer-inner { flex-direction: column; }
+      .footer-links { flex-direction: column; gap: 24px; }
+    }
+
+    @media (max-width: 768px) {
+      .marquee-track span { font-size: 12px; padding: 0 16px; }
+      .calc-ring { width: 100px; height: 100px; margin: 0 auto; }
+      .calc-ring-value { font-size: 18px; }
+      .calc-panel-body { grid-template-columns: 1fr; gap: 20px; }
+      .cursor-glow { display: none; }
+      .req-grid { grid-template-columns: 1fr; }
+      .header-metro { display: none; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+
+      /* H2 — remove hard breaks on mobile */
+      .h2 br { display: none; }
+      .h2 { font-size: clamp(28px, 7vw, 52px); }
+
+      /* Sticky widget mobile */
+      .sticky-widget {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        padding: 10px 14px;
+        gap: 6px;
+        font-size: 12px;
+        white-space: nowrap;
+        justify-content: space-between;
+      }
+      .sticky-widget strong {
+        font-size: 13px;
+      }
+      .sticky-cta {
+        font-size: 11px;
+        margin-left: auto;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      /* Process mobile */
+      .process-step { gap: 18px; padding: 18px 0; }
+      .process-step-num { width: 44px; height: 44px; min-width: 44px; font-size: 16px; }
+      .process-step-title { font-size: 18px; }
+      .process-timeline::before { left: 22px; }
+
+      /* About work mobile */
+      .about-work-grid { grid-template-columns: 1fr; gap: 16px; }
+      .about-work-card { padding: 28px 24px; }
+
+      /* Vacancies mobile */
+      .vacancy-tabs { flex-wrap: wrap; }
+      .vacancy-panel-inner { padding: 24px 20px; }
+      .vacancy-title { font-size: 22px; }
+
+      /* Referral mobile */
+      .referral-inner { flex-direction: column; padding: 32px 24px; gap: 24px; text-align: center; }
+      .referral-amount { font-size: 80px; }
+    }
+
+    /* ═══════════════════════════════════════════════════
+       ПРОЦЕСС (TIMELINE)
+    ═══════════════════════════════════════════════════ */
+    .process-timeline {
+      max-width: 700px;
+      margin: 0 auto 48px;
+      position: relative;
+    }
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      left: 28px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), rgba(139,31,49,0.1));
+    }
+    .process-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 28px;
+      padding: 24px 0;
+      position: relative;
+    }
+    .process-step-num {
+      width: 56px;
+      height: 56px;
+      min-width: 56px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 20px;
+      color: var(--accent);
+      position: relative;
+    }
+    .process-step-num::after {
+      content: '';
+      position: absolute;
+      top: -3px;
+      right: -3px;
+      width: 14px;
+      height: 14px;
+      background: var(--accent);
+      -webkit-mask-image: var(--sparkle);
+      mask-image: var(--sparkle);
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      z-index: 1;
+    }
+    .process-step-content { padding-top: 12px; }
+    .process-step-title {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .process-step-content p {
+      font-size: 15px;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════════════════════
+       О РАБОТЕ (DARK GRID)
+    ═══════════════════════════════════════════════════ */
+    .about-work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .about-work-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-card);
+      padding: 32px 28px;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .about-work-card:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(139,31,49,0.3);
+    }
+    .about-work-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(139,31,49,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-light);
+      margin-bottom: 20px;
+    }
+    .about-work-card h3 {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      color: var(--text-cream);
+      margin-bottom: 10px;
+    }
+    .about-work-card p {
+      font-size: 14px;
+      color: rgba(245,240,235,0.55);
+      line-height: 1.7;
+    }
+    .about-work-card p strong {
+      color: rgba(245,240,235,0.85);
+    }
+
+    /* ═══════════════════════════════════════════════════
+       ВАКАНСИИ (TABS)
+    ═══════════════════════════════════════════════════ */
+    .vacancy-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 32px;
+      justify-content: center;
+    }
+    .vacancy-tab {
+      padding: 12px 28px;
+      border: 1px solid var(--divider);
+      border-radius: var(--radius-btn);
+      background: transparent;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-body);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .vacancy-tab.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .vacancy-tab:hover:not(.active) {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .vacancy-panel {
+      display: none;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .vacancy-panel.active { display: block; }
+    .vacancy-panel-inner {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 40px;
+      border: 1px solid rgba(170,168,159,0.15);
+    }
+    .vacancy-title {
+      font-family: var(--font-heading);
+      font-size: 26px;
+      color: var(--text);
+      margin: 0 0 24px;
+    }
+    .vacancy-block { margin-bottom: 20px; }
+    .vacancy-block h4 {
+      font-family: var(--font-heading);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .vacancy-block ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .vacancy-block ul li {
+      position: relative;
+      padding-left: 20px;
+      font-size: 15px;
+      color: var(--text-body);
+      line-height: 1.7;
+      margin-bottom: 4px;
+    }
+    .vacancy-block ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      -webkit-mask-image: var(--sparkle);
+      mask-image: var(--sparkle);
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+    }
+    .vacancy-block ul li strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .vacancy-block p {
+      font-size: 15px;
+      color: var(--text-body);
+      line-height: 1.7;
+    }
+    .vacancy-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+      margin: 8px 0 0;
+    }
+    .vacancy-panel-inner .btn { margin-top: 20px; }
+
+    /* ═══════════════════════════════════════════════════
+       РЕФЕРАЛЬНАЯ ПРОГРАММА
+    ═══════════════════════════════════════════════════ */
+    .referral-inner {
+      display: flex;
+      align-items: center;
+      gap: 64px;
+      padding: 64px;
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      border: 1px solid rgba(170,168,159,0.15);
+    }
+    .referral-content { flex: 1; }
+    .referral-visual {
+      flex-shrink: 0;
+    }
+    .referral-amount {
+      font-family: var(--font-heading);
+      font-size: 96px;
+      color: var(--accent);
+      line-height: 1;
+      opacity: 0.15;
+    }
+    .referral-amount span { font-size: 64px; }
+
+    /* ═══════════════════════════════════════════════════
+       VIDEO PLAYER
+    ═══════════════════════════════════════════════════ */
+    .video-wrapper {
+      position: relative;
+      border-radius: var(--radius-photo);
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .video-wrapper video {
+      width: 100%;
+      display: block;
+    }
+    .video-play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s, opacity 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 24px rgba(139,31,49,0.4);
+      z-index: 2;
+    }
+    .video-play-btn::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      background: rgba(139,31,49,0.2);
+      animation: video-pulse 2s ease-in-out infinite;
+    }
+    .video-play-btn svg {
+      width: 28px;
+      height: 28px;
+      fill: #fff;
+      margin-left: 4px;
+      position: relative;
+      z-index: 1;
+    }
+    .video-play-btn:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+      box-shadow: 0 6px 32px rgba(139,31,49,0.5);
+    }
+    .video-wrapper.playing .video-play-btn {
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+    @keyframes video-pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.15); opacity: 0.5; }
+    }
+
+    /* ═══════════════════════════════════════════════════
+       FOOTER — PARTNERS & LEGAL
+    ═══════════════════════════════════════════════════ */
+    .footer-partners {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid rgba(245,240,235,0.08);
+    }
+    .footer-partner-img {
+      height: 56px;
+      width: auto;
+      border-radius: 12px;
+      opacity: 0.85;
+      transition: opacity 0.3s;
+    }
+    .footer-partner-img:hover { opacity: 1; }
+    .footer-disclaimer {
+      font-size: 12px;
+      color: rgba(245,240,235,0.3);
+      line-height: 1.7;
+      text-align: center;
+      max-width: 700px;
+      margin: 40px auto 24px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(245,240,235,0.08);
+    }
+    .footer-legal {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .footer-legal a {
+      font-size: 12px;
+      color: rgba(245,240,235,0.25);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-legal a:hover { color: rgba(245,240,235,0.5); }
+
+    /* ═══════════════════════════════════════════════════
+       RESPONSIVE — NEW BLOCKS
+    ═══════════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .about-work-grid { grid-template-columns: repeat(2, 1fr); }
+      .referral-inner { padding: 40px; gap: 40px; }
+      .referral-amount { font-size: 72px; }
+    }
+    @media (max-width: 768px) {
+      .process-timeline::before { left: 18px; }
+      .process-step-num { width: 40px; height: 40px; min-width: 40px; font-size: 16px; }
+      .process-step { gap: 16px; padding: 16px 0; }
+      .process-step-title { font-size: 18px; }
+      .about-work-grid { grid-template-columns: 1fr; }
+      .about-work-card { padding: 24px 20px; }
+      .vacancy-tabs { flex-wrap: wrap; }
+      .vacancy-panel-inner { padding: 24px; }
+      .referral-inner { flex-direction: column; padding: 32px 24px; gap: 24px; text-align: center; }
+      .referral-amount { font-size: 56px; }
+      .footer-partners { flex-direction: column; gap: 24px; }
+      .footer-legal { flex-direction: column; align-items: center; gap: 12px; }
+      .video-play-btn { width: 60px; height: 60px; }
+      .video-play-btn svg { width: 22px; height: 22px; }
+    }
+
+    /* ═══════════════════════════════════════════════════
+       LIGHTBOX
+    ═══════════════════════════════════════════════════ */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      cursor: zoom-out;
+    }
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 8px;
+      transform: scale(0.92);
+      transition: transform 0.3s ease;
+    }
+    .lightbox.active img {
+      transform: scale(1);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.2); }
+
+    /* ── Blog Section ── */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .blog-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+    }
+    .blog-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    .blog-card__img {
+      aspect-ratio: 3 / 2;
+      overflow: hidden;
+      background: var(--bg-alt);
+    }
+    .blog-card__img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .blog-card:hover .blog-card__img img {
+      transform: scale(1.04);
+    }
+
+    .blog-card__body {
+      padding: 20px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .blog-card__tag {
+      display: inline-block;
+      width: fit-content;
+      padding: 5px 14px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid var(--text);
+      border-radius: var(--radius-btn);
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .blog-card__title {
+      font-family: var(--font);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1.3;
+      color: var(--text);
+    }
+
+    .blog-card__desc {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--text-body);
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .blog-card__meta {
+      margin-top: auto;
+      padding-top: 8px;
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+    }
+
+    .blog-more { text-align: center; }
+
+    /* Skeleton */
+    .blog-card--skeleton .blog-card__img {
+      background: linear-gradient(90deg, var(--bg-alt) 25%, #e0dbd4 50%, var(--bg-alt) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+    }
+    .skel {
+      border-radius: 6px;
+      background: linear-gradient(90deg, var(--bg-alt) 25%, #e0dbd4 50%, var(--bg-alt) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+    }
+    .skel--tag { width: 80px; height: 22px; }
+    .skel--title { width: 100%; height: 20px; }
+    .skel--text { width: 90%; height: 14px; }
+    .skel--meta { width: 120px; height: 12px; margin-top: auto; }
+
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    @media (max-width: 1024px) {
+      .blog-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ═══════════════════════════════════════════════════
+       PRELOADER — Curtain
+    ═══════════════════════════════════════════════════ */
+    .preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .preloader-half {
+      position: absolute;
+      left: 0;
+      right: 0;
+      background: var(--accent);
+      transition: transform 0.9s cubic-bezier(0.76, 0, 0.24, 1);
+      will-change: transform;
+    }
+    .preloader-half--top { top: 0; bottom: 50%; }
+    .preloader-half--bot { top: 50%; bottom: 0; }
+
+    .preloader.done .preloader-half--top { transform: translateY(-100%); }
+    .preloader.done .preloader-half--bot { transform: translateY(100%); }
+
+    .preloader-logo {
+      position: relative;
+      z-index: 1;
+      color: var(--text-cream);
+      opacity: 0;
+      transform: scale(0.9);
+      animation: preloaderIn 0.6s 0.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .preloader.done .preloader-logo {
+      animation: preloaderOut 0.4s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+    }
+
+    @keyframes preloaderIn {
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes preloaderOut {
+      to { opacity: 0; transform: scale(0.85); }
+    }
+
+    .preloader-logo svg { width: 160px; height: auto; }
+    @media (max-width: 768px) {
+      .preloader-logo svg { width: 120px; }
+    }
+  </style>
+
+  <!-- Structured Data: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "YES Studio",
+    "description": "Premium NON-NUDE вебкам-студия в Москве. Работа стрим-моделью с доходом от 90 000 ₽.",
+    "url": "https://yes-studio.agency/",
+    "telephone": "+79639380267",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Москва",
+      "addressCountry": "RU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 55.6744,
+      "longitude": 37.8614
+    },
+    "openingHours": "Mo-Su 00:00-23:59",
+    "priceRange": "от 90 000 ₽/мес"
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "В чём заключается работа стрим-моделью?", "acceptedAnswer": {"@type": "Answer", "text": "Ведение онлайн-трансляции на зарубежных площадках. Ты общаешься, улыбаешься, слушаешь. По сути — оплачиваемое виртуальное общение и флирт."}},
+      {"@type": "Question", "name": "У меня нет опыта, есть ли обучение?", "acceptedAnswer": {"@type": "Answer", "text": "90% наших моделей пришли без опыта. Оплачиваемый тестовый период + персональный куратор обучит с нуля."}},
+      {"@type": "Question", "name": "Сколько я буду зарабатывать?", "acceptedAnswer": {"@type": "Answer", "text": "Старт от 90 000 ₽ в первый месяц. Средний доход — 150 000 ₽+. Потолка нет."}},
+      {"@type": "Question", "name": "Нужно ли знать английский язык?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Автоматический переводчик делает общение бесшовным. Со временем выучишь язык на практике."}},
+      {"@type": "Question", "name": "Модельная внешность обязательна?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Важна эмоция, ухоженность и харизма. Мы поможем подчеркнуть твои достоинства."}},
+      {"@type": "Question", "name": "Получится ли совмещать с основной работой?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Ты сама выбираешь время и график."}},
+      {"@type": "Question", "name": "Как происходят выплаты?", "acceptedAnswer": {"@type": "Answer", "text": "Наличными или на криптокошелёк. Ежедневно или раз в неделю — без задержек."}},
+      {"@type": "Question", "name": "Меня не увидят знакомые и жители моей страны?", "acceptedAnswer": {"@type": "Answer", "text": "Гарантируем. Строгий Гео-блок на РФ и СНГ на всех площадках."}},
+      {"@type": "Question", "name": "Что с отпусками?", "acceptedAnswer": {"@type": "Answer", "text": "Отдых каждые 3 месяца. Не спрашивая ни у кого разрешения."}},
+      {"@type": "Question", "name": "Нужно ли за что-то платить?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Фотосессии, образ, обучение — всё бесплатно. Это наши инвестиции в твой успех."}},
+      {"@type": "Question", "name": "Стриминг — это законно и безопасно?", "acceptedAnswer": {"@type": "Answer", "text": "Абсолютно. Non-Nude (общение) легально и безопасно. Мы работаем 7 лет."}},
+      {"@type": "Question", "name": "Мои личные данные в безопасности?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Никаких третьих лиц. Анкета — только для верификации возраста (18+)."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ═══════════ PRELOADER ═══════════ -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-half preloader-half--top"></div>
+    <div class="preloader-half preloader-half--bot"></div>
+    <div class="preloader-logo">
+      <svg viewBox="0 0 229 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M104.671 131.209C103.486 131.209 102.371 130.982 101.324 130.528C100.278 130.074 99.3894 129.442 98.6589 128.633C97.9481 127.823 97.4841 126.905 97.2669 125.878L99.4585 124.96C99.7744 126.204 100.436 127.181 101.443 127.892C102.45 128.603 103.526 128.958 104.671 128.958C105.895 128.958 106.932 128.583 107.781 127.833C108.63 127.063 109.054 126.066 109.054 124.842C109.054 123.993 108.808 123.292 108.314 122.739C107.82 122.186 106.952 121.614 105.708 121.021C104.128 120.251 102.924 119.629 102.094 119.155C101.285 118.662 100.604 118.06 100.051 117.349C99.5177 116.618 99.2512 115.749 99.2512 114.742C99.2512 113.775 99.5079 112.916 100.021 112.166C100.554 111.396 101.255 110.803 102.124 110.389C103.013 109.954 103.96 109.737 104.967 109.737C105.816 109.737 106.606 109.915 107.337 110.27C108.087 110.606 108.679 111.06 109.114 111.633C109.568 112.205 109.795 112.817 109.795 113.469C109.795 113.568 109.775 113.736 109.735 113.972L107.425 113.824C107.504 113.508 107.416 113.212 107.159 112.936C106.922 112.64 106.586 112.413 106.152 112.255C105.717 112.077 105.303 111.988 104.908 111.988C104.039 111.988 103.279 112.255 102.627 112.788C101.996 113.301 101.68 113.923 101.68 114.654C101.68 115.246 101.887 115.779 102.302 116.253C102.736 116.727 103.24 117.141 103.812 117.497C104.385 117.832 105.125 118.227 106.033 118.682L107.1 119.215C108.659 120.064 109.775 120.913 110.446 121.762C111.137 122.611 111.483 123.647 111.483 124.871C111.483 126.096 111.167 127.191 110.535 128.159C109.923 129.126 109.094 129.877 108.047 130.41C107.001 130.943 105.875 131.209 104.671 131.209Z" fill="currentColor"/>
+        <path d="M124.318 112.521H117.595V110.27H133.469V112.521H126.746V130.617H124.318V112.521Z" fill="currentColor"/>
+        <path d="M149.568 130.884C147.969 130.884 146.567 130.528 145.362 129.817C144.158 129.087 143.23 128.09 142.578 126.826C141.927 125.562 141.601 124.151 141.601 122.591V110.27H144.03V122.591C144.03 123.815 144.266 124.891 144.74 125.819C145.214 126.747 145.866 127.468 146.695 127.981C147.544 128.475 148.521 128.722 149.627 128.722C151.325 128.722 152.678 128.159 153.685 127.033C154.711 125.908 155.225 124.427 155.225 122.591V110.27H157.653V122.591C157.653 124.23 157.308 125.681 156.617 126.945C155.926 128.188 154.968 129.156 153.744 129.847C152.52 130.538 151.128 130.884 149.568 130.884Z" fill="currentColor"/>
+        <path d="M175.603 110.122C177.439 110.241 179.068 110.754 180.489 111.662C181.931 112.571 183.046 113.795 183.836 115.335C184.626 116.855 185.021 118.563 185.021 120.459C185.021 122.472 184.576 124.269 183.688 125.849C182.819 127.428 181.605 128.662 180.045 129.551C178.485 130.439 176.708 130.884 174.714 130.884H173.233C173.075 130.884 172.73 130.884 172.197 130.884C171.663 130.884 170.716 130.824 169.353 130.706L167.695 130.558V110.093L175.603 110.122ZM173.766 128.662C176.609 128.662 178.791 127.961 180.312 126.56C181.832 125.158 182.592 123.154 182.592 120.547C182.592 118.099 181.94 116.154 180.637 114.713C179.354 113.272 177.567 112.492 175.277 112.373H170.123V128.514C171.466 128.613 172.68 128.662 173.766 128.662Z" fill="currentColor"/>
+        <path d="M194.212 110.27H196.641V130.617H194.212V110.27Z" fill="currentColor"/>
+        <path d="M216.139 131.239C214.185 131.219 212.427 130.765 210.868 129.877C209.328 128.968 208.113 127.744 207.225 126.204C206.356 124.644 205.922 122.887 205.922 120.932V120.073C205.922 118.198 206.366 116.48 207.254 114.92C208.163 113.341 209.387 112.097 210.927 111.188C212.487 110.261 214.185 109.797 216.021 109.797C217.877 109.797 219.575 110.261 221.115 111.188C222.655 112.097 223.879 113.341 224.787 114.92C225.696 116.48 226.15 118.198 226.15 120.073V120.932C226.15 122.887 225.706 124.654 224.817 126.234C223.948 127.813 222.754 129.047 221.233 129.936C219.713 130.824 218.015 131.259 216.139 131.239ZM216.051 128.988C217.492 128.988 218.795 128.643 219.96 127.952C221.125 127.241 222.043 126.273 222.714 125.049C223.386 123.825 223.721 122.453 223.721 120.932V120.073C223.721 118.632 223.376 117.299 222.685 116.075C221.994 114.831 221.056 113.854 219.871 113.143C218.706 112.413 217.413 112.047 215.991 112.047C214.589 112.047 213.306 112.413 212.141 113.143C210.976 113.854 210.048 114.831 209.357 116.075C208.686 117.299 208.35 118.632 208.35 120.073V120.932C208.35 122.453 208.686 123.825 209.357 125.049C210.028 126.273 210.947 127.241 212.112 127.952C213.296 128.643 214.609 128.988 216.051 128.988Z" fill="currentColor"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M77.5119 0.393725C66.7597 2.18901 56.4509 5.67982 44.258 11.6551C28.0646 19.5911 16.0176 29.3856 11.5155 38.2756C6.936 47.3181 9.28037 56.3366 17.221 60.2248C21.4417 62.2915 29.3303 62.7221 33.1171 61.0923L34.6975 60.4122L31.0828 59.6628C24.2508 58.2462 18.7353 54.6456 16.5247 50.158C15.0873 47.2408 15.168 42.0391 16.7014 38.7669C18.7801 34.3313 23.8098 28.9184 30.5407 23.8734C42.2112 15.1264 62.2642 6.0951 74.3835 4.12772C86.4459 2.16949 89.9978 4.96032 85.6183 12.9554C83.3708 17.0576 81.3884 19.7407 71.5669 31.9744C62.2118 43.6265 57.2187 50.5778 53.7932 56.7165C51.0547 61.6243 50.0924 64.1766 49.35 68.5016C48.5536 73.1422 49.678 76.1109 53.1659 78.578C54.7991 79.7331 55.1948 79.8246 58.5306 79.8208C64.1617 79.8146 68.7108 77.9399 77.4271 72.034C85.9575 66.2533 98.9899 53.8155 109.73 41.2048C113.212 37.1159 113.671 36.5476 117.142 32.023C118.133 30.7299 119.049 29.7755 119.175 29.9019C119.302 30.0287 119.219 30.3703 118.992 30.6617C118.764 30.9531 117.267 33.7165 115.665 36.8029C109.835 48.0302 96.3801 71.6545 89.6815 82.4229L86.7726 87.0992L84.2204 87.1001C81.5792 87.1013 71.6891 88.0125 65.873 88.791C42.2799 91.9485 19.7092 101.41 8.17427 112.978C1.12696 120.046 -1.47433 127.434 0.802725 133.913C2.01275 137.355 4.06659 139.601 7.59025 141.335C12.9865 143.99 18.4842 144.606 26.2905 143.429C38.5578 141.58 50.7446 135.733 63.3644 125.643C72.5005 118.338 85.2334 104.267 92.5056 93.4382L94.5295 90.4246H104.314C121.212 90.4246 136.322 92.0208 161.062 96.419C165.634 97.2317 169.843 98.0202 170.415 98.1711C170.986 98.3216 171.338 98.3174 171.196 98.1611C170.865 97.7949 155.625 93.7105 148.602 92.1052C135.89 89.2001 121.049 87.3927 105.466 86.8511C100.95 86.6944 97.2562 86.4936 97.2562 86.4051C97.2562 86.3166 99.145 83.1292 101.454 79.322C105.403 72.8093 110.993 62.952 116.375 53.0141C119.202 47.7941 124.953 37.2813 129.679 28.6973C133.386 21.9638 138.318 13.356 140.422 9.94587C142.578 6.45298 142.044 2.29752 139.253 0.854304C136.502 -0.568128 135.26 0.108167 132.983 4.26863C126.116 16.8195 111 36.3012 97.3053 50.2511C83.2435 64.5752 68.6127 74.9446 61.3006 75.7697C60.0299 75.9131 59.3686 75.7448 58.4948 75.0552C57.5047 74.2737 57.3517 73.8576 57.3517 71.948C57.3517 66.6203 62.6009 57.7864 75.7295 41.019C86.4243 27.3605 90.3387 21.8399 92.7197 17.0585C95.1838 12.1103 95.9294 8.78658 95.187 6.0581C94.5593 3.75029 92.2159 1.32193 89.9725 0.654358C87.4506 -0.0955157 81.2246 -0.226043 77.5119 0.393725ZM30.7486 138.298C48.2767 133.32 66.3947 117.976 82.1021 94.8091L84.7932 90.8403L81.3606 90.9068C76.9087 90.9932 76.417 91.0506 67.3279 92.5479C40.3063 96.9989 21.9871 104.512 10.7664 115.746C7.60315 118.913 6.45297 120.407 5.15482 123.033C3.75733 125.862 3.52206 126.729 3.52206 129.061C3.52206 133.82 6.21064 136.927 12.0434 138.906C13.8549 139.521 15.5379 139.679 20.1489 139.669C25.4467 139.658 26.3969 139.535 30.7486 138.298Z" fill="currentColor"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M168.469 44.7771C170.279 42.8904 171.947 41.919 174.605 41.204C177.237 40.4965 180.726 40.376 182.213 40.9409C182.787 41.1595 183.576 41.8259 183.967 42.4215C184.628 43.4312 184.63 43.6029 183.995 44.9342C183.368 46.249 182.972 46.5371 182.168 46.2594C182.003 46.202 181.924 45.7249 181.993 45.1982C182.285 42.9681 179.536 42.2964 177.029 43.9857C173.614 46.2869 172.892 50.5658 174.769 57.3816C175.336 59.4375 175.918 62.166 176.063 63.4446L176.327 65.7694L178.462 65.3849C183.417 64.4925 187.82 62.4216 191.742 59.1407C193.309 57.8297 193.848 57.5786 194.236 57.9776C194.622 58.3742 194.294 58.8855 192.743 60.2992C189.553 63.2064 183.538 66.1165 178.624 67.1291C176.73 67.5194 176.234 67.785 176.234 68.4077C176.234 68.8404 175.853 70.2126 175.387 71.4571C173.855 75.5527 169.004 78.9305 162.819 80.2082C159.088 80.9785 157.473 81.0217 154.693 80.4256C151.786 79.8021 150.724 78.6994 151.007 76.5944C151.469 73.1489 156.701 69.695 164.249 67.8528L167.992 66.9391L167.735 65.2764C167.517 63.8644 166.043 57.1687 165.616 55.6478C165.541 55.3818 162.241 58.3808 158.283 62.3127C148.688 71.8432 143.105 75.7156 135.111 78.3863C131.727 79.517 130.732 79.6762 127.836 79.5486C118.409 79.1333 115.325 72.3146 120.065 62.3667C125.05 51.9055 137.874 42.4556 147.861 41.8832C153.076 41.5843 155.45 43.0163 155.45 46.4606C155.45 50.5467 151.812 54.3746 144.509 57.971C139.42 60.4767 133.125 62.5746 130.693 62.5746C129.476 62.5746 129.29 62.7824 127.988 65.5882C125.346 71.2821 126.259 75.0838 130.418 75.7073C134.696 76.3487 142.357 73.5999 147.701 69.5059C156.313 62.9079 165.426 53.8134 165.426 51.8174C165.426 49.9186 166.975 46.3347 168.469 44.7771ZM151.29 45.3196C152.861 47.213 149.452 51.8718 143.903 55.4142C139.296 58.3551 131.255 61.7956 130.576 61.116C130.254 60.7947 133.285 57.1359 137.073 53.2735C143.73 46.486 149.554 43.2279 151.29 45.3196ZM161.062 77.9112C164.365 77.0088 167.222 73.8447 167.758 70.494C167.906 69.5674 167.863 68.8221 167.662 68.8371C166.58 68.9186 160.729 70.9375 158.923 71.8524C156.762 72.9477 154.203 75.4617 154.203 76.4905C154.203 78.1332 157.642 78.8457 161.062 77.9112Z" fill="currentColor"/>
+        <path d="M211.604 24.02L212.999 11.62L214.394 24.02C214.185 24.392 213.791 24.3114 213.931 23.9239L219.137 20.362L215.575 25.5684C215.188 25.7079 215.107 25.3142 215.479 25.105L227.879 26.5L215.479 27.895C215.107 27.6857 215.188 27.292 215.575 27.4315L219.137 32.638L213.931 29.0761C213.791 28.6886 214.185 28.608 214.394 28.98L212.999 41.38L211.604 28.98C211.813 28.608 212.207 28.6886 212.067 29.0761L206.861 32.638L210.423 27.4315C210.81 27.292 210.891 27.6857 210.519 27.895L198.119 26.5L210.519 25.105C210.891 25.3142 210.81 25.7079 210.423 25.5684L206.861 20.362L212.067 23.9239C212.207 24.3114 211.813 24.392 211.604 24.02Z" fill="currentColor"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ═══════════ HEADER ═══════════ -->
+  <header class="header header--transparent" id="header">
+    <div class="header-left">
+      <a href="#" class="header-logo">
+        <svg class="logo-svg" viewBox="0 0 229 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M104.671 131.209C103.486 131.209 102.371 130.982 101.324 130.528C100.278 130.074 99.3894 129.442 98.6589 128.633C97.9481 127.823 97.4841 126.905 97.2669 125.878L99.4585 124.96C99.7744 126.204 100.436 127.181 101.443 127.892C102.45 128.603 103.526 128.958 104.671 128.958C105.895 128.958 106.932 128.583 107.781 127.833C108.63 127.063 109.054 126.066 109.054 124.842C109.054 123.993 108.808 123.292 108.314 122.739C107.82 122.186 106.952 121.614 105.708 121.021C104.128 120.251 102.924 119.629 102.094 119.155C101.285 118.662 100.604 118.06 100.051 117.349C99.5177 116.618 99.2512 115.749 99.2512 114.742C99.2512 113.775 99.5079 112.916 100.021 112.166C100.554 111.396 101.255 110.803 102.124 110.389C103.013 109.954 103.96 109.737 104.967 109.737C105.816 109.737 106.606 109.915 107.337 110.27C108.087 110.606 108.679 111.06 109.114 111.633C109.568 112.205 109.795 112.817 109.795 113.469C109.795 113.568 109.775 113.736 109.735 113.972L107.425 113.824C107.504 113.508 107.416 113.212 107.159 112.936C106.922 112.64 106.586 112.413 106.152 112.255C105.717 112.077 105.303 111.988 104.908 111.988C104.039 111.988 103.279 112.255 102.627 112.788C101.996 113.301 101.68 113.923 101.68 114.654C101.68 115.246 101.887 115.779 102.302 116.253C102.736 116.727 103.24 117.141 103.812 117.497C104.385 117.832 105.125 118.227 106.033 118.682L107.1 119.215C108.659 120.064 109.775 120.913 110.446 121.762C111.137 122.611 111.483 123.647 111.483 124.871C111.483 126.096 111.167 127.191 110.535 128.159C109.923 129.126 109.094 129.877 108.047 130.41C107.001 130.943 105.875 131.209 104.671 131.209Z" fill="currentColor"/>
+          <path d="M124.318 112.521H117.595V110.27H133.469V112.521H126.746V130.617H124.318V112.521Z" fill="currentColor"/>
+          <path d="M149.568 130.884C147.969 130.884 146.567 130.528 145.362 129.817C144.158 129.087 143.23 128.09 142.578 126.826C141.927 125.562 141.601 124.151 141.601 122.591V110.27H144.03V122.591C144.03 123.815 144.266 124.891 144.74 125.819C145.214 126.747 145.866 127.468 146.695 127.981C147.544 128.475 148.521 128.722 149.627 128.722C151.325 128.722 152.678 128.159 153.685 127.033C154.711 125.908 155.225 124.427 155.225 122.591V110.27H157.653V122.591C157.653 124.23 157.308 125.681 156.617 126.945C155.926 128.188 154.968 129.156 153.744 129.847C152.52 130.538 151.128 130.884 149.568 130.884Z" fill="currentColor"/>
+          <path d="M175.603 110.122C177.439 110.241 179.068 110.754 180.489 111.662C181.931 112.571 183.046 113.795 183.836 115.335C184.626 116.855 185.021 118.563 185.021 120.459C185.021 122.472 184.576 124.269 183.688 125.849C182.819 127.428 181.605 128.662 180.045 129.551C178.485 130.439 176.708 130.884 174.714 130.884H173.233C173.075 130.884 172.73 130.884 172.197 130.884C171.663 130.884 170.716 130.824 169.353 130.706L167.695 130.558V110.093L175.603 110.122ZM173.766 128.662C176.609 128.662 178.791 127.961 180.312 126.56C181.832 125.158 182.592 123.154 182.592 120.547C182.592 118.099 181.94 116.154 180.637 114.713C179.354 113.272 177.567 112.492 175.277 112.373H170.123V128.514C171.466 128.613 172.68 128.662 173.766 128.662Z" fill="currentColor"/>
+          <path d="M194.212 110.27H196.641V130.617H194.212V110.27Z" fill="currentColor"/>
+          <path d="M216.139 131.239C214.185 131.219 212.427 130.765 210.868 129.877C209.328 128.968 208.113 127.744 207.225 126.204C206.356 124.644 205.922 122.887 205.922 120.932V120.073C205.922 118.198 206.366 116.48 207.254 114.92C208.163 113.341 209.387 112.097 210.927 111.188C212.487 110.261 214.185 109.797 216.021 109.797C217.877 109.797 219.575 110.261 221.115 111.188C222.655 112.097 223.879 113.341 224.787 114.92C225.696 116.48 226.15 118.198 226.15 120.073V120.932C226.15 122.887 225.706 124.654 224.817 126.234C223.948 127.813 222.754 129.047 221.233 129.936C219.713 130.824 218.015 131.259 216.139 131.239ZM216.051 128.988C217.492 128.988 218.795 128.643 219.96 127.952C221.125 127.241 222.043 126.273 222.714 125.049C223.386 123.825 223.721 122.453 223.721 120.932V120.073C223.721 118.632 223.376 117.299 222.685 116.075C221.994 114.831 221.056 113.854 219.871 113.143C218.706 112.413 217.413 112.047 215.991 112.047C214.589 112.047 213.306 112.413 212.141 113.143C210.976 113.854 210.048 114.831 209.357 116.075C208.686 117.299 208.35 118.632 208.35 120.073V120.932C208.35 122.453 208.686 123.825 209.357 125.049C210.028 126.273 210.947 127.241 212.112 127.952C213.296 128.643 214.609 128.988 216.051 128.988Z" fill="currentColor"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M77.5119 0.393725C66.7597 2.18901 56.4509 5.67982 44.258 11.6551C28.0646 19.5911 16.0176 29.3856 11.5155 38.2756C6.936 47.3181 9.28037 56.3366 17.221 60.2248C21.4417 62.2915 29.3303 62.7221 33.1171 61.0923L34.6975 60.4122L31.0828 59.6628C24.2508 58.2462 18.7353 54.6456 16.5247 50.158C15.0873 47.2408 15.168 42.0391 16.7014 38.7669C18.7801 34.3313 23.8098 28.9184 30.5407 23.8734C42.2112 15.1264 62.2642 6.0951 74.3835 4.12772C86.4459 2.16949 89.9978 4.96032 85.6183 12.9554C83.3708 17.0576 81.3884 19.7407 71.5669 31.9744C62.2118 43.6265 57.2187 50.5778 53.7932 56.7165C51.0547 61.6243 50.0924 64.1766 49.35 68.5016C48.5536 73.1422 49.678 76.1109 53.1659 78.578C54.7991 79.7331 55.1948 79.8246 58.5306 79.8208C64.1617 79.8146 68.7108 77.9399 77.4271 72.034C85.9575 66.2533 98.9899 53.8155 109.73 41.2048C113.212 37.1159 113.671 36.5476 117.142 32.023C118.133 30.7299 119.049 29.7755 119.175 29.9019C119.302 30.0287 119.219 30.3703 118.992 30.6617C118.764 30.9531 117.267 33.7165 115.665 36.8029C109.835 48.0302 96.3801 71.6545 89.6815 82.4229L86.7726 87.0992L84.2204 87.1001C81.5792 87.1013 71.6891 88.0125 65.873 88.791C42.2799 91.9485 19.7092 101.41 8.17427 112.978C1.12696 120.046 -1.47433 127.434 0.802725 133.913C2.01275 137.355 4.06659 139.601 7.59025 141.335C12.9865 143.99 18.4842 144.606 26.2905 143.429C38.5578 141.58 50.7446 135.733 63.3644 125.643C72.5005 118.338 85.2334 104.267 92.5056 93.4382L94.5295 90.4246H104.314C121.212 90.4246 136.322 92.0208 161.062 96.419C165.634 97.2317 169.843 98.0202 170.415 98.1711C170.986 98.3216 171.338 98.3174 171.196 98.1611C170.865 97.7949 155.625 93.7105 148.602 92.1052C135.89 89.2001 121.049 87.3927 105.466 86.8511C100.95 86.6944 97.2562 86.4936 97.2562 86.4051C97.2562 86.3166 99.145 83.1292 101.454 79.322C105.403 72.8093 110.993 62.952 116.375 53.0141C119.202 47.7941 124.953 37.2813 129.679 28.6973C133.386 21.9638 138.318 13.356 140.422 9.94587C142.578 6.45298 142.044 2.29752 139.253 0.854304C136.502 -0.568128 135.26 0.108167 132.983 4.26863C126.116 16.8195 111 36.3012 97.3053 50.2511C83.2435 64.5752 68.6127 74.9446 61.3006 75.7697C60.0299 75.9131 59.3686 75.7448 58.4948 75.0552C57.5047 74.2737 57.3517 73.8576 57.3517 71.948C57.3517 66.6203 62.6009 57.7864 75.7295 41.019C86.4243 27.3605 90.3387 21.8399 92.7197 17.0585C95.1838 12.1103 95.9294 8.78658 95.187 6.0581C94.5593 3.75029 92.2159 1.32193 89.9725 0.654358C87.4506 -0.0955157 81.2246 -0.226043 77.5119 0.393725ZM30.7486 138.298C48.2767 133.32 66.3947 117.976 82.1021 94.8091L84.7932 90.8403L81.3606 90.9068C76.9087 90.9932 76.417 91.0506 67.3279 92.5479C40.3063 96.9989 21.9871 104.512 10.7664 115.746C7.60315 118.913 6.45297 120.407 5.15482 123.033C3.75733 125.862 3.52206 126.729 3.52206 129.061C3.52206 133.82 6.21064 136.927 12.0434 138.906C13.8549 139.521 15.5379 139.679 20.1489 139.669C25.4467 139.658 26.3969 139.535 30.7486 138.298Z" fill="currentColor"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M168.469 44.7771C170.279 42.8904 171.947 41.919 174.605 41.204C177.237 40.4965 180.726 40.376 182.213 40.9409C182.787 41.1595 183.576 41.8259 183.967 42.4215C184.628 43.4312 184.63 43.6029 183.995 44.9342C183.368 46.249 182.972 46.5371 182.168 46.2594C182.003 46.202 181.924 45.7249 181.993 45.1982C182.285 42.9681 179.536 42.2964 177.029 43.9857C173.614 46.2869 172.892 50.5658 174.769 57.3816C175.336 59.4375 175.918 62.166 176.063 63.4446L176.327 65.7694L178.462 65.3849C183.417 64.4925 187.82 62.4216 191.742 59.1407C193.309 57.8297 193.848 57.5786 194.236 57.9776C194.622 58.3742 194.294 58.8855 192.743 60.2992C189.553 63.2064 183.538 66.1165 178.624 67.1291C176.73 67.5194 176.234 67.785 176.234 68.4077C176.234 68.8404 175.853 70.2126 175.387 71.4571C173.855 75.5527 169.004 78.9305 162.819 80.2082C159.088 80.9785 157.473 81.0217 154.693 80.4256C151.786 79.8021 150.724 78.6994 151.007 76.5944C151.469 73.1489 156.701 69.695 164.249 67.8528L167.992 66.9391L167.735 65.2764C167.517 63.8644 166.043 57.1687 165.616 55.6478C165.541 55.3818 162.241 58.3808 158.283 62.3127C148.688 71.8432 143.105 75.7156 135.111 78.3863C131.727 79.517 130.732 79.6762 127.836 79.5486C118.409 79.1333 115.325 72.3146 120.065 62.3667C125.05 51.9055 137.874 42.4556 147.861 41.8832C153.076 41.5843 155.45 43.0163 155.45 46.4606C155.45 50.5467 151.812 54.3746 144.509 57.971C139.42 60.4767 133.125 62.5746 130.693 62.5746C129.476 62.5746 129.29 62.7824 127.988 65.5882C125.346 71.2821 126.259 75.0838 130.418 75.7073C134.696 76.3487 142.357 73.5999 147.701 69.5059C156.313 62.9079 165.426 53.8134 165.426 51.8174C165.426 49.9186 166.975 46.3347 168.469 44.7771ZM151.29 45.3196C152.861 47.213 149.452 51.8718 143.903 55.4142C139.296 58.3551 131.255 61.7956 130.576 61.116C130.254 60.7947 133.285 57.1359 137.073 53.2735C143.73 46.486 149.554 43.2279 151.29 45.3196ZM161.062 77.9112C164.365 77.0088 167.222 73.8447 167.758 70.494C167.906 69.5674 167.863 68.8221 167.662 68.8371C166.58 68.9186 160.729 70.9375 158.923 71.8524C156.762 72.9477 154.203 75.4617 154.203 76.4905C154.203 78.1332 157.642 78.8457 161.062 77.9112Z" fill="currentColor"/>
+          <path d="M211.604 24.02L212.999 11.62L214.394 24.02C214.185 24.392 213.791 24.3114 213.931 23.9239L219.137 20.362L215.575 25.5684C215.188 25.7079 215.107 25.3142 215.479 25.105L227.879 26.5L215.479 27.895C215.107 27.6857 215.188 27.292 215.575 27.4315L219.137 32.638L213.931 29.0761C213.791 28.6886 214.185 28.608 214.394 28.98L212.999 41.38L211.604 28.98C211.813 28.608 212.207 28.6886 212.067 29.0761L206.861 32.638L210.423 27.4315C210.81 27.292 210.891 27.6857 210.519 27.895L198.119 26.5L210.519 25.105C210.891 25.3142 210.81 25.7079 210.423 25.5684L206.861 20.362L212.067 23.9239C212.207 24.3114 211.813 24.392 211.604 24.02Z" fill="currentColor"/>
+        </svg>
+      </a>
+    </div>
+    <div class="header-right">
+      <div class="header-meta">
+        <span class="header-metro"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 12h3v8h4v-6h6v6h4v-8h3L12 2z"/></svg>Москва, м. Красносельская</span>
+        <a href="tel:+79639380267" class="header-phone"><span class="pulse-dot"></span>+7 (963) 938-02-67</a>
+        <a href="https://t.me/studio_yes" target="_blank" class="header-tg"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.06-.49-.83-.27-1.49-.42-1.43-.88.03-.24.37-.49 1.02-.75 3.98-1.73 6.64-2.88 7.97-3.44 3.8-1.58 4.59-1.86 5.1-1.87.11 0 .37.03.54.17.14.12.18.28.2.47-.01.06.01.24 0 .37z"/></svg></a>
+      </div>
+      <div class="burger" id="burgerBtn">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Fullscreen nav overlay -->
+  <div class="nav-overlay" id="navOverlay">
+    <div class="nav-overlay-close" id="navClose">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </div>
+    <div class="nav-content">
+      <nav class="nav-links">
+        <a href="#hook">Твоя история</a>
+        <a href="#diversity">Для&#160;всех</a>
+        <a href="#services">Почему мы</a>
+        <a href="#calc">Калькулятор</a>
+        <a href="#stories">Истории</a>
+        <a href="#studio">Студия</a>
+        <a href="#requirements">Требования</a>
+        <a href="#faq">FAQ</a>
+        <a href="/blog/">Блог</a>
+        <a href="https://t.me/studio_yes" target="_blank">Контакты</a>
+      </nav>
+      <div class="nav-metro">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2L2 12h3v8h4v-6h6v6h4v-8h3L12 2z"/></svg>
+        Москва, м. Красносельская
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════
+       BLOCK 1 — HERO
+       Центральная композиция, бордовый шёлковый фон
+  ═══════════════════════════════════════════════════ -->
+  <main>
+  <section class="hero" id="hero">
+    <!-- Фото-фон с текстурой -->
+    <div class="hero-bg"></div>
+
+    <div class="hero-inner">
+      <div class="hero-badge hero-enter hero-enter-1">
+        <span class="hero-badge-dot"></span>
+        NON-NUDE студия
+      </div>
+
+      <h1 class="hero-title hero-enter hero-enter-2">Stream<br>Model Agency</h1>
+
+      <div class="hero-divider hero-enter hero-enter-3"></div>
+
+      <p class="hero-sub hero-enter hero-enter-4">
+        Единственная NON-NUDE студия в&#160;Москве, где зарабатывают
+        <strong>на&#160;общении от 90 000 ₽</strong> уже в&#160;первый месяц.
+      </p>
+
+      <div class="hero-ctas hero-enter hero-enter-5">
+        <a href="https://t.me/studio_yes" target="_blank" class="btn btn--cream">Начать зарабатывать <span class="btn-dot"></span></a>
+        <a href="#calc" class="btn btn--ghost-light">Рассчитать доход</a>
+      </div>
+
+      <div class="hero-stats hero-enter hero-enter-6">
+        <div class="hero-stat">
+          <div class="hero-stat-num"><span class="counter" data-target="7">0</span> <span class="sfx">лет</span></div>
+          <div class="hero-stat-label">на&#160;рынке</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num"><span class="counter" data-target="150" data-suffix=" 000 ₽+">0</span></div>
+          <div class="hero-stat-label">средний доход</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num"><span class="counter" data-target="527" data-suffix="+">0</span></div>
+          <div class="hero-stat-label">выбрали нас</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" style="font-size: 22px; letter-spacing: 0.02em;">Ежедневно</div>
+          <div class="hero-stat-label">выплаты</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       НОВЫЙ БЛОК — ЭМОЦИОНАЛЬНЫЙ ХУК
+  ═══════════════════════════════════════════════════ -->
+  <section class="section section--alt hook-section" id="hook">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="h2 split-text">
+          <span class="h-accent">Скорее всего ты здесь,</span><br>
+          потому что хочешь круто <br>изменить свою жизнь!
+        </h2>
+      </div>
+
+      <div class="pain-grid">
+        <div class="pain-card reveal reveal-delay-1">
+          <div class="pain-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18"/><path d="M8 6h10v10"/><circle cx="12" cy="12" r="10" opacity="0.3"/></svg></div>
+          <div class="pain-card-body">
+            <div class="pain-card-title">Финансовая зависимость</div>
+            <p class="pain-card-text">Устала финансово зависеть от&#160;парня или родителей и&#160;не чувствуешь себя свободной</p>
+          </div>
+        </div>
+
+        <div class="pain-card reveal reveal-delay-2">
+          <div class="pain-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 16l4-4 3 3 6-8"/></svg></div>
+          <div class="pain-card-body">
+            <div class="pain-card-title">Долги и&#160;кредиты</div>
+            <p class="pain-card-text">У&#160;тебя есть финансовая задолженность, которая не&#160;дает спокойно жить</p>
+          </div>
+        </div>
+
+        <div class="pain-card reveal reveal-delay-3">
+          <div class="pain-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+          <div class="pain-card-body">
+            <div class="pain-card-title">Контроль родителей</div>
+            <p class="pain-card-text">Сложные отношения с&#160;родителями, которые контролируют каждый твой шаг</p>
+          </div>
+        </div>
+
+        <div class="pain-card reveal reveal-delay-4">
+          <div class="pain-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-6.22-8.57"/><path d="M21 3v5h-5"/></svg></div>
+          <div class="pain-card-body">
+            <div class="pain-card-title">Замкнутый круг</div>
+            <p class="pain-card-text">Вся зарплата уходит на&#160;долги, потом снова занимаешь — и&#160;так по&#160;кругу</p>
+          </div>
+        </div>
+
+        <div class="pain-card reveal reveal-delay-5">
+          <div class="pain-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 00-2 2v3"/><path d="M21 8V5a2 2 0 00-2-2h-3"/><path d="M3 16v3a2 2 0 002 2h3"/><path d="M16 21h3a2 2 0 002-2v-3"/><path d="M15 9l-6 6"/><path d="M9 9h.01"/><path d="M15 15h.01"/></svg></div>
+          <div class="pain-card-body">
+            <div class="pain-card-title">Не&#160;устраивает студия</div>
+            <p class="pain-card-text">Уже работаешь моделью, но&#160;условия, процент или отношение в&#160;текущей студии — не&#160;то, чего ты заслуживаешь</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="hook-text reveal">
+        Если ты узнала себя — мы те, кто поможет и&#160;проведёт к&#160;новой классной жизни за&#160;руку
+      </p>
+
+      <div class="section-cta reveal">
+        <a href="https://t.me/studio_yes" target="_blank" class="btn btn--accent">Хочу узнать больше <span class="btn-dot"></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       BLOCK 6 — SOCIAL PROOF (Истории моделей)
+  ═══════════════════════════════════════════════════ -->
+  <section class="section section--alt section--textured" id="stories">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label label--accent">реальные истории</div>
+        <h2 class="h2 split-text">
+          <span class="h-accent">Они были</span><br>
+          на&#160;твоём месте
+        </h2>
+        <p class="section-lead">
+          Истории наших моделей, которые изменили свою жизнь с&#160;помощью YES Studio
+        </p>
+      </div>
+
+      <div class="stories-grid">
+        <!-- Дарья -->
+        <div class="story-card reveal reveal-delay-1">
+          <div class="story-photo">
+            <img src="public/photos/lifestyle-1.png" alt="Дарья">
+          </div>
+          <div class="story-body">
+            <div class="story-name">Дарья, 24 года</div>
+            <div class="story-before-after">
+              <div class="story-ba-item story-ba-before">
+                <span class="story-ba-label">Было</span>
+                Долг 400 000 ₽, зависимость от&#160;парня
+              </div>
+              <div class="story-ba-item story-ba-after">
+                <span class="story-ba-label">Стало</span>
+                Доход 200 000+ ₽/мес, путешествия, свобода
+              </div>
+            </div>
+            <div class="story-expandable" data-expanded="false">
+              <div class="story-full-text">
+                «Я взяла кредит на&#160;своего парня, думала, что он вернёт. Не&#160;вернул. Осталась с&#160;долгом в 400 тысяч и&#160;без поддержки. Было страшно и&#160;обидно. В YES я пришла из&#160;отчаяния. Первые две недели казались сложными, но&#160;куратор поддерживала каждый день. <strong>За 4 месяца я полностью закрыла кредит</strong> и&#160;поняла, что могу полагаться только на&#160;себя. Теперь мой доход 200 000+ в&#160;месяц, я путешествую и&#160;живу для&#160;себя».
+              </div>
+              <button class="story-toggle" onclick="toggleStory(this)">Читать историю</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Алина -->
+        <div class="story-card reveal reveal-delay-2">
+          <div class="story-photo">
+            <img src="public/photos/lifestyle-2.png" alt="Алина">
+          </div>
+          <div class="story-body">
+            <div class="story-name">Алина, 21 год</div>
+            <div class="story-before-after">
+              <div class="story-ba-item story-ba-before">
+                <span class="story-ba-label">Было</span>
+                Родители контролировали каждый шаг, ноль своих денег
+              </div>
+              <div class="story-ba-item story-ba-after">
+                <span class="story-ba-label">Стало</span>
+                Своя квартира, 120 000 ₽ в&#160;первый месяц
+              </div>
+            </div>
+            <div class="story-expandable" data-expanded="false">
+              <div class="story-full-text">
+                «Я жила с&#160;родителями, которые контролировали абсолютно всё: куда иду, с&#160;кем общаюсь, сколько трачу. Своих денег не&#160;было, я чувствовала себя как в&#160;клетке. Работу в&#160;студии нашла случайно. Сначала боялась сказать родителям, но&#160;когда <strong>через месяц принесла домой 120 тысяч</strong>, их отношение изменилось. Сейчас я снимаю свою квартиру, финансово независима и&#160;сама решаю, как жить».
+              </div>
+              <button class="story-toggle" onclick="toggleStory(this)">Читать историю</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Кристина -->
+        <div class="story-card reveal reveal-delay-3">
+          <div class="story-photo">
+            <img src="public/photos/desert-vibe.jpg" alt="Кристина">
+          </div>
+          <div class="story-body">
+            <div class="story-name">Кристина, 26 лет</div>
+            <div class="story-before-after">
+              <div class="story-ba-item story-ba-before">
+                <span class="story-ba-label">Было</span>
+                Зарплата 45 000 ₽, всё уходило на&#160;долги
+              </div>
+              <div class="story-ba-item story-ba-after">
+                <span class="story-ba-label">Стало</span>
+                180–250 000 ₽/мес, все долги закрыты за&#160;полгода
+              </div>
+            </div>
+            <div class="story-expandable" data-expanded="false">
+              <div class="story-full-text">
+                «Я работала администратором за 45 тысяч. Из&#160;них 30 уходило на&#160;кредиты и&#160;долги знакомым. Потом снова занимала — замкнутый круг. В YES я начала зарабатывать с&#160;первой недели. <strong>За&#160;полгода закрыла все долги</strong> — это была лучшая победа в&#160;моей жизни. Теперь зарабатываю 180-250 тысяч, откладываю и&#160;впервые чувствую, что контролирую свою жизнь».
+              </div>
+              <button class="story-toggle" onclick="toggleStory(this)">Читать историю</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Виктория -->
+        <div class="story-card reveal reveal-delay-4">
+          <div class="story-photo">
+            <img src="public/photos/model-2.jpg" alt="Виктория">
+          </div>
+          <div class="story-body">
+            <div class="story-name">Виктория, 23 года</div>
+            <div class="story-before-after">
+              <div class="story-ba-item story-ba-before">
+                <span class="story-ba-label">Было</span>
+                Финансовая зависимость от&#160;парня, токсичные отношения
+              </div>
+              <div class="story-ba-item story-ba-after">
+                <span class="story-ba-label">Стало</span>
+                150–200 000 ₽/мес, независимость, своя жизнь
+              </div>
+            </div>
+            <div class="story-expandable" data-expanded="false">
+              <div class="story-full-text">
+                «Я не&#160;работала, зависела от&#160;парня финансово. Каждая покупка — это просьба и&#160;объяснения. Отношения были токсичными, но&#160;уйти было некуда. Студия стала моим спасением. Уже <strong>в&#160;первый месяц заработала 95 тысяч</strong> и&#160;съехала от&#160;него. Сейчас мой доход стабильно 150-200 тысяч, я независима и&#160;счастлива. Это было лучшее решение в&#160;моей жизни».
+              </div>
+              <button class="story-toggle" onclick="toggleStory(this)">Читать историю</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-cta reveal" style="margin-top: 56px;">
+        <a href="https://t.me/studio_yes" target="_blank" class="btn btn--dark">Я тоже хочу изменить свою жизнь <span class="btn-dot"></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ MARQUEE TICKER ═══════════ -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>YES STUDIO</span><span class="marquee-dot"></span>
+      <span>PREMIUM</span><span class="marquee-dot"></span>
+      <span>МОСКВА</span><span class="marquee-dot"></span>
+      <span>NON-NUDE</span><span class="marquee-dot"></span>
+      <span>ЕЖЕДНЕВНЫЕ ВЫПЛАТЫ</span><span class="marquee-dot"></span>
+      <span>527+ МОДЕЛЕЙ</span><span class="marquee-dot"></span>
+      <span>ОБУЧЕНИЕ</span><span class="marquee-dot"></span>
+      <span>ПОДДЕРЖКА 24/7</span><span class="marquee-dot"></span>
+      <span>YES STUDIO</span><span class="marquee-dot"></span>
+      <span>PREMIUM</span><span class="marquee-dot"></span>
+      <span>МОСКВА</span><span class="marquee-dot"></span>
+      <span>NON-NUDE</span><span class="marquee-dot"></span>
+      <span>ЕЖЕДНЕВНЫЕ ВЫПЛАТЫ</span><span class="marquee-dot"></span>
+      <span>527+ МОДЕЛЕЙ</span><span class="marquee-dot"></span>
+      <span>ОБУЧЕНИЕ</span><span class="marquee-dot"></span>
+      <span>ПОДДЕРЖКА 24/7</span><span class="marquee-dot"></span>
+    </div>
+  </div>
+  <!-- ═══════════════════════════════════════════════════
+       BLOCK 2 — BENTO: ПОЧЕМУ МЫ
+  ═══════════════════════════════════════════════════ -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label label--accent">преимущества</div>
+        <h2 class="h2 split-text">
+          <span class="h-accent">Почему мы лучшие</span><br>
+          на&#160;рынке?
+        </h2>
+        <p class="section-lead">
+          Мы не&#160;просто даём рабочее место. Мы создаём из&#160;тебя Personal Brand,
+          который приносит деньги, поклонников и&#160;независимость. Вот что отличает нас от&#160;других студий:
+        </p>
+      </div>
+
+      <div class="bento">
+        <div class="bento-card tilt-card reveal reveal-delay-1">
+          <span class="pill-tag">Стратегия</span>
+          <div class="bento-visual">
+            <img src="public/photos/lifestyle-1.png" alt="Индивидуальная стратегия работы стрим-моделью в YES Studio" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="bento-body">
+            <div class="bento-title">Индивидуальная<br>стратегия</div>
+            <p class="bento-desc">Мы прописываем сценарий твоего успеха: на&#160;каких темах играть, как удерживать внимание щедрых пользователей и&#160;монетизировать харизму, а&#160;не тело. Твой бренд будет работать годами</p>
+          </div>
+        </div>
+
+        <div class="bento-card tilt-card reveal reveal-delay-2">
+          <span class="pill-tag">Имидж</span>
+          <div class="bento-visual">
+            <img src="public/photos/lifestyle-2.png" alt="Создание личного имиджа модели в вебкам студии" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="bento-body">
+            <div class="bento-title">Личный<br>имидж</div>
+            <p class="bento-desc">Наставник подберёт мейк, укладку и&#160;аксессуары, которые транслируют твой характер и&#160;повышают чек за&#160;минуту общения</p>
+          </div>
+        </div>
+
+        <div class="bento-card tilt-card reveal reveal-delay-3">
+          <span class="pill-tag">Контент</span>
+          <div class="bento-visual">
+            <img src="public/photos/bento-photo.jpg" alt="Профессиональный контент для стрим-модели" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="bento-body">
+            <div class="bento-title">Профессиональный<br>контент</div>
+            <p class="bento-desc">Бесплатно создадим фото- и&#160;видеоконтент уровня глянца, который привлекает фанатов ещё до&#160;выхода в&#160;стрим</p>
+          </div>
+        </div>
+
+        <div class="bento-card tilt-card reveal reveal-delay-1">
+          <span class="pill-tag">Карьера</span>
+          <div class="bento-visual">
+            <img src="public/photos/model-1.jpg" alt="Карьерный рост модели в YES Studio" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="bento-body">
+            <div class="bento-title">Карьерный<br>рост</div>
+            <p class="bento-desc">От&#160;новичка до&#160;звезды — повышай уровень, забирай бонусы и&#160;увеличивай процент</p>
+          </div>
+        </div>
+
+        <div class="bento-card tilt-card reveal reveal-delay-2">
+          <span class="pill-tag">Поддержка 24/7</span>
+          <div class="bento-visual">
+            <img src="public/photos/model-2.jpg" alt="Персональный куратор 24/7 в вебкам студии" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="bento-body">
+            <div class="bento-title">Персональный<br>куратор</div>
+            <p class="bento-desc">Продюсер на&#160;связи 24/7. Обучает тонкостям психологии общения и&#160;сопровождает на&#160;всех этапах: от&#160;настройки света до&#160;крупных донатов</p>
+          </div>
+        </div>
+
+        <div class="bento-card tilt-card reveal reveal-delay-3">
+          <span class="pill-tag">Языки</span>
+          <div class="bento-visual">
+            <img src="public/photos/desert-vibe.jpg" alt="Обучение английскому на практике в студии YES" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="bento-body">
+            <div class="bento-title">Английский<br>на&#160;практике</div>
+            <p class="bento-desc">Автопереводчик + через год свободно заговоришь на&#160;английском в&#160;живом общении</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-cta reveal">
+        <a href="https://t.me/studio_yes" target="_blank" class="btn btn--dark">Начать зарабатывать <span class="btn-dot"></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       BLOCK — О НАШЕЙ СТУДИИ
+  ═══════════════════════════════════════════════════ -->
+  <section class="section" id="studio">
+    <div class="container">
+      <div class="section-header reveal" style="text-align: center;">
+        <div class="label label--accent">пространство</div>
+        <h2 class="h2 split-text"><span class="h-accent">О&#160;нашей</span> студии</h2>
+        <p class="section-lead" style="margin-left: auto; margin-right: auto;">
+          Уютное пространство в&#160;центре Москвы, рядом с&#160;м. Красносельская.
+          Индивидуальные комнаты с&#160;дизайнерским интерьером, профессиональное освещение и&#160;всё для&#160;комфортной работы.
+        </p>
+      </div>
+
+      <!-- Видео -->
+      <div class="studio-video reveal" style="margin-bottom: 40px;">
+        <div class="video-wrapper" id="studioVideoWrap">
+          <video id="studioVideo" muted loop playsinline preload="metadata">
+            <source src="public/photos/studio-promo.webm" type="video/webm">
+            <source src="public/photos/studio-promo.mp4" type="video/mp4">
+          </video>
+          <button class="video-play-btn" id="studioPlayBtn" aria-label="Воспроизвести со звуком">
+            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mosaic Photo Grid -->
+      <div class="studio-mosaic">
+        <div class="studio-mosaic__item studio-mosaic__hero reveal" onclick="openLightbox(this.querySelector('img').src)">
+          <img src="public/photos/studio-room-3.jpg" alt="Элегантная комната студии YES" loading="lazy">
+          <div class="studio-mosaic__overlay">
+            <span class="studio-mosaic__tag">5 уникальных комнат</span>
+          </div>
+        </div>
+        <div class="studio-mosaic__item studio-mosaic__tall reveal reveal-delay-1" onclick="openLightbox(this.querySelector('img').src)">
+          <img src="public/photos/studio-room-2.jpg" alt="Зелёная зона студии" loading="lazy">
+        </div>
+        <div class="studio-mosaic__item reveal reveal-delay-2" onclick="openLightbox(this.querySelector('img').src)">
+          <img src="public/photos/studio-room-1.jpg" alt="Уютная комната с книжным шкафом" loading="lazy">
+        </div>
+        <div class="studio-mosaic__item reveal reveal-delay-3" onclick="openLightbox(this.querySelector('img').src)">
+          <img src="public/photos/studio-room-5.jpg" alt="Тропическая комната" loading="lazy">
+        </div>
+        <div class="studio-mosaic__item studio-mosaic__wide reveal reveal-delay-4" onclick="openLightbox(this.querySelector('img').src)">
+          <img src="public/photos/studio-room-4.jpg" alt="Комната с неоновым дизайном" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Studio features -->
+      <div class="studio-features reveal">
+        <div class="studio-feat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Москва, м. Красносельская</span>
+        </div>
+        <div class="studio-feat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          <span>Полная приватность</span>
+        </div>
+        <div class="studio-feat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <span>Профессиональный свет</span>
+        </div>
+        <div class="studio-feat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          <span>Комфорт и&#160;забота</span>
+        </div>
+      </div>
+
+      <div class="section-cta reveal" style="text-align: center; margin-top: 48px;">
+        <a href="https://t.me/studio_yes" target="_blank" class="btn btn--dark">Посмотреть студию вживую <span class="btn-dot"></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       BLOCK 5 — КАЛЬКУЛЯТОР
+  ═══════════════════════════════════════════════════ -->
+  <section class="section section--dark" id="calc" style="position: relative; overflow: hidden;">
+    <div class="cursor-glow" id="calcGlow"></div>
+    <div class="container">
+      <div class="calc-layout">
+        <div class="calc-text reveal">
+          <div class="label label--accent">доход</div>
+          <h2 class="h2 split-text">
+            <span class="h-accent">Рассчитай</span><br>
+            свой доход
+          </h2>
+          <p class="body-text">
+            Узнай, сколько ты сможешь зарабатывать в YES —
+            в&#160;зависимости от&#160;своего графика. Двигай параметры
+            и&#160;смотри результат.
+          </p>
+          <p class="body-text" style="color: var(--text-muted); font-size: 14px;">
+            Данные рассчитаны на&#160;основе средней статистики заработка наших моделей.
+            Выплаты — ежедневно или раз в&#160;неделю.
+          </p>
+        </div>
+
+        <div class="calc-panel reveal reveal-delay-2">
+          <div class="calc-panel-title">Параметры</div>
+
+          <div class="calc-panel-body">
+            <div class="calc-panel-params">
+              <div class="calc-group">
+                <div class="calc-group-label">Смены в&#160;неделю</div>
+                <div class="calc-tabs" id="shiftsGroup">
+                  <button class="calc-tab" data-value="4">4</button>
+                  <button class="calc-tab active" data-value="5">5</button>
+                  <button class="calc-tab" data-value="6">6</button>
+                </div>
+              </div>
+
+              <div class="calc-group">
+                <div class="calc-group-label">Часов за&#160;смену</div>
+                <div class="calc-tabs" id="hoursGroup">
+                  <button class="calc-tab" data-value="5">5</button>
+                  <button class="calc-tab" data-value="6">6</button>
+                  <button class="calc-tab active" data-value="7">7</button>
+                  <button class="calc-tab" data-value="8">8</button>
+                </div>
+              </div>
+
+              <div class="calc-group">
+                <div class="calc-group-label">Опыт</div>
+                <div class="calc-tabs" id="expGroup">
+                  <button class="calc-tab active" data-value="0.7">Новичок</button>
+                  <button class="calc-tab" data-value="1">Опытная</button>
+                  <button class="calc-tab" data-value="1.4">Профи</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="calc-ring reveal" id="calcRing">
+              <svg viewBox="0 0 120 120">
+                <circle class="calc-ring-bg" cx="60" cy="60" r="54"/>
+                <circle class="calc-ring-fill" cx="60" cy="60" r="54" id="calcRingFill"/>
+              </svg>
+              <div class="calc-ring-value" id="calcRingPercent">73%</div>
+            </div>
+          </div>
+
+          <div class="calc-result">
+            <div class="calc-result-label">Твой потенциальный доход в&#160;месяц</div>
+            <div class="calc-result-value" id="calcResult"><span class="nowrap">от 98&nbsp;000&nbsp;₽</span> <span class="nowrap">до 147&nbsp;000&nbsp;₽</span></div>
+            <div class="calc-result-sub">
+              При&#160;графике <span id="calcShifts">5</span> смен × <span id="calcHours">7</span>ч · <span id="calcExp">новичок</span>
+            </div>
+            <a href="https://t.me/studio_yes" target="_blank" class="btn btn--accent">Хочу столько же <span class="btn-dot"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       НОВЫЙ БЛОК — МЫ РАБОТАЕМ СО ВСЕМИ
+  ═══════════════════════════════════════════════════ -->
+  <section class="section" id="diversity">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label label--accent">для&#160;всех</div>
+        <h2 class="h2 split-text">
+          <span class="h-accent">Мы работаем</span><br>
+          с&#160;девушками любого типа
+        </h2>
+        <h3 class="section-sub" style="font-family: var(--font-body); font-size: 20px; font-weight: 400; color: var(--text-body); margin-top: 12px;">Твоя внешность — твоё преимущество</h3>
+      </div>
+
+      <div class="diversity-layout reveal">
+        <div class="diversity-visual reveal">
+          <img src="public/photos/model-1.jpg" alt="Модели YES Studio" class="diversity-photo" style="aspect-ratio: 3/4;">
+        </div>
+
+        <div class="diversity-right">
+          <p class="body-text" style="margin-bottom: 28px;">
+            Не&#160;важно, как ты выглядишь — важно, кто ты внутри. Мы принимаем девушек:
+          </p>
+
+          <div class="diversity-list">
+            <div class="diversity-item">
+              <div class="diversity-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+              <div class="diversity-content">
+                <h4>Разных национальностей</h4>
+                <p>Твоя уникальность в&#160;твоих корнях</p>
+              </div>
+            </div>
+
+            <div class="diversity-item">
+              <div class="diversity-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8H20l-4.9 3.6 1.9 5.8L12 14.6 6.9 18.2l1.9-5.8L4 8.8h6.1z"/></svg></div>
+              <div class="diversity-content">
+                <h4>Любого телосложения</h4>
+                <p>В&#160;стриме ценят харизму, а&#160;не 90-60-90</p>
+              </div>
+            </div>
+
+            <div class="diversity-item">
+              <div class="diversity-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg></div>
+              <div class="diversity-content">
+                <h4>Разных возрастов</h4>
+                <p>От 18 до&#160;любого возраста</p>
+              </div>
+            </div>
+
+            <div class="diversity-item">
+              <div class="diversity-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7a4 4 0 00-8 0"/><path d="M12 11v4"/><circle cx="12" cy="16" r="1"/></svg></div>
+              <div class="diversity-content">
+                <h4>Любого социального статуса</h4>
+                <p>Студентка, мама, офисный работник — не&#160;важно</p>
+              </div>
+            </div>
+
+            <div class="diversity-item">
+              <div class="diversity-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg></div>
+              <div class="diversity-content">
+                <h4>С&#160;разным опытом</h4>
+                <p>90% наших моделей пришли без&#160;опыта</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="diversity-footer">
+            Главное — желание меняться и&#160;зарабатывать. Остальное мы дадим.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Old studio section moved after services -->
+
+  <!-- ═══════════════════════════════════════════════════
+       BLOCK — ПРОЦЕСС
+  ═══════════════════════════════════════════════════ -->
+  <section class="section section--alt" id="process">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label label--accent">как это работает</div>
+        <h2 class="h2 split-text">
+          <span class="h-accent">Как устроена</span><br>
+          работа — 5 шагов
+        </h2>
+      </div>
+
+      <div class="process-timeline">
+        <div class="process-step reveal reveal-delay-1">
+          <div class="process-step-num">01</div>
+          <div class="process-step-content">
+            <h3 class="process-step-title">Заявка</h3>
+            <p>Оставляешь контакты на&#160;сайте или пишешь в Telegram</p>
+          </div>
+        </div>
+
+        <div class="process-step reveal reveal-delay-2">
+          <div class="process-step-num">02</div>
+          <div class="process-step-content">
+            <h3 class="process-step-title">Знакомство</h3>
+            <p>Короткое общение в&#160;переписке и&#160;приглашение на&#160;встречу</p>
+          </div>
+        </div>
+
+        <div class="process-step reveal reveal-delay-3">
+          <div class="process-step-num">03</div>
+          <div class="process-step-content">
+            <h3 class="process-step-title">Тестовый период</h3>
+            <p>Оплачиваемый старт (1-5 дней). Ты пробуешь — мы платим</p>
+          </div>
+        </div>
+
+        <div class="process-step reveal reveal-delay-4">
+          <div class="process-step-num">04</div>
+          <div class="process-step-content">
+            <h3 class="process-step-title">Personal Brand</h3>
+            <p>Упаковка твоего образа, фотосессия и&#160;стиль</p>
+          </div>
+        </div>
+
+        <div class="process-step reveal reveal-delay-1">
+          <div class="process-step-num">05</div>
+          <div class="process-step-content">
+            <h3 class="process-step-title">Доход</h3>
+            <p>Первые заработанные деньги на&#160;руки или криптокошелёк</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-cta reveal">
+        <a href="https://t.me/studio_yes" target="_blank" class="btn btn--accent">Оставить заявку <span class="btn-dot"></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       BLOCK — О РАБОТЕ В НАШЕЙ КОМПАНИИ
+  ═══════════════════════════════════════════════════ -->
+  <section class="section section--dark" id="about-work">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label" style="color: rgba(245,240,235,0.3);">условия</div>
+        <h2 class="h2 split-text" style="color: var(--text-cream);">
+          <span class="h-accent">О&#160;работе</span><br>
+          в&#160;нашей компании
+        </h2>
+        <p class="section-lead" style="color: rgba(245,240,235,0.6);">
+          Выбирая нас, ты выбираешь:
+        </p>
+      </div>
+
+      <div class="about-work-grid">
+        <div class="about-work-card reveal reveal-delay-1">
+          <div class="about-work-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h3>Non-Nude навсегда</h3>
+          <p>Наши модели не&#160;раздеваются. Мы зарабатываем на&#160;харизме, атмосфере и&#160;позитиве. <strong>Никакого давления на nude</strong> — никогда. Твои границы — закон</p>
+        </div>
+
+        <div class="about-work-card reveal reveal-delay-2">
+          <div class="about-work-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/><circle cx="12" cy="12" r="5"/></svg>
+          </div>
+          <h3>Честные проценты</h3>
+          <p>Ты получаешь <strong>50-60% дохода</strong>. Без&#160;скрытых комиссий и&#160;штрафов. Твой аккаунт — твой навсегда. Выплаты наличными ежедневно или раз в&#160;неделю — <strong>без&#160;задержек</strong></p>
+        </div>
+
+        <div class="about-work-card reveal reveal-delay-3">
+          <div class="about-work-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+          </div>
+          <h3>Безопасный старт</h3>
+          <p>Оплачиваемый тест 1-5 дней. Даже если решишь не&#160;продолжать — мы заплатим</p>
+        </div>
+
+        <div class="about-work-card reveal reveal-delay-1">
+          <div class="about-work-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>Гибкость</h3>
+          <p>Сама выбираешь график. Совмещай с&#160;учёбой или основной работой</p>
+        </div>
+
+        <div class="about-work-card reveal reveal-delay-2">
+          <div class="about-work-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 110-14h9.09"/><path d="M14 16l4 3-4 3"/></svg>
+          </div>
+          <h3>Отдых</h3>
+          <p>Отпуск каждые 3 месяца, чтобы ты не&#160;выгорала и&#160;путешествовала</p>
+        </div>
+
+        <div class="about-work-card reveal reveal-delay-3">
+          <div class="about-work-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+          <h3>Гео-блок</h3>
+          <p>Строгая блокировка на&#160;РФ и&#160;СНГ — твои знакомые тебя не&#160;увидят</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       BLOCK — ТРЕБОВАНИЯ
+  ═══════════════════════════════════════════════════ -->
+  <section class="section" id="requirements">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label label--accent">старт</div>
+        <h2 class="h2 split-text">
+          <span class="h-accent">Что нужно</span><br>
+          для&#160;начала работы
+        </h2>
+        <p class="section-lead">
+          Минимальные условия — максимальные возможности
+        </p>
+      </div>
+
+      <div class="req-grid">
+        <div class="req-card reveal reveal-delay-1">
+          <div class="req-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="req-card-title">Возраст от 18 лет</div>
+          <p class="req-card-text">Обязательное условие для&#160;работы. Подтверждается паспортом</p>
+        </div>
+
+        <div class="req-card reveal reveal-delay-2">
+          <div class="req-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/><circle cx="7.5" cy="7" r="0.5" fill="currentColor"/></svg></div>
+          <div class="req-card-title">Паспорт РФ</div>
+          <p class="req-card-text">Для&#160;оформления договора. Все данные защищены</p>
+        </div>
+
+        <div class="req-card reveal reveal-delay-3">
+          <div class="req-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8H20l-4.9 3.6 1.9 5.8L12 14.6 6.9 18.2l1.9-5.8L4 8.8h6.1z"/></svg></div>
+          <div class="req-card-title">Желание меняться</div>
+          <p class="req-card-text">Главное — мотивация. Всему остальному мы научим</p>
+        </div>
+
+        <div class="req-card reveal reveal-delay-1">
+          <div class="req-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
+          <div class="req-card-title">Смартфон</div>
+          <p class="req-card-text">Для&#160;связи с&#160;куратором и&#160;выхода на&#160;платформу</p>
+        </div>
+
+        <div class="req-card reveal reveal-delay-2">
+          <div class="req-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div class="req-card-title">от 5 часов в&#160;день</div>
+          <p class="req-card-text">Гибкий график — ты сама выбираешь удобное время для&#160;смен</p>
+        </div>
+
+        <div class="req-card reveal reveal-delay-3">
+          <div class="req-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="req-card-title">Быть в&#160;Москве</div>
+          <p class="req-card-text">Работа в&#160;нашей студии рядом с&#160;м. Красносельская. Помогаем с&#160;жильём</p>
+        </div>
+      </div>
+
+      <div class="section-cta reveal">
+        <a href="https://t.me/studio_yes" target="_blank" class="btn btn--accent">Подхожу! Хочу начать <span class="btn-dot"></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       BLOCK — FAQ
+  ═══════════════════════════════════════════════════ -->
+  <section class="section section--alt" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label label--accent">вопросы</div>
+        <h2 class="h2 split-text">FAQ</h2>
+        <h3 style="font-family: var(--font-body); font-size: 18px; font-weight: 400; color: var(--text-muted); margin-top: 8px;">Ответы на&#160;часто задаваемые вопросы</h3>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            <h4>В&#160;чём заключается работа стрим-моделью?</h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">Ведение онлайн-трансляции на&#160;зарубежных площадках. Ты общаешься, улыбаешься, слушаешь. По&#160;сути — оплачиваемое виртуальное общение и&#160;флирт.</div></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            <h4>У&#160;меня нет опыта, есть ли обучение?</h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">90% наших моделей пришли без&#160;опыта. Оплачиваемый тестовый период + персональный куратор обучит с&#160;нуля.</div></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            <h4>Сколько я буду зарабатывать?</h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">Старт от 90 000 ₽ в&#160;первый месяц. Средний доход — 150 000 ₽+. Потолка нет.</div></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            <h4>Нужно ли знать английский язык?</h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">Нет. Автоматический переводчик делает общение бесшовным. Со временем выучишь язык на&#160;практике.</div></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            <h4>Модельная внешность обязательна?</h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">Нет. Важна эмоция, ухоженность и&#160;харизма. Мы поможем подчеркнуть твои достоинства.</div></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            <h4>Получится ли совмещать с&#160;основной работой?</h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">Да. Ты сама выбираешь время и&#160;график.</div></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            <h4>Как происходят выплаты?</h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">Наличными или на&#160;криптокошелёк. Ежедневно или раз в&#160;неделю — без&#160;задержек.</div></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            <h4>Меня не&#160;увидят знакомые и&#160;жители моей страны?</h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">Гарантируем. Строгий Гео-блок на&#160;РФ и&#160;СНГ на&#160;всех площадках.</div></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            <h4>Что с&#160;отпусками?</h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">Отдых каждые 3 месяца. Не&#160;спрашивая ни&#160;у кого разрешения.</div></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            <h4>Нужно ли за&#160;что-то платить?</h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">Нет. Фотосессии, образ, обучение — всё бесплатно. Это наши инвестиции в&#160;твой успех.</div></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            <h4>Стриминг — это законно и&#160;безопасно?</h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">Абсолютно. Non-Nude (общение) легально и&#160;безопасно. Мы работаем 7 лет.</div></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            <h4>Мои личные данные в&#160;безопасности?</h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">Да. Никаких третьих лиц. Анкета — только для&#160;верификации возраста (18+).</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       BLOCK — ВАКАНСИИ
+  ═══════════════════════════════════════════════════ -->
+  <section class="section" id="vacancies">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label label--accent">карьера</div>
+        <h2 class="h2 split-text">
+          <span class="h-accent">Вакансии</span><br>
+          в&#160;нашей студии
+        </h2>
+      </div>
+
+      <div class="vacancy-tabs reveal">
+        <button class="vacancy-tab active" onclick="switchVacancy(0)">Модель</button>
+        <button class="vacancy-tab" onclick="switchVacancy(1)">Агент</button>
+        <button class="vacancy-tab" onclick="switchVacancy(2)">Администратор</button>
+      </div>
+
+      <div class="vacancy-panels">
+        <div class="vacancy-panel active" id="vacancy-0">
+          <div class="vacancy-panel-inner">
+            <h3 class="vacancy-title">Модель</h3>
+            <div class="vacancy-block">
+              <h4>Требования</h4>
+              <ul>
+                <li>только девушки</li>
+                <li><strong>возраст от 18 до 35 лет</strong></li>
+                <li>выработка часового норматива</li>
+                <li>опрятный внешний вид</li>
+              </ul>
+            </div>
+            <div class="vacancy-block">
+              <h4>Условия</h4>
+              <ul>
+                <li>график работы 5/2</li>
+                <li>студия в&#160;центре города</li>
+                <li>обучение, сопровождение</li>
+              </ul>
+            </div>
+            <a href="https://t.me/studio_yes" target="_blank" class="btn btn--accent">Откликнуться <span class="btn-dot"></span></a>
+          </div>
+        </div>
+
+        <div class="vacancy-panel" id="vacancy-1">
+          <div class="vacancy-panel-inner">
+            <h3 class="vacancy-title">Агент</h3>
+            <div class="vacancy-block">
+              <h4>Требования</h4>
+              <ul>
+                <li>поиск и&#160;привлечение моделей</li>
+                <li>доведение соискателей до&#160;собеседования в&#160;студии</li>
+                <li>коммуникабельность, ответственность</li>
+                <li>опыт работы HR в&#160;вебкам индустрии станет большим преимуществом</li>
+              </ul>
+            </div>
+            <div class="vacancy-block">
+              <h4>Условия</h4>
+              <ul>
+                <li>за&#160;каждую модель <strong>до 300$</strong> и&#160;если приведёшь 5 моделей за&#160;месяц — дополнительный бонус 30 000 рублей</li>
+                <li>свободный график</li>
+                <li>моментальная выплата после того, как приведённая вами модель заработает первые деньги</li>
+              </ul>
+            </div>
+            <p class="vacancy-note">Более подробные условия на&#160;собеседовании</p>
+            <a href="https://t.me/studio_yes" target="_blank" class="btn btn--accent">Откликнуться <span class="btn-dot"></span></a>
+          </div>
+        </div>
+
+        <div class="vacancy-panel" id="vacancy-2">
+          <div class="vacancy-panel-inner">
+            <h3 class="vacancy-title">Администратор</h3>
+            <div class="vacancy-block">
+              <h4>Требования</h4>
+              <ul>
+                <li>девушка от 20 до 30 лет</li>
+                <li>стрессоустойчивость, пунктуальность, ответственность, доброжелательность, креативность, оперативность</li>
+                <li>опыт в&#160;вебкам индустрии</li>
+                <li>опытный пользователь ПК, знание фото и&#160;видео-редакторов приветствуется</li>
+                <li>быстрая обучаемость</li>
+                <li>знание английского языка приветствуется</li>
+              </ul>
+            </div>
+            <div class="vacancy-block">
+              <h4>Условия</h4>
+              <ul>
+                <li>высокий оклад от 70 000 рублей</li>
+                <li>обучение</li>
+                <li>комфортные рабочие места с&#160;современной техникой</li>
+                <li>сменный график</li>
+                <li>поиск моделей <strong>не&#160;входит</strong> в&#160;обязанности</li>
+              </ul>
+            </div>
+            <div class="vacancy-block">
+              <h4>Обязанности</h4>
+              <ul>
+                <li>обучение новых моделей</li>
+                <li>заполнение анкет и&#160;их раскрутка</li>
+                <li>анализ работы моделей</li>
+                <li>контроль и&#160;соблюдение правил студии</li>
+              </ul>
+            </div>
+            <a href="https://t.me/studio_yes" target="_blank" class="btn btn--accent">Откликнуться <span class="btn-dot"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       BLOCK — РЕФЕРАЛЬНАЯ ПРОГРАММА
+  ═══════════════════════════════════════════════════ -->
+  <section class="section section--alt" id="referral">
+    <div class="container">
+      <div class="referral-inner reveal">
+        <div class="referral-content">
+          <div class="label label--accent">бонус</div>
+          <h2 class="h2 split-text" style="font-size: clamp(28px, 4vw, 42px);">
+            Приведи подругу — получи <span class="h-accent">300$</span>
+          </h2>
+          <p class="section-lead" style="margin-bottom: 32px;">
+            Знаешь, кому подойдёт работа в YES? Мы ценим рекомендации и&#160;платим <strong>300$</strong> за&#160;каждую приведённую модель (при&#160;условии заработка ею первых 300$).
+          </p>
+          <a href="https://t.me/studio_yes" target="_blank" class="btn btn--accent">Узнать подробности <span class="btn-dot"></span></a>
+        </div>
+        <div class="referral-visual">
+          <div class="referral-amount">300<span>$</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       BLOCK — БЛОГ
+  ═══════════════════════════════════════════════════ -->
+  <section class="section" id="blog">
+    <div class="container">
+      <div class="section-header reveal" style="text-align: center;">
+        <div class="label label--accent">блог</div>
+        <h2 class="h2 split-text">Полезные <span class="h-accent">статьи</span></h2>
+        <p class="section-lead" style="margin-left: auto; margin-right: auto;">Честные ответы на&#160;все вопросы о&#160;работе стрим-моделью: карьера, доход, безопасность и&#160;лайфстайл.</p>
+      </div>
+
+      <div class="blog-grid reveal" id="blogGrid">
+        <!-- Skeleton placeholders (replaced by JS) -->
+        <div class="blog-card blog-card--skeleton"><div class="blog-card__img"></div><div class="blog-card__body"><div class="skel skel--tag"></div><div class="skel skel--title"></div><div class="skel skel--text"></div><div class="skel skel--meta"></div></div></div>
+        <div class="blog-card blog-card--skeleton"><div class="blog-card__img"></div><div class="blog-card__body"><div class="skel skel--tag"></div><div class="skel skel--title"></div><div class="skel skel--text"></div><div class="skel skel--meta"></div></div></div>
+        <div class="blog-card blog-card--skeleton"><div class="blog-card__img"></div><div class="blog-card__body"><div class="skel skel--tag"></div><div class="skel skel--title"></div><div class="skel skel--text"></div><div class="skel skel--meta"></div></div></div>
+      </div>
+
+      <div class="blog-more reveal">
+        <a href="/blog/" class="btn btn--outline">Все статьи <span class="btn-dot"></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FINAL CTA ═══════════ -->
+  <section class="final-cta final-cta--photo">
+    <div class="cursor-glow" id="ctaGlow"></div>
+    <div class="final-cta-inner reveal">
+      <div class="label" style="color: rgba(245,240,235,0.3);">начни сегодня</div>
+      <h2 class="final-cta-title">Готова <br>изменить <em>свою</em> <br>жизнь?</h2>
+      <p class="final-cta-sub">
+        Одно сообщение отделяет тебя от&#160;финансовой свободы, нового окружения и&#160;жизни, о&#160;которой ты мечтаешь.
+      </p>
+      <div class="final-cta-actions">
+        <a href="https://t.me/studio_yes" target="_blank" class="btn btn--accent">Написать в Telegram <span class="btn-dot"></span></a>
+        <a href="https://t.me/studio_yes" target="_blank" class="btn btn--ghost-light">Задать вопрос</a>
+      </div>
+      <div class="final-cta-note">Бесплатная консультация · Без&#160;обязательств</div>
+    </div>
+  </section>
+
+  <!-- Sticky Widget -->
+  <div class="sticky-widget">
+    <span class="sticky-dot"></span>
+    В&#160;феврале осталось <strong>3 из 5</strong> мест
+    <a href="https://t.me/studio_yes" target="_blank" class="sticky-cta">Занять своё место <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+
+  </main>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <!-- Partner Logos -->
+      <div class="footer-partners">
+        <a href="https://webcam-best.com/studii/rostov-na-donu/yes-studio/" target="_blank" rel="noopener"><img src="public/partnerka_best_webcam.gif" alt="Партнер сервиса BEST WEBCAM" class="footer-partner-img"></a>
+        <a href="https://webcam-studios.ru/studio/yes-2/" target="_blank" rel="noopener"><img src="public/webcam-studios.gif" alt="Каталог всех вебкам студий Webcam-StudioS.ru" class="footer-partner-img"></a>
+      </div>
+
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#">
+            <svg viewBox="0 0 229 144" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: 36px; width: auto; color: rgba(245,240,235,0.5);">
+              <path d="M104.671 131.209C103.486 131.209 102.371 130.982 101.324 130.528C100.278 130.074 99.3894 129.442 98.6589 128.633C97.9481 127.823 97.4841 126.905 97.2669 125.878L99.4585 124.96C99.7744 126.204 100.436 127.181 101.443 127.892C102.45 128.603 103.526 128.958 104.671 128.958C105.895 128.958 106.932 128.583 107.781 127.833C108.63 127.063 109.054 126.066 109.054 124.842C109.054 123.993 108.808 123.292 108.314 122.739C107.82 122.186 106.952 121.614 105.708 121.021C104.128 120.251 102.924 119.629 102.094 119.155C101.285 118.662 100.604 118.06 100.051 117.349C99.5177 116.618 99.2512 115.749 99.2512 114.742C99.2512 113.775 99.5079 112.916 100.021 112.166C100.554 111.396 101.255 110.803 102.124 110.389C103.013 109.954 103.96 109.737 104.967 109.737C105.816 109.737 106.606 109.915 107.337 110.27C108.087 110.606 108.679 111.06 109.114 111.633C109.568 112.205 109.795 112.817 109.795 113.469C109.795 113.568 109.775 113.736 109.735 113.972L107.425 113.824C107.504 113.508 107.416 113.212 107.159 112.936C106.922 112.64 106.586 112.413 106.152 112.255C105.717 112.077 105.303 111.988 104.908 111.988C104.039 111.988 103.279 112.255 102.627 112.788C101.996 113.301 101.68 113.923 101.68 114.654C101.68 115.246 101.887 115.779 102.302 116.253C102.736 116.727 103.24 117.141 103.812 117.497C104.385 117.832 105.125 118.227 106.033 118.682L107.1 119.215C108.659 120.064 109.775 120.913 110.446 121.762C111.137 122.611 111.483 123.647 111.483 124.871C111.483 126.096 111.167 127.191 110.535 128.159C109.923 129.126 109.094 129.877 108.047 130.41C107.001 130.943 105.875 131.209 104.671 131.209Z" fill="currentColor"/>
+              <path d="M124.318 112.521H117.595V110.27H133.469V112.521H126.746V130.617H124.318V112.521Z" fill="currentColor"/>
+              <path d="M149.568 130.884C147.969 130.884 146.567 130.528 145.362 129.817C144.158 129.087 143.23 128.09 142.578 126.826C141.927 125.562 141.601 124.151 141.601 122.591V110.27H144.03V122.591C144.03 123.815 144.266 124.891 144.74 125.819C145.214 126.747 145.866 127.468 146.695 127.981C147.544 128.475 148.521 128.722 149.627 128.722C151.325 128.722 152.678 128.159 153.685 127.033C154.711 125.908 155.225 124.427 155.225 122.591V110.27H157.653V122.591C157.653 124.23 157.308 125.681 156.617 126.945C155.926 128.188 154.968 129.156 153.744 129.847C152.52 130.538 151.128 130.884 149.568 130.884Z" fill="currentColor"/>
+              <path d="M175.603 110.122C177.439 110.241 179.068 110.754 180.489 111.662C181.931 112.571 183.046 113.795 183.836 115.335C184.626 116.855 185.021 118.563 185.021 120.459C185.021 122.472 184.576 124.269 183.688 125.849C182.819 127.428 181.605 128.662 180.045 129.551C178.485 130.439 176.708 130.884 174.714 130.884H173.233C173.075 130.884 172.73 130.884 172.197 130.884C171.663 130.884 170.716 130.824 169.353 130.706L167.695 130.558V110.093L175.603 110.122ZM173.766 128.662C176.609 128.662 178.791 127.961 180.312 126.56C181.832 125.158 182.592 123.154 182.592 120.547C182.592 118.099 181.94 116.154 180.637 114.713C179.354 113.272 177.567 112.492 175.277 112.373H170.123V128.514C171.466 128.613 172.68 128.662 173.766 128.662Z" fill="currentColor"/>
+              <path d="M194.212 110.27H196.641V130.617H194.212V110.27Z" fill="currentColor"/>
+              <path d="M216.139 131.239C214.185 131.219 212.427 130.765 210.868 129.877C209.328 128.968 208.113 127.744 207.225 126.204C206.356 124.644 205.922 122.887 205.922 120.932V120.073C205.922 118.198 206.366 116.48 207.254 114.92C208.163 113.341 209.387 112.097 210.927 111.188C212.487 110.261 214.185 109.797 216.021 109.797C217.877 109.797 219.575 110.261 221.115 111.188C222.655 112.097 223.879 113.341 224.787 114.92C225.696 116.48 226.15 118.198 226.15 120.073V120.932C226.15 122.887 225.706 124.654 224.817 126.234C223.948 127.813 222.754 129.047 221.233 129.936C219.713 130.824 218.015 131.259 216.139 131.239ZM216.051 128.988C217.492 128.988 218.795 128.643 219.96 127.952C221.125 127.241 222.043 126.273 222.714 125.049C223.386 123.825 223.721 122.453 223.721 120.932V120.073C223.721 118.632 223.376 117.299 222.685 116.075C221.994 114.831 221.056 113.854 219.871 113.143C218.706 112.413 217.413 112.047 215.991 112.047C214.589 112.047 213.306 112.413 212.141 113.143C210.976 113.854 210.048 114.831 209.357 116.075C208.686 117.299 208.35 118.632 208.35 120.073V120.932C208.35 122.453 208.686 123.825 209.357 125.049C210.028 126.273 210.947 127.241 212.112 127.952C213.296 128.643 214.609 128.988 216.051 128.988Z" fill="currentColor"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M77.5119 0.393725C66.7597 2.18901 56.4509 5.67982 44.258 11.6551C28.0646 19.5911 16.0176 29.3856 11.5155 38.2756C6.936 47.3181 9.28037 56.3366 17.221 60.2248C21.4417 62.2915 29.3303 62.7221 33.1171 61.0923L34.6975 60.4122L31.0828 59.6628C24.2508 58.2462 18.7353 54.6456 16.5247 50.158C15.0873 47.2408 15.168 42.0391 16.7014 38.7669C18.7801 34.3313 23.8098 28.9184 30.5407 23.8734C42.2112 15.1264 62.2642 6.0951 74.3835 4.12772C86.4459 2.16949 89.9978 4.96032 85.6183 12.9554C83.3708 17.0576 81.3884 19.7407 71.5669 31.9744C62.2118 43.6265 57.2187 50.5778 53.7932 56.7165C51.0547 61.6243 50.0924 64.1766 49.35 68.5016C48.5536 73.1422 49.678 76.1109 53.1659 78.578C54.7991 79.7331 55.1948 79.8246 58.5306 79.8208C64.1617 79.8146 68.7108 77.9399 77.4271 72.034C85.9575 66.2533 98.9899 53.8155 109.73 41.2048C113.212 37.1159 113.671 36.5476 117.142 32.023C118.133 30.7299 119.049 29.7755 119.175 29.9019C119.302 30.0287 119.219 30.3703 118.992 30.6617C118.764 30.9531 117.267 33.7165 115.665 36.8029C109.835 48.0302 96.3801 71.6545 89.6815 82.4229L86.7726 87.0992L84.2204 87.1001C81.5792 87.1013 71.6891 88.0125 65.873 88.791C42.2799 91.9485 19.7092 101.41 8.17427 112.978C1.12696 120.046 -1.47433 127.434 0.802725 133.913C2.01275 137.355 4.06659 139.601 7.59025 141.335C12.9865 143.99 18.4842 144.606 26.2905 143.429C38.5578 141.58 50.7446 135.733 63.3644 125.643C72.5005 118.338 85.2334 104.267 92.5056 93.4382L94.5295 90.4246H104.314C121.212 90.4246 136.322 92.0208 161.062 96.419C165.634 97.2317 169.843 98.0202 170.415 98.1711C170.986 98.3216 171.338 98.3174 171.196 98.1611C170.865 97.7949 155.625 93.7105 148.602 92.1052C135.89 89.2001 121.049 87.3927 105.466 86.8511C100.95 86.6944 97.2562 86.4936 97.2562 86.4051C97.2562 86.3166 99.145 83.1292 101.454 79.322C105.403 72.8093 110.993 62.952 116.375 53.0141C119.202 47.7941 124.953 37.2813 129.679 28.6973C133.386 21.9638 138.318 13.356 140.422 9.94587C142.578 6.45298 142.044 2.29752 139.253 0.854304C136.502 -0.568128 135.26 0.108167 132.983 4.26863C126.116 16.8195 111 36.3012 97.3053 50.2511C83.2435 64.5752 68.6127 74.9446 61.3006 75.7697C60.0299 75.9131 59.3686 75.7448 58.4948 75.0552C57.5047 74.2737 57.3517 73.8576 57.3517 71.948C57.3517 66.6203 62.6009 57.7864 75.7295 41.019C86.4243 27.3605 90.3387 21.8399 92.7197 17.0585C95.1838 12.1103 95.9294 8.78658 95.187 6.0581C94.5593 3.75029 92.2159 1.32193 89.9725 0.654358C87.4506 -0.0955157 81.2246 -0.226043 77.5119 0.393725ZM30.7486 138.298C48.2767 133.32 66.3947 117.976 82.1021 94.8091L84.7932 90.8403L81.3606 90.9068C76.9087 90.9932 76.417 91.0506 67.3279 92.5479C40.3063 96.9989 21.9871 104.512 10.7664 115.746C7.60315 118.913 6.45297 120.407 5.15482 123.033C3.75733 125.862 3.52206 126.729 3.52206 129.061C3.52206 133.82 6.21064 136.927 12.0434 138.906C13.8549 139.521 15.5379 139.679 20.1489 139.669C25.4467 139.658 26.3969 139.535 30.7486 138.298Z" fill="currentColor"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M168.469 44.7771C170.279 42.8904 171.947 41.919 174.605 41.204C177.237 40.4965 180.726 40.376 182.213 40.9409C182.787 41.1595 183.576 41.8259 183.967 42.4215C184.628 43.4312 184.63 43.6029 183.995 44.9342C183.368 46.249 182.972 46.5371 182.168 46.2594C182.003 46.202 181.924 45.7249 181.993 45.1982C182.285 42.9681 179.536 42.2964 177.029 43.9857C173.614 46.2869 172.892 50.5658 174.769 57.3816C175.336 59.4375 175.918 62.166 176.063 63.4446L176.327 65.7694L178.462 65.3849C183.417 64.4925 187.82 62.4216 191.742 59.1407C193.309 57.8297 193.848 57.5786 194.236 57.9776C194.622 58.3742 194.294 58.8855 192.743 60.2992C189.553 63.2064 183.538 66.1165 178.624 67.1291C176.73 67.5194 176.234 67.785 176.234 68.4077C176.234 68.8404 175.853 70.2126 175.387 71.4571C173.855 75.5527 169.004 78.9305 162.819 80.2082C159.088 80.9785 157.473 81.0217 154.693 80.4256C151.786 79.8021 150.724 78.6994 151.007 76.5944C151.469 73.1489 156.701 69.695 164.249 67.8528L167.992 66.9391L167.735 65.2764C167.517 63.8644 166.043 57.1687 165.616 55.6478C165.541 55.3818 162.241 58.3808 158.283 62.3127C148.688 71.8432 143.105 75.7156 135.111 78.3863C131.727 79.517 130.732 79.6762 127.836 79.5486C118.409 79.1333 115.325 72.3146 120.065 62.3667C125.05 51.9055 137.874 42.4556 147.861 41.8832C153.076 41.5843 155.45 43.0163 155.45 46.4606C155.45 50.5467 151.812 54.3746 144.509 57.971C139.42 60.4767 133.125 62.5746 130.693 62.5746C129.476 62.5746 129.29 62.7824 127.988 65.5882C125.346 71.2821 126.259 75.0838 130.418 75.7073C134.696 76.3487 142.357 73.5999 147.701 69.5059C156.313 62.9079 165.426 53.8134 165.426 51.8174C165.426 49.9186 166.975 46.3347 168.469 44.7771ZM151.29 45.3196C152.861 47.213 149.452 51.8718 143.903 55.4142C139.296 58.3551 131.255 61.7956 130.576 61.116C130.254 60.7947 133.285 57.1359 137.073 53.2735C143.73 46.486 149.554 43.2279 151.29 45.3196ZM161.062 77.9112C164.365 77.0088 167.222 73.8447 167.758 70.494C167.906 69.5674 167.863 68.8221 167.662 68.8371C166.58 68.9186 160.729 70.9375 158.923 71.8524C156.762 72.9477 154.203 75.4617 154.203 76.4905C154.203 78.1332 157.642 78.8457 161.062 77.9112Z" fill="currentColor"/>
+              <path d="M211.604 24.02L212.999 11.62L214.394 24.02C214.185 24.392 213.791 24.3114 213.931 23.9239L219.137 20.362L215.575 25.5684C215.188 25.7079 215.107 25.3142 215.479 25.105L227.879 26.5L215.479 27.895C215.107 27.6857 215.188 27.292 215.575 27.4315L219.137 32.638L213.931 29.0761C213.791 28.6886 214.185 28.608 214.394 28.98L212.999 41.38L211.604 28.98C211.813 28.608 212.207 28.6886 212.067 29.0761L206.861 32.638L210.423 27.4315C210.81 27.292 210.891 27.6857 210.519 27.895L198.119 26.5L210.519 25.105C210.891 25.3142 210.81 25.7079 210.423 25.5684L206.861 20.362L212.067 23.9239C212.207 24.3114 211.813 24.392 211.604 24.02Z" fill="currentColor"/>
+            </svg>
+          </a>
+          <p>Stream Model Agency YES</p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Навигация</h4>
+            <a href="#services">Почему мы</a>
+            <a href="#studio">Студия</a>
+            <a href="#calc">Калькулятор</a>
+            <a href="#stories">Истории</a>
+            <a href="#process">Процесс</a>
+            <a href="#about-work">О&#160;работе</a>
+            <a href="#requirements">Требования</a>
+            <a href="#faq">FAQ</a>
+            <a href="#vacancies">Вакансии</a>
+            <a href="/blog/">Блог</a>
+          </div>
+          <div class="footer-col footer-contact">
+            <h4>Контакты</h4>
+            <a href="tel:+79639380267">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              +7 (963) 938-02-67
+            </a>
+            <a href="https://t.me/studio_yes" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.06-.49-.83-.27-1.49-.42-1.43-.88.03-.24.37-.49 1.02-.75 3.98-1.73 6.64-2.88 7.97-3.44 3.8-1.58 4.59-1.86 5.1-1.87.11 0 .37.03.54.17.14.12.18.28.2.47-.01.06.01.24 0 .37z"/></svg>
+              Telegram
+            </a>
+            <a href="#" style="pointer-events: none;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+              Москва, м. Красносельская
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-disclaimer">
+        Студия Yes не&#160;является продавцом интимных услуг, а&#160;также не&#160;является посредником в&#160;их предоставлении. Работа моделей заключается в&#160;общении только в&#160;онлайн-пространстве и&#160;носит развлекательный характер. 18+
+      </div>
+
+      <div class="footer-legal">
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Договор оферты</a>
+        <a href="#">Согласие на&#160;обработку персональных данных</a>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2025 YES Studio. Все права защищены.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════ SCRIPTS ═══════════ -->
+  <script>
+    // ── Preloader ──
+    (function() {
+      var preloader = document.getElementById('preloader');
+      var heroImg = new Image();
+      heroImg.src = 'public/photos/hero-hearts.jpg';
+      var revealed = false;
+
+      function reveal() {
+        if (revealed) return;
+        revealed = true;
+        preloader.classList.add('done');
+        document.body.style.overflow = '';
+        setTimeout(function() { preloader.remove(); }, 1200);
+      }
+
+      document.body.style.overflow = 'hidden';
+
+      if (heroImg.complete) {
+        setTimeout(reveal, 600);
+      } else {
+        heroImg.onload = function() { setTimeout(reveal, 300); };
+        heroImg.onerror = reveal;
+        setTimeout(reveal, 4000);
+      }
+    })();
+
+    // ── Header scroll ──
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', scrollY > 60);
+    });
+
+    // ── Burger menu ──
+    const overlay = document.getElementById('navOverlay');
+    document.getElementById('burgerBtn').addEventListener('click', () => overlay.classList.add('open'));
+    document.getElementById('navClose').addEventListener('click', () => overlay.classList.remove('open'));
+    overlay.querySelectorAll('a').forEach(a => a.addEventListener('click', () => overlay.classList.remove('open')));
+
+    // ── Reveal on scroll ──
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // ── Counter animation ──
+    function fmtNum(n) { return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
+
+    function animCounter(el) {
+      const target = +el.dataset.target;
+      const suffix = el.dataset.suffix || '';
+      const dur = 1800;
+      const start = performance.now();
+      function ease(t) { return t === 1 ? 1 : 1 - Math.pow(2, -10 * t); }
+      function tick(now) {
+        const p = Math.min((now - start) / dur, 1);
+        const v = Math.floor(ease(p) * target);
+        el.textContent = fmtNum(v) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+        else el.textContent = fmtNum(target) + suffix;
+      }
+      requestAnimationFrame(tick);
+    }
+
+    const counterObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { animCounter(e.target); counterObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.counter').forEach(c => counterObs.observe(c));
+
+    // ── Calculator ──
+    let shifts = 5, hours = 7, expMult = 0.7;
+    const expLabels = { '0.7': 'новичок', '1': 'опытная', '1.4': 'профи' };
+
+    function updateCalc() {
+      const min = Math.round(shifts * hours * 1000 * expMult * 4);
+      const max = Math.round(shifts * hours * 1500 * expMult * 4);
+      document.getElementById('calcResult').innerHTML = `<span class="nowrap">от ${fmtNum(min)}&nbsp;₽</span> <span class="nowrap">до ${fmtNum(max)}&nbsp;₽</span>`;
+      document.getElementById('calcShifts').textContent = shifts;
+      document.getElementById('calcHours').textContent = hours;
+      document.getElementById('calcExp').textContent = expLabels[String(expMult)];
+    }
+
+    function setupTabs(groupId, setter) {
+      const group = document.getElementById(groupId);
+      group.querySelectorAll('.calc-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          group.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          setter(+tab.dataset.value);
+          updateCalc();
+        });
+      });
+    }
+
+    setupTabs('shiftsGroup', v => { shifts = v; });
+    setupTabs('hoursGroup', v => { hours = v; });
+    setupTabs('expGroup', v => { expMult = v; });
+
+    // ── Story toggle ──
+    function toggleStory(btn) {
+      const wrap = btn.closest('.story-expandable');
+      const expanded = wrap.dataset.expanded === 'true';
+      wrap.dataset.expanded = expanded ? 'false' : 'true';
+      btn.textContent = expanded ? 'Читать историю' : 'Свернуть';
+    }
+
+    // ═══════════════════════════════════════════════════
+    //  ANIMATION EFFECTS
+    // ═══════════════════════════════════════════════════
+
+    // 2. Parallax — лёгкое смещение элементов при скролле
+    (function() {
+      const parallaxEls = document.querySelectorAll('.diversity-visual, .photo-strip');
+      if (!parallaxEls.length) return;
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            const sy = window.scrollY;
+            parallaxEls.forEach(el => {
+              const rect = el.getBoundingClientRect();
+              if (rect.top < window.innerHeight && rect.bottom > 0) {
+                const offset = (rect.top - window.innerHeight / 2) * 0.06;
+                el.style.transform = `translateY(${offset}px)`;
+              }
+            });
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+    })();
+
+    // 4. Magnetic Buttons — кнопки тянутся за курсором
+    (function() {
+      if (window.innerWidth < 768) return; // skip on mobile
+      document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('mousemove', e => {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+        });
+        btn.addEventListener('mouseleave', () => {
+          btn.style.transform = 'translate(0, 0)';
+          btn.style.transition = 'transform 0.3s ease';
+          setTimeout(() => { btn.style.transition = ''; }, 300);
+        });
+      });
+    })();
+
+    // 7. Text Split Animation — буквы заголовков появляются по одному
+    // Chars grouped per word to prevent mid-word line breaks
+    (function() {
+      document.querySelectorAll('.split-text').forEach(el => {
+        const html = el.innerHTML.replace(/&nbsp;/gi, ' ');
+        let result = '';
+        let inTag = false;
+        let charIndex = 0;
+        let wordBuf = '';
+        function flushWord() {
+          if (wordBuf) {
+            result += '<span style="display:inline-block;white-space:nowrap">' + wordBuf + '</span>';
+            wordBuf = '';
+          }
+        }
+        for (let i = 0; i < html.length; i++) {
+          if (html[i] === '<') { flushWord(); inTag = true; result += html[i]; continue; }
+          if (html[i] === '>') { inTag = false; result += html[i]; continue; }
+          if (inTag) { result += html[i]; continue; }
+          if (html[i] === ' ' || html[i] === '\n') {
+            flushWord();
+            result += html[i];
+          } else {
+            const delay = Math.min(charIndex * 25, 1200);
+            wordBuf += `<span class="char" style="transition-delay:${delay}ms">${html[i]}</span>`;
+            charIndex++;
+          }
+        }
+        flushWord();
+        el.innerHTML = result;
+      });
+    })();
+
+    // 8. Tilt 3D — лёгкий наклон карточек при наведении
+    (function() {
+      if (window.innerWidth < 768) return;
+      document.querySelectorAll('.tilt-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5;
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
+          card.style.transform = `perspective(600px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(600px) rotateY(0) rotateX(0)';
+          card.style.transition = 'transform 0.4s ease';
+          setTimeout(() => { card.style.transition = 'transform 0.15s ease-out'; }, 400);
+        });
+      });
+    })();
+
+    // 9. Counter Ring animation — ring fills when visible
+    (function() {
+      const ring = document.getElementById('calcRing');
+      if (!ring) return;
+      const ringObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            ring.classList.add('visible');
+            ringObs.unobserve(ring);
+          }
+        });
+      }, { threshold: 0.5 });
+      ringObs.observe(ring);
+
+      // Update ring based on calculator values
+      const origUpdate = window.updateCalcRing;
+      window.updateCalcRing = function() {
+        const pct = Math.round((shifts * hours) / (6 * 8) * 100);
+        const circumference = 2 * Math.PI * 54;
+        const offset = circumference * (1 - pct / 100);
+        const fill = document.getElementById('calcRingFill');
+        const label = document.getElementById('calcRingPercent');
+        if (fill) fill.style.strokeDashoffset = offset;
+        if (label) label.textContent = pct + '%';
+      };
+
+      // Patch updateCalc to also update ring
+      const origCalc = updateCalc;
+      updateCalc = function() {
+        origCalc();
+        if (window.updateCalcRing) window.updateCalcRing();
+      };
+    })();
+
+    // 10. Cursor Glow — свечение за курсором на тёмных секциях
+    (function() {
+      if (window.innerWidth < 768) return;
+      const glows = document.querySelectorAll('.cursor-glow');
+      glows.forEach(glow => {
+        const parent = glow.parentElement;
+        parent.addEventListener('mousemove', e => {
+          const rect = parent.getBoundingClientRect();
+          glow.style.left = (e.clientX - rect.left) + 'px';
+          glow.style.top = (e.clientY - rect.top) + 'px';
+        });
+      });
+    })();
+
+    // Clip-reveal: observe elements with clip-reveal class
+    document.querySelectorAll('.clip-reveal, .clip-reveal-left').forEach(el => {
+      if (!el.classList.contains('reveal')) {
+        obs.observe(el);
+      }
+    });
+
+    // ── Video Player (autoplay on scroll, play with sound) ──
+    (() => {
+      const wrap = document.getElementById('studioVideoWrap');
+      const video = document.getElementById('studioVideo');
+      const btn = document.getElementById('studioPlayBtn');
+      if (!wrap || !video || !btn) return;
+
+      let hasPlayedWithSound = false;
+
+      // Autoplay muted when scrolled into view
+      const vidObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting && !hasPlayedWithSound) {
+            video.muted = true;
+            video.play().catch(() => {});
+          } else if (!e.isIntersecting && video.muted) {
+            video.pause();
+          }
+        });
+      }, { threshold: 0.3 });
+      vidObs.observe(wrap);
+
+      // Play button → restart with sound
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        hasPlayedWithSound = true;
+        video.muted = false;
+        video.currentTime = 0;
+        video.play();
+        wrap.classList.add('playing');
+      });
+
+      // Click on video while playing with sound → pause/resume
+      wrap.addEventListener('click', () => {
+        if (!hasPlayedWithSound) return;
+        if (video.paused) {
+          video.play();
+          wrap.classList.add('playing');
+        } else {
+          video.pause();
+          wrap.classList.remove('playing');
+        }
+      });
+
+      // When video ends → show play button again
+      video.addEventListener('ended', () => {
+        if (hasPlayedWithSound) {
+          wrap.classList.remove('playing');
+          hasPlayedWithSound = false;
+          video.muted = true;
+        }
+      });
+    })();
+
+    // ── Vacancy Tabs ──
+    function switchVacancy(idx) {
+      document.querySelectorAll('.vacancy-tab').forEach((t, i) => t.classList.toggle('active', i === idx));
+      document.querySelectorAll('.vacancy-panel').forEach((p, i) => p.classList.toggle('active', i === idx));
+    }
+
+    // Lightbox
+    function openLightbox(src) {
+      const lb = document.getElementById('lightbox');
+      lb.querySelector('img').src = src;
+      lb.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      const lb = document.getElementById('lightbox');
+      lb.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+    // ── Blog: fetch 3 latest posts from Sanity ──
+    (function() {
+      const PROJECT_ID = 'n2knh3st';
+      const DATASET = 'production';
+      const query = encodeURIComponent('*[_type == "post"] | order(publishedAt desc) [0...3] { title, slug, excerpt, coverImage, publishedAt, "category": category->{ title }, "readTime": round(length(pt::text(body)) / 1200) }');
+      const url = `https://${PROJECT_ID}.apicdn.sanity.io/v2024-01-01/data/query/${DATASET}?query=${query}`;
+
+      function sanityImageUrl(img) {
+        if (!img || !img.asset || !img.asset._ref) return '';
+        const ref = img.asset._ref;
+        const [, id, dims, ext] = ref.split('-');
+        return `https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${id}-${dims}.${ext}?w=600&h=400&fit=crop&auto=format`;
+      }
+
+      function formatDate(d) {
+        if (!d) return '';
+        return new Date(d).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' });
+      }
+
+      fetch(url)
+        .then(r => r.json())
+        .then(data => {
+          const posts = data.result;
+          if (!posts || !posts.length) return;
+          const grid = document.getElementById('blogGrid');
+
+          grid.innerHTML = posts.map(p => {
+            const imgUrl = sanityImageUrl(p.coverImage);
+            const imgHtml = imgUrl
+              ? `<img src="${imgUrl}" alt="${p.title}" loading="lazy" width="600" height="400">`
+              : `<div style="width:100%;height:100%;background:linear-gradient(135deg,var(--bg-alt),var(--bg-sand));display:flex;align-items:center;justify-content:center;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>`;
+            const catHtml = p.category ? `<span class="blog-card__tag">${p.category.title}</span>` : '';
+            const metaHtml = `<span>${formatDate(p.publishedAt)}</span>${p.readTime ? ` · ${p.readTime} мин` : ''}`;
+            const slug = p.slug && p.slug.current ? p.slug.current : '';
+
+            return `<a href="/blog/${slug}/" class="blog-card">
+              <div class="blog-card__img">${imgHtml}</div>
+              <div class="blog-card__body">
+                ${catHtml}
+                <h3 class="blog-card__title">${p.title}</h3>
+                ${p.excerpt ? `<p class="blog-card__desc">${p.excerpt}</p>` : ''}
+                <div class="blog-card__meta">${metaHtml}</div>
+              </div>
+            </a>`;
+          }).join('');
+        })
+        .catch(err => console.warn('[blog] Failed to load posts:', err));
+    })();
+  </script>
+
+  <!-- Lightbox overlay -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img src="" alt="Фото студии в полном размере" onclick="event.stopPropagation()">
+  </div>
+
+</body>
+</html>

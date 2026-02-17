@@ -1,0 +1,52 @@
+---
+import BlogCard from './BlogCard.astro'
+
+interface Props {
+  posts: any[]
+}
+
+const { posts } = Astro.props
+---
+
+{posts.length > 0 && (
+  <section class="related">
+    <div class="container">
+      <div class="related__header">
+        <span class="related__label">Читай также</span>
+      </div>
+      <div class="related__grid">
+        {posts.map((post) => (
+          <BlogCard post={post} />
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .related {
+    padding: var(--section-pad) 0;
+    background: var(--bg-alt);
+  }
+  .related__header {
+    margin-bottom: 40px;
+  }
+  .related__label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .related__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 1024px) {
+    .related__grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .related__grid { grid-template-columns: 1fr; }
+  }
+</style>

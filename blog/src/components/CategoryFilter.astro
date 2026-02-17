@@ -1,0 +1,57 @@
+---
+interface Props {
+  categories: Array<{ title: string; slug: { current: string } }>
+  activeCategory?: string
+}
+
+const { categories, activeCategory } = Astro.props
+---
+
+<nav class="category-filter">
+  <a href="/blog/" class:list={['category-filter__item', { active: !activeCategory }]}>
+    Все
+  </a>
+  {categories.map((cat) => (
+    <a
+      href={`/blog/?category=${cat.slug.current}`}
+      class:list={['category-filter__item', { active: activeCategory === cat.slug.current }]}
+    >
+      {cat.title}
+    </a>
+  ))}
+</nav>
+
+<style>
+  .category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 48px;
+  }
+  .category-filter__item {
+    display: inline-block;
+    padding: 7px 18px;
+    font-family: var(--font);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid var(--text);
+    border-radius: var(--radius-btn);
+    color: var(--text);
+    line-height: 1;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .category-filter__item:hover {
+    background: var(--text);
+    color: var(--text-cream);
+    text-decoration: none;
+  }
+  .category-filter__item.active {
+    background: var(--text);
+    color: var(--text-cream);
+    text-decoration: none;
+  }
+</style>
