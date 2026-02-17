@@ -74,16 +74,20 @@ if (categoryParam) {
     (function () {
       var PROJECT_ID = 'n2knh3st';
       var DATASET = 'production';
+      var loaded = false;
 
       var urlParams = new URLSearchParams(window.location.search);
       var categoryFilter = urlParams.get('category');
 
       var groq = categoryFilter
-        ? '*[_type == "post" && category->slug.current == "' + categoryFilter + '"] | order(publishedAt desc) { title, slug, excerpt, coverImage, publishedAt, "category": category->{ title, slug }, "readTime": round(length(pt::text(body)) / 1200) }'
+        ? '*[_type == "post" && category->slug.current == $cat] | order(publishedAt desc) { title, slug, excerpt, coverImage, publishedAt, "category": category->{ title, slug }, "readTime": round(length(pt::text(body)) / 1200) }'
         : '*[_type == "post"] | order(publishedAt desc) { title, slug, excerpt, coverImage, publishedAt, "category": category->{ title, slug }, "readTime": round(length(pt::text(body)) / 1200) }';
 
+      var params = categoryFilter ? '&$cat="' + encodeURIComponent(categoryFilter) + '"' : '';
       var query = encodeURIComponent(groq);
-      var url = 'https://' + PROJECT_ID + '.apicdn.sanity.io/v2024-01-01/data/query/' + DATASET + '?query=' + query;
+      var url = 'https://' + PROJECT_ID + '.apicdn.sanity.io/v2024-01-01/data/query/' + DATASET + '?query=' + query + params;
+
+      function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 
       function sanityImageUrl(img) {
         if (!img || !img.asset || !img.asset._ref) return '';
@@ -97,24 +101,35 @@ if (categoryParam) {
       }
 
       function renderCard(p) {
-        var slug = p.slug && p.slug.current ? p.slug.current : '';
+        var slug = p.slug && p.slug.current ? encodeURIComponent(p.slug.current) : '';
+        var title = esc(p.title || '');
         var imgUrl = sanityImageUrl(p.coverImage);
         var imgHtml = imgUrl
-          ? '<img src="' + imgUrl + '" alt="' + p.title.replace(/"/g, '&quot;') + '" loading="lazy" width="600" height="400">'
+          ? '<img src="' + imgUrl + '" alt="' + title.replace(/"/g, '&quot;') + '" loading="lazy" width="600" height="400">'
           : '<div class="blog-card__placeholder"></div>';
-        var catHtml = p.category ? '<span class="blog-card__tag">' + p.category.title + '</span>' : '';
-        var metaHtml = '<span>' + formatDate(p.publishedAt) + '</span>' + (p.readTime ? ' · ' + p.readTime + ' мин' : '');
-        var descHtml = p.excerpt ? '<p class="blog-card__desc">' + p.excerpt + '</p>' : '';
+        var catHtml = p.category ? '<span class="blog-card__tag">' + esc(p.category.title) + '</span>' : '';
+        var metaHtml = '<span>' + formatDate(p.publishedAt) + '</span>' + (p.readTime ? ' &middot; ' + p.readTime + ' мин' : '');
+        var descHtml = p.excerpt ? '<p class="blog-card__desc">' + esc(p.excerpt) + '</p>' : '';
 
         return '<a href="/blog/' + slug + '/" class="blog-card">'
           + '<div class="blog-card__visual">' + imgHtml + '</div>'
-          + '<div class="blog-card__body">' + catHtml + '<h3 class="blog-card__title">' + p.title + '</h3>' + descHtml + '<div class="blog-card__meta">' + metaHtml + '</div></div>'
+          + '<div class="blog-card__body">' + catHtml + '<h3 class="blog-card__title">' + title + '</h3>' + descHtml + '<div class="blog-card__meta">' + metaHtml + '</div></div>'
           + '</a>';
       }
+
+      // Timeout: if fetch takes > 6s on empty grid, show fallback message
+      setTimeout(function () {
+        if (loaded) return;
+        var grid = document.getElementById('blogBento');
+        if (grid && grid.classList.contains('blog-bento-empty')) {
+          grid.innerHTML = '<div class="blog-empty"><p>Статьи скоро появятся. Подпишись на наш <a href="https://t.me/studio_yes">Telegram</a>, чтобы не пропустить!</p></div>';
+        }
+      }, 6000);
 
       fetch(url)
         .then(function (r) { return r.json(); })
         .then(function (data) {
+          loaded = true;
           var posts = data.result;
           if (!posts || !posts.length) return;
           var grid = document.getElementById('blogBento');
@@ -122,7 +137,7 @@ if (categoryParam) {
           grid.innerHTML = posts.map(renderCard).join('');
           grid.classList.remove('blog-bento-empty');
         })
-        .catch(function () {}); // silently fail — static content remains
+        .catch(function () { loaded = true; }); // silently fail — static content remains
     })();
   </script>
 

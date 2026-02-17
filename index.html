@@ -14,9 +14,18 @@
   <meta property="og:url" content="https://yes-studio.agency/">
   <meta property="og:site_name" content="YES Studio">
   <meta property="og:locale" content="ru_RU">
+  <meta property="og:image" content="https://yes-studio.agency/public/photos/hero.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="YES Studio — Вебкам студия в Москве | NON-NUDE">
+  <meta name="twitter:description" content="Premium NON-NUDE вебкам-студия. Доход от 90 000 ₽ в первый месяц. Обучение с нуля, ежедневные выплаты.">
+  <meta name="twitter:image" content="https://yes-studio.agency/public/photos/hero.jpg">
   <link rel="icon" type="image/svg+xml" href="/public/images/logos/yes-studio-sparkle%20(2).svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.sanity.io">
+  <link rel="dns-prefetch" href="https://n2knh3st.apicdn.sanity.io">
   <link href="https://fonts.googleapis.com/css2?family=Forum&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     /* ═══════════════════════════════════════════════════
@@ -4243,6 +4252,8 @@
       const query = encodeURIComponent('*[_type == "post"] | order(publishedAt desc) [0...3] { title, slug, excerpt, coverImage, publishedAt, "category": category->{ title }, "readTime": round(length(pt::text(body)) / 1200) }');
       const url = `https://${PROJECT_ID}.apicdn.sanity.io/v2024-01-01/data/query/${DATASET}?query=${query}`;
 
+      function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
       function sanityImageUrl(img) {
         if (!img || !img.asset || !img.asset._ref) return '';
         const ref = img.asset._ref;
@@ -4264,19 +4275,20 @@
 
           grid.innerHTML = posts.map(p => {
             const imgUrl = sanityImageUrl(p.coverImage);
+            const title = esc(p.title || '');
             const imgHtml = imgUrl
-              ? `<img src="${imgUrl}" alt="${p.title}" loading="lazy" width="600" height="400">`
+              ? `<img src="${imgUrl}" alt="${title}" loading="lazy" width="600" height="400">`
               : `<div style="width:100%;height:100%;background:linear-gradient(135deg,var(--bg-alt),var(--bg-sand));display:flex;align-items:center;justify-content:center;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>`;
-            const catHtml = p.category ? `<span class="blog-card__tag">${p.category.title}</span>` : '';
+            const catHtml = p.category ? `<span class="blog-card__tag">${esc(p.category.title)}</span>` : '';
             const metaHtml = `<span>${formatDate(p.publishedAt)}</span>${p.readTime ? ` · ${p.readTime} мин` : ''}`;
-            const slug = p.slug && p.slug.current ? p.slug.current : '';
+            const slug = p.slug && p.slug.current ? encodeURIComponent(p.slug.current) : '';
 
             return `<a href="/blog/${slug}/" class="blog-card">
               <div class="blog-card__img">${imgHtml}</div>
               <div class="blog-card__body">
                 ${catHtml}
-                <h3 class="blog-card__title">${p.title}</h3>
-                ${p.excerpt ? `<p class="blog-card__desc">${p.excerpt}</p>` : ''}
+                <h3 class="blog-card__title">${title}</h3>
+                ${p.excerpt ? `<p class="blog-card__desc">${esc(p.excerpt)}</p>` : ''}
                 <div class="blog-card__meta">${metaHtml}</div>
               </div>
             </a>`;

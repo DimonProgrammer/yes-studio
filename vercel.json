@@ -2,6 +2,29 @@
   "version": 2,
   "buildCommand": "node scripts/build.js",
   "outputDirectory": "dist",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    },
+    {
+      "source": "/public/(.*)\\.(?:jpg|jpeg|png|gif|svg|webp|avif|ico)$",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/public/(.*)\\.(?:js|css|woff2?)$",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ],
   "routes": [
     { "src": "/blog/(.*)", "dest": "/blog/$1" },
     { "handle": "filesystem" },
