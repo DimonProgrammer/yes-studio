@@ -447,6 +447,54 @@ export default function Home() {
     };
   }, []);
 
+  /* ── Video autoplay on scroll ── */
+  useEffect(() => {
+    const vid = videoRef.current;
+    const wrap = document.getElementById('studioVideoWrap');
+    if (!vid || !wrap) return;
+
+    let hasPlayedWithSound = false;
+
+    const vidObs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasPlayedWithSound) {
+            vid.muted = true;
+            vid.play().catch(() => {});
+          } else if (!entry.isIntersecting && vid.muted) {
+            vid.pause();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    vidObs.observe(wrap);
+
+    return () => vidObs.disconnect();
+  }, []);
+
+  /* ── Smooth scroll for anchor links ── */
+  useEffect(() => {
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const link = target.closest('a[href^="#"]');
+      if (!link) return;
+
+      const href = link.getAttribute('href');
+      if (!href || href === '#') return;
+
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+    return () => document.removeEventListener('click', handleAnchorClick);
+  }, []);
+
   /* ── Schema.org JSON-LD ── */
   const localBusinessSchema = {
     '@context': 'https://schema.org',
@@ -1453,11 +1501,26 @@ export default function Home() {
               ) : blogPosts.length > 0 ? (
                 blogPosts.map((post) => (
                   <a key={post._id} href={`/blog/${post.slug?.current || ''}`} className="blog-card">
-                    {post.mainImage?.asset?._ref && (
-                      <div className="blog-card__img">
+                    <div className="blog-card__img">
+                      {post.mainImage?.asset?._ref ? (
                         <img src={sanityImageUrl(post.mainImage.asset._ref)} alt={post.title} loading="lazy" />
-                      </div>
-                    )}
+                      ) : (
+                        <div style={{
+                          width: '100%',
+                          height: '100%',
+                          background: 'linear-gradient(135deg, #8B1F31 0%, #C93A50 100%)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: 'var(--text-cream)',
+                          fontSize: '48px',
+                          fontWeight: '600',
+                          fontFamily: 'var(--font-heading)'
+                        }}>
+                          YES
+                        </div>
+                      )}
+                    </div>
                     <div className="blog-card__body">
                       {post.categories?.[0] && (
                         <span className="blog-card__tag">{post.categories[0].title}</span>

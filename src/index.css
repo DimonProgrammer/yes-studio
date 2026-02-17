@@ -1639,7 +1639,7 @@
 
     /* Final CTA with photo background */
     .final-cta--photo {
-      background: url('public/photos/model-2.jpg') center/cover no-repeat;
+      background: url('/photos/model-2.jpg') center/cover no-repeat;
     }
 
     .final-cta--photo::before {
