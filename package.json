@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "node scripts/build.js",
     "preview": "vite preview",
-    "sync:notion": "node scripts/sync-notion.js"
+    "sync:notion": "node scripts/sync-notion.js",
+    "push:notion": "node scripts/push-notion.js"
   },
   "dependencies": {
     "@notionhq/client": "^5.9.0",

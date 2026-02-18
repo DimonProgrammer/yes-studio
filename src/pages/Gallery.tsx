@@ -1,5 +1,14 @@
 import { Helmet } from 'react-helmet-async';
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Главная', item: 'https://yes-studio.agency/' },
+    { '@type': 'ListItem', position: 2, name: 'Галерея', item: 'https://yes-studio.agency/gallery/' },
+  ],
+};
+
 export default function Gallery() {
   return (
     <>
@@ -7,6 +16,13 @@ export default function Gallery() {
         <title>Фото и видео вебкам-студии YES — виртуальный тур по офису</title>
         <meta name="description" content="Посмотрите фото и видео вебкам-студии YES. Рабочие комнаты, зона отдыха, оборудование. 3D-тур по офису в Москве." />
         <link rel="canonical" href="https://yes-studio.agency/gallery/" />
+        <meta property="og:title" content="Галерея YES Studio — фото студии в Москве" />
+        <meta property="og:description" content="Фото рабочих комнат, оборудования и зон отдыха вебкам-студии YES в Москве." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yes-studio.agency/gallery/" />
+        <meta property="og:image" content="https://yes-studio.agency/photos/studio-room-1.jpg" />
+        <meta property="og:site_name" content="YES Studio" />
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
 
       <section className="section">

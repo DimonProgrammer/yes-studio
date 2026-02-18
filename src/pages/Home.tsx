@@ -478,19 +478,36 @@ export default function Home() {
   }, []);
 
   /* ── Schema.org JSON-LD ── */
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'YES Studio',
+    url: 'https://yes-studio.agency',
+    logo: 'https://yes-studio.agency/photos/studio-room-3.jpg',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+7-963-938-02-67',
+      contactType: 'customer service',
+      availableLanguage: 'Russian',
+    },
+    sameAs: ['https://t.me/studio_yes'],
+  };
+
   const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'YES Studio',
     description: 'Единственная NON-NUDE студия в Москве. Зарабатывай на общении от 90 000 руб.',
-    url: 'https://yes-studio.ru',
-    telephone: '+7-XXX-XXX-XXXX',
+    url: 'https://yes-studio.agency',
+    telephone: '+7-963-938-02-67',
     address: {
       '@type': 'PostalAddress',
+      streetAddress: 'м. Красносельская',
       addressLocality: 'Москва',
+      addressRegion: 'Москва',
       addressCountry: 'RU',
     },
-    image: 'https://yes-studio.ru/photos/studio-room-3.jpg',
+    image: 'https://yes-studio.agency/photos/studio-room-3.jpg',
     priceRange: 'от 90 000 ₽',
   };
 
@@ -520,8 +537,11 @@ export default function Home() {
         <meta property="og:title" content="YES Studio — NON-NUDE вебкам студия в Москве" />
         <meta property="og:description" content="Зарабатывай на общении от 90 000 ₽ в месяц. Ежедневные выплаты." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yes-studio.ru" />
-        <link rel="canonical" href="https://yes-studio.ru" />
+        <meta property="og:url" content="https://yes-studio.agency/" />
+        <meta property="og:image" content="https://yes-studio.agency/photos/studio-room-3.jpg" />
+        <meta property="og:site_name" content="YES Studio" />
+        <link rel="canonical" href="https://yes-studio.agency/" />
+        <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>

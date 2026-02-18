@@ -2,14 +2,12 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const navLinks = [
-  { label: 'Твоя история', href: '#hook' },
-  { label: 'Для\u00A0всех', href: '#diversity' },
-  { label: 'Почему мы', href: '#services' },
-  { label: 'Калькулятор', href: '#calc' },
+  { label: 'О студии', href: '/about' },
+  { label: 'Вакансии', href: '/vacancies' },
+  { label: 'Калькулятор', href: '/calculator' },
   { label: 'Истории', href: '#stories' },
-  { label: 'Студия', href: '#studio' },
-  { label: 'Требования', href: '#requirements' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Контакты', href: '/contacts' },
 ];
 
 export function Header() {
@@ -54,6 +52,8 @@ export function Header() {
         } else {
           navigate('/' + href);
         }
+      } else if (href.startsWith('/')) {
+        navigate(href);
       }
     },
     [location.pathname, navigate],
@@ -209,14 +209,6 @@ export function Header() {
             <Link to="/blog/" onClick={closeMenu}>
               Блог
             </Link>
-            <a
-              href="https://t.me/studio_yes"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={closeMenu}
-            >
-              Контакты
-            </a>
           </nav>
           <div className="nav-metro">
             <svg

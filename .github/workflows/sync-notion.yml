@@ -1,8 +1,11 @@
 name: Sync Notion with Project
 
 on:
+  push:
+    branches:
+      - main
   schedule:
-    # Каждые 6 часов
+    # Каждые 6 часов (тянуть из Notion)
     - cron: '0 */6 * * *'
   workflow_dispatch:
 
@@ -23,12 +26,21 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Sync with Notion
+      - name: Push docs to Notion
+        if: github.event_name == 'push'
+        env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          YES_STUDIO_PAGE_ID: ${{ secrets.YES_STUDIO_PAGE_ID }}
+        run: npm run push:notion
+
+      - name: Pull from Notion
+        if: github.event_name == 'schedule'
         env:
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
         run: npm run sync:notion
 
       - name: Commit changes
+        if: github.event_name == 'schedule'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
