@@ -1333,6 +1333,51 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ═══════════ CTA FORM ═══════════ */}
+        <section className="section section--dark" id="apply" style={{ position: 'relative', overflow: 'hidden' }}>
+          <div className="cursor-glow" id="applyGlow"></div>
+          <div className="container">
+
+            <div className="cta-form-badge reveal">
+              <span className="cta-form-badge-dot"></span>
+              В{'\u00A0'}феврале осталось <strong>3 из 5</strong> мест
+            </div>
+
+            <div className="cta-form-layout">
+              {/* Текст */}
+              <div className="cta-form-text reveal">
+                <h2 className="cta-form-title">
+                  ХОЧЕШЬ, ОТПРАВИМ<br />
+                  <em>подробности</em><br />
+                  В ТЕЛЕГРАМ?
+                </h2>
+                <p className="cta-form-subtitle">Только девушки 18+</p>
+                <p className="cta-form-desc">
+                  Оставь заявку — перезвоним <strong>за{'\u00A0'}час</strong> и{'\u00A0'}пригласим на{'\u00A0'}встречу в{'\u00A0'}студии.
+                </p>
+                <div className="cta-form-trust">
+                  <div className="cta-form-trust-item">
+                    <div className="cta-form-trust-icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <span>Конфиденциально — данные защищены</span>
+                  </div>
+                  <div className="cta-form-trust-item">
+                    <div className="cta-form-trust-icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <span>Перезвоним в{'\u00A0'}течение 1{'\u00A0'}часа</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Форма */}
+              <CTAForm />
+            </div>
+
+          </div>
+        </section>
+
         {/* ═══════════ FAQ ═══════════ */}
         <section className="section section--alt" id="faq">
           <div className="container">
@@ -1511,51 +1556,6 @@ export default function Home() {
             <div className="blog-more reveal">
               <a href="/blog/" className="btn btn--outline">Все статьи <span className="btn-dot"></span></a>
             </div>
-          </div>
-        </section>
-
-        {/* ═══════════ CTA FORM ═══════════ */}
-        <section className="section section--dark" id="apply" style={{ position: 'relative', overflow: 'hidden' }}>
-          <div className="cursor-glow" id="applyGlow"></div>
-          <div className="container">
-
-            <div className="cta-form-badge reveal">
-              <span className="cta-form-badge-dot"></span>
-              В{'\u00A0'}феврале осталось <strong>3 из 5</strong> мест
-            </div>
-
-            <div className="cta-form-layout">
-              {/* Текст */}
-              <div className="cta-form-text reveal">
-                <h2 className="cta-form-title">
-                  ХОЧЕШЬ, ОТПРАВИМ<br />
-                  <em>подробности</em><br />
-                  В ТЕЛЕГРАМ?
-                </h2>
-                <p className="cta-form-subtitle">Только девушки 18+</p>
-                <p className="cta-form-desc">
-                  Оставь заявку — перезвоним <strong>за{'\u00A0'}час</strong> и{'\u00A0'}пригласим на{'\u00A0'}встречу в{'\u00A0'}студии.
-                </p>
-                <div className="cta-form-trust">
-                  <div className="cta-form-trust-item">
-                    <div className="cta-form-trust-icon">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    </div>
-                    <span>Конфиденциально — данные защищены</span>
-                  </div>
-                  <div className="cta-form-trust-item">
-                    <div className="cta-form-trust-icon">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    </div>
-                    <span>Перезвоним в{'\u00A0'}течение 1{'\u00A0'}часа</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Форма */}
-              <CTAForm />
-            </div>
-
           </div>
         </section>
 
