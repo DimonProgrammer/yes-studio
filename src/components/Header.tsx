@@ -206,9 +206,9 @@ export function Header() {
                 {link.label}
               </a>
             ))}
-            <Link to="/blog/" onClick={closeMenu}>
+            <a href="/blog/">
               Блог
-            </Link>
+            </a>
           </nav>
           <div className="nav-metro">
             <svg
