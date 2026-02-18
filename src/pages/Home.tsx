@@ -1492,7 +1492,7 @@ export default function Home() {
                         <span className="blog-card__tag">{post.categories[0].title}</span>
                       )}
                       <h3 className="blog-card__title">{post.title}</h3>
-                      {post.excerpt && <p className="blog-card__text">{post.excerpt}</p>}
+                      {post.excerpt && <p className="blog-card__desc">{post.excerpt}</p>}
                       <div className="blog-card__meta">
                         {new Date(post.publishedAt).toLocaleDateString('ru-RU', {
                           day: 'numeric',
