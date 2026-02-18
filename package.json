@@ -5,9 +5,11 @@
   "scripts": {
     "dev": "vite",
     "build": "node scripts/build.js",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sync:notion": "node scripts/sync-notion.js"
   },
   "dependencies": {
+    "@notionhq/client": "^5.9.0",
     "@tailwindcss/vite": "^4.1.18",
     "lucide-react": "^0.469.0",
     "motion": "^11.15.0",
