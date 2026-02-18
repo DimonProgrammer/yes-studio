@@ -227,8 +227,8 @@ export default function About() {
             <div className="section-header reveal" style={{ maxWidth: '760px' }}>
               <div className="label"><span className="label-star"></span>О студии</div>
               <h1 className="h2" style={{ marginTop: '24px' }}>
-                Студия, которая начала<br />
-                менять жизни <span className="h-accent">в 2018 году</span>
+                NON-NUDE вебкам-студия<br />
+                <span className="h-accent">в Ростове-на-Дону с 2018 года</span>
               </h1>
               <p className="section-lead" style={{ marginTop: '24px' }}>
                 YES Studio — NON-NUDE стриминг в Ростове-на-Дону и Москве.
@@ -252,19 +252,19 @@ export default function About() {
             <div className="hero-stats reveal" style={{ justifyContent: 'center', gap: '48px' }}>
               <div className="hero-stat">
                 <div className="hero-stat-num">
-                  <span className="counter" data-target="2018">0</span>
+                  <span className="counter" data-target="2018">2018</span>
                 </div>
                 <div className="hero-stat-label">год основания</div>
               </div>
               <div className="hero-stat">
                 <div className="hero-stat-num">
-                  <span className="counter" data-target="527" data-suffix="+">0</span>
+                  <span className="counter" data-target="527" data-suffix="+">527+</span>
                 </div>
                 <div className="hero-stat-label">моделей с нами</div>
               </div>
               <div className="hero-stat">
                 <div className="hero-stat-num">
-                  <span className="counter" data-target="150" data-suffix=" 000 ₽+">0</span>
+                  <span className="counter" data-target="150" data-suffix=" 000 ₽+">150 000 ₽+</span>
                 </div>
                 <div className="hero-stat-label">средний доход</div>
               </div>
