@@ -279,7 +279,7 @@ export default function About() {
         {/* ═══════════ ИСТОРИЯ ═══════════ */}
         <section className="section">
           <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
+            <div className="about-two-col">
               <div className="reveal">
                 <div className="label"><span className="label-star"></span>Наша история</div>
                 <h2 className="h2" style={{ marginTop: '24px' }}>
@@ -292,12 +292,12 @@ export default function About() {
                   В 2018 году мы открыли первую студию в Ростове-на-Дону. NON-NUDE стриминг тогда
                   был новым форматом — мы поверили в него раньше других и не ошиблись.
                 </p>
-                <p style={{ color: 'rgba(245,240,235,0.6)', lineHeight: '1.7' }}>
+                <p style={{ color: 'var(--text-body)', lineHeight: '1.7' }}>
                   За семь лет мы выстроили систему: профессиональное оборудование,
                   личный куратор для каждой модели, прозрачные выплаты без задержек.
                   В 2025 году открыли вторую студию — в Москве, у метро Красносельская.
                 </p>
-                <p style={{ color: 'rgba(245,240,235,0.6)', lineHeight: '1.7' }}>
+                <p style={{ color: 'var(--text-body)', lineHeight: '1.7' }}>
                   Сегодня YES Studio работает в двух городах с одной целью: дать каждой девушке
                   возможность зарабатывать честно, на своих условиях, с командой рядом с первого дня.
                 </p>
@@ -315,7 +315,7 @@ export default function About() {
                 Три вещи, на которых <span className="h-accent">стоит YES Studio</span>
               </h2>
             </div>
-            <div className="pain-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+            <div className="req-grid">
               {values.map((v, i) => (
                 <div key={i} className={`pain-card tilt-card reveal reveal-delay-${i + 1}`}>
                   <div className="pain-card-icon">{v.icon}</div>
@@ -341,7 +341,7 @@ export default function About() {
                 Ростов-на-Дону <span className="h-accent">и Москва</span>
               </h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
+            <div className="about-cities-grid">
               <div className="pain-card tilt-card reveal reveal-delay-1">
                 <div className="pain-card-body">
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
@@ -400,7 +400,7 @@ export default function About() {
                 живой человек с конкретной задачей.
               </p>
             </div>
-            <div className="pain-grid">
+            <div className="req-grid">
               {teamRoles.map((member, i) => (
                 <div key={i} className={`pain-card reveal reveal-delay-${(i % 3) + 1}`}>
                   <div className="pain-card-icon">{member.icon}</div>
@@ -417,13 +417,13 @@ export default function About() {
         {/* ═══════════ ЧТО ТЫ ПОЛУЧАЕШЬ ═══════════ */}
         <section className="section">
           <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'start' }}>
+            <div className="about-two-col about-two-col--start">
               <div className="reveal">
                 <div className="label"><span className="label-star"></span>Работа у нас</div>
                 <h2 className="h2" style={{ marginTop: '24px' }}>
                   Что ты получаешь <span className="h-accent">с первого дня</span>
                 </h2>
-                <p style={{ marginTop: '24px', color: 'rgba(245,240,235,0.6)', lineHeight: '1.7' }}>
+                <p style={{ marginTop: '24px', color: 'var(--text-body)', lineHeight: '1.7' }}>
                   Всё необходимое для старта — уже в студии. Никаких дополнительных расходов,
                   никаких платных курсов. Это наши инвестиции в твой успех.
                 </p>

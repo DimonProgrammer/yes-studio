@@ -2180,6 +2180,24 @@
     }
 
     /* ═══════════════════════════════════════════════════
+       ABOUT PAGE GRIDS
+    ═══════════════════════════════════════════════════ */
+    .about-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-two-col--start {
+      align-items: start;
+    }
+    .about-cities-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    /* ═══════════════════════════════════════════════════
        REQUIREMENTS BLOCK
     ═══════════════════════════════════════════════════ */
     .req-grid {
@@ -2484,6 +2502,7 @@
 
     @media (max-width: 1024px) {
       .req-grid { grid-template-columns: 1fr 1fr; }
+      .about-two-col { gap: 48px; }
       .footer-inner { flex-direction: column; }
       .footer-links { flex-direction: column; gap: 24px; }
       .cta-form-layout { grid-template-columns: 1fr; gap: 40px; }
@@ -2500,6 +2519,8 @@
       .calc-panel-body { grid-template-columns: 1fr; gap: 20px; }
       .cursor-glow { display: none; }
       .req-grid { grid-template-columns: 1fr; }
+      .about-two-col { grid-template-columns: 1fr; gap: 40px; }
+      .about-cities-grid { grid-template-columns: 1fr; }
       .header-metro { display: none; }
       .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
 
