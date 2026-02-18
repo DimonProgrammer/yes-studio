@@ -178,6 +178,22 @@ export default function Home() {
     setVideoPlaying(true);
   }, []);
 
+  /* ── Video click toggle (pause/resume) ── */
+  const handleVideoClick = useCallback(() => {
+    const vid = videoRef.current;
+    const wrap = document.getElementById('studioVideoWrap');
+    if (!vid || !wrap) return;
+    if (!wrap.classList.contains('playing')) return; // не трогать до первого нажатия Play
+
+    if (vid.paused) {
+      vid.play();
+      wrap.classList.remove('video-paused');
+    } else {
+      vid.pause();
+      wrap.classList.add('video-paused');
+    }
+  }, []);
+
   /* ── Reveal on scroll (add 'visible' class) ── */
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -889,7 +905,7 @@ export default function Home() {
             {/* Video */}
             <div className="studio-video reveal" style={{ marginBottom: '40px' }}>
               <div className="video-wrapper" id="studioVideoWrap">
-                <video ref={videoRef} muted loop playsInline preload="metadata">
+                <video ref={videoRef} muted loop playsInline preload="metadata" onClick={handleVideoClick} style={{ cursor: 'pointer' }}>
                   <source src="/photos/studio-promo.webm" type="video/webm" />
                   <source src="/photos/studio-promo.mp4" type="video/mp4" />
                 </video>
