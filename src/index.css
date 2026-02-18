@@ -601,6 +601,286 @@
       border-radius: 12px;
       overflow: hidden;
       background: var(--bg-alt);
+      position: relative;
+    }
+
+    .bento-visual::before,
+    .bento-visual::after {
+      content: '';
+      position: absolute;
+      pointer-events: none;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  opacity 0.5s ease;
+    }
+
+    /* Sparkle mask — shared for all bento visuals */
+    .bento-visual--strategy::after,
+    .bento-visual--image::after,
+    .bento-visual--content::after,
+    .bento-visual--career::after,
+    .bento-visual--support::after {
+      -webkit-mask-image: var(--sparkle);
+      mask-image: var(--sparkle);
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+    }
+
+    .bento-sparkle {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: var(--accent);
+      opacity: 0.5;
+      -webkit-mask-image: var(--sparkle);
+      mask-image: var(--sparkle);
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      z-index: 1;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .bento-card:hover .bento-sparkle {
+      transform: translate(-50%, -50%) scale(1.2) rotate(15deg);
+      opacity: 0.8;
+    }
+
+    /* ── Card 1: Strategy — ascending path lines ── */
+    .bento-visual--strategy {
+      background:
+        linear-gradient(135deg, transparent 42%, var(--bg-sand) 42%, var(--bg-sand) 42.5%, transparent 42.5%),
+        linear-gradient(135deg, transparent 52%, rgba(139, 31, 49, 0.15) 52%, rgba(139, 31, 49, 0.15) 52.5%, transparent 52.5%),
+        linear-gradient(135deg, transparent 62%, rgba(139, 31, 49, 0.08) 62%, rgba(139, 31, 49, 0.08) 62.5%, transparent 62.5%),
+        linear-gradient(160deg, var(--bg-alt) 0%, var(--bg-card) 100%);
+    }
+
+    .bento-visual--strategy::before {
+      top: 12%;
+      right: 12%;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139, 31, 49, 0.12) 0%, transparent 70%);
+    }
+
+    .bento-visual--strategy::after {
+      top: 16%;
+      right: 16%;
+      width: 28px;
+      height: 28px;
+      background: var(--accent);
+      opacity: 0.7;
+    }
+
+    .bento-card:hover .bento-visual--strategy::after {
+      transform: scale(1.15) rotate(15deg);
+      opacity: 1;
+    }
+
+    .bento-card:hover .bento-visual--strategy::before {
+      transform: scale(1.2);
+    }
+
+    /* ── Card 2: Image — concentric rings ── */
+    .bento-visual--image {
+      background: linear-gradient(145deg, var(--bg-card) 0%, var(--bg-alt) 100%);
+    }
+
+    .bento-visual--image::before {
+      top: 50%;
+      left: 50%;
+      width: 55%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 1.5px solid rgba(139, 31, 49, 0.1);
+      outline: 1.5px solid rgba(139, 31, 49, 0.06);
+      outline-offset: 24px;
+      transform: translate(-50%, -50%);
+    }
+
+    .bento-visual--image::after {
+      top: 50%;
+      left: 50%;
+      width: 24px;
+      height: 24px;
+      background: var(--accent);
+      opacity: 0.5;
+      transform: translate(-50%, -50%);
+    }
+
+    .bento-card:hover .bento-visual--image::before {
+      border-color: rgba(139, 31, 49, 0.2);
+    }
+
+    .bento-card:hover .bento-visual--image::after {
+      transform: translate(-50%, -50%) scale(1.2) rotate(20deg);
+      opacity: 0.8;
+    }
+
+    /* ── Card 3: Content — ring light + bokeh ── */
+    .bento-visual--content {
+      background:
+        radial-gradient(circle at 30% 70%, rgba(200, 185, 168, 0.4) 0%, transparent 30%),
+        radial-gradient(circle at 70% 30%, rgba(200, 185, 168, 0.3) 0%, transparent 25%),
+        radial-gradient(circle at 55% 45%, rgba(200, 185, 168, 0.2) 0%, transparent 15%),
+        radial-gradient(circle at 20% 25%, rgba(200, 185, 168, 0.25) 0%, transparent 12%),
+        radial-gradient(circle at 80% 75%, rgba(200, 185, 168, 0.2) 0%, transparent 10%),
+        linear-gradient(160deg, var(--bg-alt) 0%, var(--bg-card) 100%);
+    }
+
+    .bento-visual--content::before {
+      top: 50%;
+      left: 50%;
+      width: 60%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 2px solid rgba(139, 31, 49, 0.15);
+      transform: translate(-50%, -50%);
+    }
+
+    .bento-visual--content::after {
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      background: var(--accent);
+      opacity: 0.4;
+      transform: translate(-50%, -50%);
+    }
+
+    .bento-card:hover .bento-visual--content::before {
+      border-color: rgba(139, 31, 49, 0.25);
+      box-shadow: 0 0 30px rgba(139, 31, 49, 0.06);
+    }
+
+    .bento-card:hover .bento-visual--content::after {
+      opacity: 0.7;
+      transform: translate(-50%, -50%) scale(1.15);
+    }
+
+    /* ── Card 4: Career — ascending bars ── */
+    .bento-visual--career {
+      background: linear-gradient(160deg, var(--bg-alt) 0%, var(--bg-card) 100%);
+    }
+
+    .bento-visual--career::before {
+      bottom: 20%;
+      left: 10%;
+      right: 10%;
+      height: 60%;
+      background:
+        linear-gradient(0deg, rgba(139, 31, 49, 0.08) 0%, rgba(139, 31, 49, 0.08) 100%) 0% 100% / 12% 30% no-repeat,
+        linear-gradient(0deg, rgba(139, 31, 49, 0.11) 0%, rgba(139, 31, 49, 0.11) 100%) 22% 100% / 12% 45% no-repeat,
+        linear-gradient(0deg, rgba(139, 31, 49, 0.14) 0%, rgba(139, 31, 49, 0.14) 100%) 44% 100% / 12% 60% no-repeat,
+        linear-gradient(0deg, rgba(139, 31, 49, 0.18) 0%, rgba(139, 31, 49, 0.18) 100%) 66% 100% / 12% 78% no-repeat,
+        linear-gradient(0deg, rgba(139, 31, 49, 0.22) 0%, rgba(139, 31, 49, 0.22) 100%) 88% 100% / 12% 100% no-repeat;
+      border-radius: 4px;
+    }
+
+    .bento-visual--career::after {
+      top: 18%;
+      right: 14%;
+      width: 22px;
+      height: 22px;
+      background: var(--accent);
+      opacity: 0.6;
+    }
+
+    .bento-card:hover .bento-visual--career::before {
+      transform: translateY(-4px);
+    }
+
+    .bento-card:hover .bento-visual--career::after {
+      transform: translateY(-6px) rotate(15deg);
+      opacity: 0.9;
+    }
+
+    /* ── Card 5: Support — warm radial pulse ── */
+    .bento-visual--support {
+      background:
+        radial-gradient(circle at 50% 50%, rgba(139, 31, 49, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(200, 185, 168, 0.2) 0%, transparent 70%),
+        linear-gradient(160deg, var(--bg-alt) 0%, var(--bg-card) 100%);
+    }
+
+    .bento-visual--support::before {
+      top: 50%;
+      left: 50%;
+      width: 40%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 1.5px solid rgba(139, 31, 49, 0.15);
+      transform: translate(-50%, -50%);
+      animation: bento-pulse 3s ease-in-out infinite;
+    }
+
+    .bento-visual--support::after {
+      top: 50%;
+      left: 50%;
+      width: 26px;
+      height: 26px;
+      background: var(--accent);
+      opacity: 0.5;
+      transform: translate(-50%, -50%);
+      animation: bento-glow 3s ease-in-out infinite;
+    }
+
+    @keyframes bento-pulse {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+      50% { transform: translate(-50%, -50%) scale(1.08); opacity: 0.7; }
+    }
+
+    @keyframes bento-glow {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 0.8; }
+    }
+
+    .bento-card:hover .bento-visual--support::before {
+      border-color: rgba(139, 31, 49, 0.25);
+    }
+
+    /* ── Card 6: Languages — intersecting circles ── */
+    .bento-visual--languages {
+      background: linear-gradient(160deg, var(--bg-alt) 0%, var(--bg-card) 100%);
+    }
+
+    .bento-visual--languages::before {
+      top: 50%;
+      left: 35%;
+      width: 45%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 1.5px solid rgba(139, 31, 49, 0.12);
+      transform: translate(-50%, -50%);
+    }
+
+    .bento-visual--languages::after {
+      top: 50%;
+      left: 60%;
+      width: 45%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 1.5px solid rgba(200, 185, 168, 0.3);
+      transform: translate(-50%, -50%);
+      -webkit-mask-image: none;
+      mask-image: none;
+      background: transparent;
+    }
+
+    .bento-card:hover .bento-visual--languages::before {
+      transform: translate(-50%, -50%) translateX(-3px);
+      border-color: rgba(139, 31, 49, 0.2);
+    }
+
+    .bento-card:hover .bento-visual--languages::after {
+      transform: translate(-50%, -50%) translateX(3px);
+      border-color: rgba(200, 185, 168, 0.45);
     }
 
     .bento-body {
@@ -1855,6 +2135,12 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      filter: grayscale(1) sepia(1) hue-rotate(320deg) saturate(0.5) brightness(0.95) contrast(1.1);
+      transition: filter 0.4s ease;
+    }
+
+    .diversity-visual:hover .diversity-photo {
+      filter: grayscale(0.4) sepia(0.3) hue-rotate(320deg) saturate(0.4) brightness(1) contrast(1.05);
     }
 
     .story-photo img {
@@ -1862,6 +2148,12 @@
       height: 100%;
       object-fit: cover;
       border-radius: 50%;
+      filter: grayscale(1) sepia(1) hue-rotate(320deg) saturate(0.6) brightness(0.95) contrast(1.1);
+      transition: filter 0.4s ease;
+    }
+
+    .story-card:hover .story-photo img {
+      filter: grayscale(0.3) sepia(0.4) hue-rotate(320deg) saturate(0.5) brightness(1) contrast(1.05);
     }
 
     /* Photo Strip with real photo */
@@ -1873,7 +2165,7 @@
 
     /* Final CTA with photo background */
     .final-cta--photo {
-      background: url('/photos/cta-studio-warm.png') center/cover no-repeat;
+      background: url('/photos/cta-dream-life.png') center/cover no-repeat;
     }
 
     .final-cta--photo::before {
@@ -2884,6 +3176,15 @@
 
       /* Bento */
       .bento-card { padding: 22px 18px; }
+
+      .bento-visual--strategy::after,
+      .bento-visual--career::after,
+      .bento-visual--support::after { width: 20px; height: 20px; }
+
+      .bento-visual--image::after,
+      .bento-visual--content::after { width: 16px; height: 16px; }
+
+      .bento-sparkle { width: 14px; height: 14px; }
 
       /* Studio mosaic — stack on very small */
       .studio-mosaic {

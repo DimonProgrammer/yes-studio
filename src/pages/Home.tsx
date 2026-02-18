@@ -683,7 +683,7 @@ export default function Home() {
               {/* Дарья */}
               <div className="story-card reveal reveal-delay-1">
                 <div className="story-photo">
-                  <img src="/photos/story-darya.png" alt="Дарья" />
+                  <img src="/photos/story-natural-1.png" alt="Дарья" />
                 </div>
                 <div className="story-body">
                   <div className="story-name">Дарья, 24 года</div>
@@ -711,7 +711,7 @@ export default function Home() {
               {/* Алина */}
               <div className="story-card reveal reveal-delay-2">
                 <div className="story-photo">
-                  <img src="/photos/story-alina.png" alt="Алина" />
+                  <img src="/photos/story-natural-2.png" alt="Алина" />
                 </div>
                 <div className="story-body">
                   <div className="story-name">Алина, 21 год</div>
@@ -739,7 +739,7 @@ export default function Home() {
               {/* Кристина */}
               <div className="story-card reveal reveal-delay-3">
                 <div className="story-photo">
-                  <img src="/photos/story-kristina.png" alt="Кристина" />
+                  <img src="/photos/story-natural-3.png" alt="Кристина" />
                 </div>
                 <div className="story-body">
                   <div className="story-name">Кристина, 26 лет</div>
@@ -767,7 +767,7 @@ export default function Home() {
               {/* Виктория */}
               <div className="story-card reveal reveal-delay-4">
                 <div className="story-photo">
-                  <img src="/photos/story-victoria.png" alt="Виктория" />
+                  <img src="/photos/story-natural-4.png" alt="Виктория" />
                 </div>
                 <div className="story-body">
                   <div className="story-name">Виктория, 23 года</div>
@@ -839,9 +839,7 @@ export default function Home() {
             <div className="bento">
               <div className="bento-card tilt-card reveal reveal-delay-1">
                 <span className="pill-tag">Стратегия</span>
-                <div className="bento-visual">
-                  <img src="/photos/story-darya.png" alt="Индивидуальная стратегия работы стрим-моделью в YES Studio" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
+                <div className="bento-visual bento-visual--strategy"></div>
                 <div className="bento-body">
                   <div className="bento-title">Индивидуальная<br />стратегия</div>
                   <p className="bento-desc">Мы прописываем сценарий твоего успеха: на{'\u00A0'}каких темах играть, как удерживать внимание щедрых пользователей и{'\u00A0'}монетизировать харизму, а{'\u00A0'}не тело. Твой бренд будет работать годами</p>
@@ -850,9 +848,7 @@ export default function Home() {
 
               <div className="bento-card tilt-card reveal reveal-delay-2">
                 <span className="pill-tag">Имидж</span>
-                <div className="bento-visual">
-                  <img src="/photos/story-alina.png" alt="Создание личного имиджа модели в вебкам студии" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
+                <div className="bento-visual bento-visual--image"></div>
                 <div className="bento-body">
                   <div className="bento-title">Личный<br />имидж</div>
                   <p className="bento-desc">Наставник подберёт мейк, укладку и{'\u00A0'}аксессуары, которые транслируют твой характер и{'\u00A0'}повышают чек за{'\u00A0'}минуту общения</p>
@@ -861,9 +857,7 @@ export default function Home() {
 
               <div className="bento-card tilt-card reveal reveal-delay-3">
                 <span className="pill-tag">Контент</span>
-                <div className="bento-visual">
-                  <img src="/photos/bts-workspace.png" alt="Профессиональный контент для стрим-модели" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
+                <div className="bento-visual bento-visual--content"></div>
                 <div className="bento-body">
                   <div className="bento-title">Профессиональный<br />контент</div>
                   <p className="bento-desc">Бесплатно создадим фото- и{'\u00A0'}видеоконтент уровня глянца, который привлекает фанатов ещё до{'\u00A0'}выхода в{'\u00A0'}стрим</p>
@@ -872,9 +866,7 @@ export default function Home() {
 
               <div className="bento-card tilt-card reveal reveal-delay-1">
                 <span className="pill-tag">Карьера</span>
-                <div className="bento-visual">
-                  <img src="/photos/story-kristina.png" alt="Карьерный рост модели в YES Studio" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
+                <div className="bento-visual bento-visual--career"></div>
                 <div className="bento-body">
                   <div className="bento-title">Карьерный<br />рост</div>
                   <p className="bento-desc">От{'\u00A0'}новичка до{'\u00A0'}звезды — повышай уровень, забирай бонусы и{'\u00A0'}увеличивай процент</p>
@@ -883,9 +875,7 @@ export default function Home() {
 
               <div className="bento-card tilt-card reveal reveal-delay-2">
                 <span className="pill-tag">Поддержка 24/7</span>
-                <div className="bento-visual">
-                  <img src="/photos/story-victoria.png" alt="Персональный куратор 24/7 в вебкам студии" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
+                <div className="bento-visual bento-visual--support"></div>
                 <div className="bento-body">
                   <div className="bento-title">Персональный<br />куратор</div>
                   <p className="bento-desc">Продюсер на{'\u00A0'}связи 24/7. Обучает тонкостям психологии общения и{'\u00A0'}сопровождает на{'\u00A0'}всех этапах: от{'\u00A0'}настройки света до{'\u00A0'}крупных донатов</p>
@@ -894,9 +884,7 @@ export default function Home() {
 
               <div className="bento-card tilt-card reveal reveal-delay-3">
                 <span className="pill-tag">Языки</span>
-                <div className="bento-visual">
-                  <img src="/photos/detail-silk-robe.png" alt="Обучение английскому на практике в студии YES" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
+                <div className="bento-visual bento-visual--languages"><span className="bento-sparkle"></span></div>
                 <div className="bento-body">
                   <div className="bento-title">Английский<br />на{'\u00A0'}практике</div>
                   <p className="bento-desc">Автопереводчик + через год свободно заговоришь на{'\u00A0'}английском в{'\u00A0'}живом общении</p>
@@ -1106,7 +1094,7 @@ export default function Home() {
 
             <div className="diversity-layout reveal">
               <div className="diversity-visual reveal">
-                <img src="/photos/diversity-auburn.png" alt="Модели YES Studio" className="diversity-photo" style={{ aspectRatio: '3/4' }} />
+                <img src="/photos/diversity-friends.png" alt="Модели YES Studio" className="diversity-photo" style={{ aspectRatio: '4/3' }} />
               </div>
 
               <div className="diversity-right">
