@@ -596,71 +596,87 @@ export default function Home() {
         {/* ═══════════ HOOK / PAIN POINTS ═══════════ */}
         <section className="section section--alt hook-section" id="hook">
           <div className="container">
-            <div className="section-header reveal">
-              <h2 className="h2 split-text">
-                <span className="h-accent">Скорее всего ты здесь,</span><br />
-                потому что хочешь круто <br />изменить свою жизнь!
-              </h2>
-            </div>
+            <div className="hook-layout">
 
-            <div className="pain-grid">
-              <div className="pain-card reveal reveal-delay-1">
-                <div className="pain-card-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6L6 18" /><path d="M8 6h10v10" /><circle cx="12" cy="12" r="10" opacity="0.3" /></svg>
+              <div className="hook-left">
+                <div className="section-header reveal">
+                  <h2 className="h2 split-text">
+                    <span className="h-accent">Скорее всего ты здесь,</span><br />
+                    потому что хочешь круто <br />изменить свою жизнь!
+                  </h2>
                 </div>
-                <div className="pain-card-body">
-                  <div className="pain-card-title">Финансовая зависимость</div>
-                  <p className="pain-card-text">Устала финансово зависеть от{'\u00A0'}парня или родителей и{'\u00A0'}не чувствуешь себя свободной</p>
+
+                <div className="pain-grid">
+                  <div className="pain-card reveal reveal-delay-1">
+                    <div className="pain-card-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6L6 18" /><path d="M8 6h10v10" /><circle cx="12" cy="12" r="10" opacity="0.3" /></svg>
+                    </div>
+                    <div className="pain-card-body">
+                      <div className="pain-card-title">Финансовая зависимость</div>
+                      <p className="pain-card-text">Устала финансово зависеть от{'\u00A0'}парня или родителей и{'\u00A0'}не чувствуешь себя свободной</p>
+                    </div>
+                  </div>
+
+                  <div className="pain-card reveal reveal-delay-2">
+                    <div className="pain-card-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18" /><path d="M7 16l4-4 3 3 6-8" /></svg>
+                    </div>
+                    <div className="pain-card-body">
+                      <div className="pain-card-title">Долги и{'\u00A0'}кредиты</div>
+                      <p className="pain-card-text">У{'\u00A0'}тебя есть финансовая задолженность, которая не{'\u00A0'}дает спокойно жить</p>
+                    </div>
+                  </div>
+
+                  <div className="pain-card reveal reveal-delay-3">
+                    <div className="pain-card-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0110 0v4" /></svg>
+                    </div>
+                    <div className="pain-card-body">
+                      <div className="pain-card-title">Контроль родителей</div>
+                      <p className="pain-card-text">Сложные отношения с{'\u00A0'}родителями, которые контролируют каждый твой шаг</p>
+                    </div>
+                  </div>
+
+                  <div className="pain-card reveal reveal-delay-4">
+                    <div className="pain-card-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12a9 9 0 11-6.22-8.57" /><path d="M21 3v5h-5" /></svg>
+                    </div>
+                    <div className="pain-card-body">
+                      <div className="pain-card-title">Замкнутый круг</div>
+                      <p className="pain-card-text">Вся зарплата уходит на{'\u00A0'}долги, потом снова занимаешь — и{'\u00A0'}так по{'\u00A0'}кругу</p>
+                    </div>
+                  </div>
+
+                  <div className="pain-card reveal reveal-delay-5">
+                    <div className="pain-card-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M8 3H5a2 2 0 00-2 2v3" /><path d="M21 8V5a2 2 0 00-2-2h-3" /><path d="M3 16v3a2 2 0 002 2h3" /><path d="M16 21h3a2 2 0 002-2v-3" /><path d="M15 9l-6 6" /><path d="M9 9h.01" /><path d="M15 15h.01" /></svg>
+                    </div>
+                    <div className="pain-card-body">
+                      <div className="pain-card-title">Не{'\u00A0'}устраивает студия</div>
+                      <p className="pain-card-text">Уже работаешь моделью, но{'\u00A0'}условия, процент или отношение в{'\u00A0'}текущей студии — не{'\u00A0'}то, чего ты заслуживаешь</p>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="hook-text reveal">
+                  Если ты узнала себя — мы те, кто поможет и{'\u00A0'}проведёт к{'\u00A0'}новой классной жизни за{'\u00A0'}руку
+                </p>
+
+                <div className="hook-cta reveal">
+                  <a href="https://t.me/studio_yes" target="_blank" rel="noopener noreferrer" className="btn btn--accent">Хочу узнать больше <span className="btn-dot"></span></a>
                 </div>
               </div>
 
-              <div className="pain-card reveal reveal-delay-2">
-                <div className="pain-card-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18" /><path d="M7 16l4-4 3 3 6-8" /></svg>
-                </div>
-                <div className="pain-card-body">
-                  <div className="pain-card-title">Долги и{'\u00A0'}кредиты</div>
-                  <p className="pain-card-text">У{'\u00A0'}тебя есть финансовая задолженность, которая не{'\u00A0'}дает спокойно жить</p>
-                </div>
-              </div>
-
-              <div className="pain-card reveal reveal-delay-3">
-                <div className="pain-card-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0110 0v4" /></svg>
-                </div>
-                <div className="pain-card-body">
-                  <div className="pain-card-title">Контроль родителей</div>
-                  <p className="pain-card-text">Сложные отношения с{'\u00A0'}родителями, которые контролируют каждый твой шаг</p>
+              <div className="hook-right">
+                <div className="hook-photo reveal reveal-delay-2">
+                  <img
+                    src="/photos/freepik__a-dark-luxury-valentinethemed-fashion-editorial-in__94932.png"
+                    alt="YES Studio"
+                    loading="lazy"
+                  />
                 </div>
               </div>
 
-              <div className="pain-card reveal reveal-delay-4">
-                <div className="pain-card-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12a9 9 0 11-6.22-8.57" /><path d="M21 3v5h-5" /></svg>
-                </div>
-                <div className="pain-card-body">
-                  <div className="pain-card-title">Замкнутый круг</div>
-                  <p className="pain-card-text">Вся зарплата уходит на{'\u00A0'}долги, потом снова занимаешь — и{'\u00A0'}так по{'\u00A0'}кругу</p>
-                </div>
-              </div>
-
-              <div className="pain-card reveal reveal-delay-5">
-                <div className="pain-card-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M8 3H5a2 2 0 00-2 2v3" /><path d="M21 8V5a2 2 0 00-2-2h-3" /><path d="M3 16v3a2 2 0 002 2h3" /><path d="M16 21h3a2 2 0 002-2v-3" /><path d="M15 9l-6 6" /><path d="M9 9h.01" /><path d="M15 15h.01" /></svg>
-                </div>
-                <div className="pain-card-body">
-                  <div className="pain-card-title">Не{'\u00A0'}устраивает студия</div>
-                  <p className="pain-card-text">Уже работаешь моделью, но{'\u00A0'}условия, процент или отношение в{'\u00A0'}текущей студии — не{'\u00A0'}то, чего ты заслуживаешь</p>
-                </div>
-              </div>
-            </div>
-
-            <p className="hook-text reveal">
-              Если ты узнала себя — мы те, кто поможет и{'\u00A0'}проведёт к{'\u00A0'}новой классной жизни за{'\u00A0'}руку
-            </p>
-
-            <div className="section-cta reveal">
-              <a href="https://t.me/studio_yes" target="_blank" rel="noopener noreferrer" className="btn btn--accent">Хочу узнать больше <span className="btn-dot"></span></a>
             </div>
           </div>
         </section>

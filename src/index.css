@@ -1282,15 +1282,49 @@
 
     /* Emotional Hook — Pain Points */
     .hook-section {
-      text-align: center;
+      text-align: left;
+    }
+
+    .hook-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .hook-left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hook-right {
+      position: sticky;
+      top: 100px;
+    }
+
+    .hook-photo {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.18);
+    }
+
+    .hook-photo img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .hook-cta {
+      margin-top: 40px;
     }
 
     .pain-grid {
       display: flex;
       flex-direction: column;
       gap: 14px;
-      max-width: 580px;
-      margin: 0 auto 44px;
+      margin-bottom: 32px;
     }
 
     .pain-card {
@@ -1341,14 +1375,13 @@
     }
 
     .hook-text {
-      text-align: center;
+      text-align: left;
       font-family: var(--font-heading);
       font-size: 20px;
       font-weight: 400;
       line-height: 1.6;
       color: var(--text);
-      max-width: 560px;
-      margin: 0 auto 32px;
+      margin: 0 0 0;
       letter-spacing: 0.01em;
     }
 
@@ -1948,6 +1981,10 @@
     }
 
     @media (max-width: 1024px) {
+      .hook-layout {
+        grid-template-columns: 1fr 320px;
+        gap: 40px;
+      }
       .stories-grid {
         grid-template-columns: 1fr;
       }
@@ -1958,6 +1995,27 @@
       .diversity-visual {
         max-width: 400px;
         margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hook-section { text-align: left; }
+      .hook-layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .hook-right {
+        position: static;
+        order: -1;
+        margin: 0 -20px 36px;
+      }
+      .hook-photo {
+        border-radius: 0;
+        box-shadow: none;
+      }
+      .hook-photo img {
+        aspect-ratio: 4 / 3;
+        object-position: center 20%;
       }
     }
 
