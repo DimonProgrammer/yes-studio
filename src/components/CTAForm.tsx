@@ -4,6 +4,8 @@ export function CTAForm() {
   const [formData, setFormData] = useState({ name: '', telegram: '', phone: '' });
   const [errors, setErrors] = useState<Record<string, boolean>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [serverError, setServerError] = useState(false);
 
   const handlePhoneChange = (value: string) => {
     const digits = value.replace(/\D/g, '');
@@ -20,8 +22,9 @@ export function CTAForm() {
     setFormData(prev => ({ ...prev, phone: formatted }));
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setServerError(false);
     const newErrors: Record<string, boolean> = {};
 
     if (!formData.name.trim()) newErrors.name = true;
@@ -34,9 +37,21 @@ export function CTAForm() {
     setErrors(newErrors);
     if (Object.keys(newErrors).length > 0) return;
 
-    setSubmitted(true);
-    // TODO: Replace with actual endpoint
-    console.log('CTA Form submitted:', formData);
+    setLoading(true);
+    try {
+      const res = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error('Server error');
+      setSubmitted(true);
+    } catch {
+      setServerError(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -98,8 +113,14 @@ export function CTAForm() {
             className={errors.phone ? 'is-invalid' : formData.phone && formData.phone.replace(/\D/g, '').length >= 11 ? 'is-valid' : ''}
           />
         </div>
-        <button type="submit" className="btn btn--accent cta-form-submit">
-          Записаться — это бесплатно <span className="btn-dot"></span>
+        {serverError && (
+          <p className="cta-form-server-error">
+            Не удалось отправить заявку. Напишите нам напрямую в{'\u00A0'}
+            <a href="https://t.me/studio_yes" target="_blank" rel="noopener noreferrer">Telegram</a>.
+          </p>
+        )}
+        <button type="submit" className="btn btn--accent cta-form-submit" disabled={loading}>
+          {loading ? 'Отправляем...' : 'Записаться — это бесплатно'} {!loading && <span className="btn-dot"></span>}
         </button>
         <p className="cta-form-disclaimer">Нажимая кнопку, вы{'\u00A0'}даёте согласие на{'\u00A0'}обработку персональных данных</p>
       </form>

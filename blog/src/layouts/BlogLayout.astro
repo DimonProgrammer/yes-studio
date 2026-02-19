@@ -13,6 +13,8 @@ const { title, description, ogImage, ogType = 'website', canonical } = Astro.pro
 const siteUrl = 'https://yes-studio.agency'
 const defaultDescription = 'Блог YES Studio — полезные статьи о работе стрим-моделью, доходе, безопасности и лайфстайле.'
 const metaDescription = description || defaultDescription
+const defaultOgImage = `${siteUrl}/photos/cta-studio-warm.png`
+const metaOgImage = ogImage || defaultOgImage
 ---
 
 <!DOCTYPE html>
@@ -24,6 +26,10 @@ const metaDescription = description || defaultDescription
   <meta name="description" content={metaDescription}>
   {canonical && <link rel="canonical" href={canonical}>}
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="icon" href="/mark.svg" sizes="any">
+
   <!-- Open Graph -->
   <meta property="og:type" content={ogType}>
   <meta property="og:title" content={title}>
@@ -31,15 +37,15 @@ const metaDescription = description || defaultDescription
   <meta property="og:url" content={canonical || `${siteUrl}/blog/`}>
   <meta property="og:site_name" content="YES Studio">
   <meta property="og:locale" content="ru_RU">
-  {ogImage && <meta property="og:image" content={ogImage}>}
-  {ogImage && <meta property="og:image:width" content="1200">}
-  {ogImage && <meta property="og:image:height" content="630">}
+  <meta property="og:image" content={metaOgImage}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content={title}>
   <meta name="twitter:description" content={metaDescription}>
-  {ogImage && <meta name="twitter:image" content={ogImage}>}
+  <meta name="twitter:image" content={metaOgImage}>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -281,12 +287,12 @@ const metaDescription = description || defaultDescription
     </div>
     <div class="nav-content">
       <nav class="nav-links">
-        <a href="/about/">о студии</a>
-        <a href="/vacancies/">вакансии</a>
-        <a href="/calculator/">калькулятор</a>
+        <a href="/about/">О студии</a>
+        <a href="/vacancies/">Вакансии</a>
+        <a href="/calculator/">Калькулятор</a>
         <a href="/faq/">FAQ</a>
-        <a href="/blog/">блог</a>
-        <a href="/contacts/">контакты</a>
+        <a href="/blog/">Блог</a>
+        <a href="/contacts/">Контакты</a>
       </nav>
       <div class="nav-metro-overlay">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2L2 12h3v8h4v-6h6v6h4v-8h3L12 2z"/></svg>
@@ -358,9 +364,9 @@ const metaDescription = description || defaultDescription
       </div>
 
       <div class="footer-legal">
-        <a href="#">Политика конфиденциальности</a>
-        <a href="#">Договор оферты</a>
-        <a href="#">Согласие на обработку персональных данных</a>
+        <a href="/privacy/">Политика конфиденциальности</a>
+        <a href="/terms/">Договор оферты</a>
+        <a href="/personal-data/">Согласие на обработку персональных данных</a>
       </div>
 
       <div class="footer-bottom">

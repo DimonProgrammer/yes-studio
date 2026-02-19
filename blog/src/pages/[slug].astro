@@ -13,9 +13,10 @@ const { slug } = Astro.params
 const post = await getPost(slug!)
 if (!post) return Astro.redirect('/blog/')
 
-const relatedPosts = post.category?.slug
-  ? await getRelatedPosts(post.category.slug.current, post._id)
-  : []
+const relatedPosts = await getRelatedPosts(
+  post.category?.slug?.current ?? null,
+  post._id
+)
 
 const coverUrl = post.coverImage
   ? urlFor(post.coverImage).width(1200).height(630).format('webp').url()
@@ -206,7 +207,7 @@ const bodyHtml = post.body ? toHTML(post.body, {
   }
 
   /* ── Article Header ── */
-  .article-page { padding-top: 16px; }
+  .article-page { padding-top: 16px; padding-bottom: 100px; }
   .article-header { max-width: 680px; margin-bottom: 32px; }
   .article-meta {
     display: flex; gap: 10px; align-items: center;

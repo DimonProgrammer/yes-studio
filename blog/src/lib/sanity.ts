@@ -76,22 +76,31 @@ export async function getPost(slug: string) {
   }
 }
 
-// Fetch related posts (same category, exclude current)
-export async function getRelatedPosts(categorySlug: string, currentId: string) {
+// Fetch related posts (same category first, fall back to recent)
+export async function getRelatedPosts(categorySlug: string | null, currentId: string) {
+  if (categorySlug) {
+    const sameCat = await safeFetch<any[]>(
+      `
+      *[_type == "post" && category->slug.current == $categorySlug && _id != $currentId] | order(publishedAt desc) [0...3] {
+        _id, title, slug, excerpt, coverImage, publishedAt,
+        "category": category->{ title, slug },
+        "readTime": round(length(pt::text(body)) / 1200)
+      }
+    `,
+      { categorySlug, currentId }
+    )
+    if (sameCat.length >= 2) return sameCat
+  }
+  // Fall back to most recent posts
   return safeFetch<any[]>(
     `
-    *[_type == "post" && category->slug.current == $categorySlug && _id != $currentId] | order(publishedAt desc) [0...3] {
-      _id,
-      title,
-      slug,
-      excerpt,
-      coverImage,
-      publishedAt,
+    *[_type == "post" && _id != $currentId] | order(publishedAt desc) [0...3] {
+      _id, title, slug, excerpt, coverImage, publishedAt,
       "category": category->{ title, slug },
       "readTime": round(length(pt::text(body)) / 1200)
     }
   `,
-    { categorySlug, currentId }
+    { currentId }
   )
 }
 

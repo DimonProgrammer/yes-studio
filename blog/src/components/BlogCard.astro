@@ -25,7 +25,9 @@ const date = post.publishedAt
     {imageUrl ? (
       <img src={imageUrl} alt={post.coverImage?.alt || post.title} loading="lazy" width="600" height="400">
     ) : (
-      <div class="blog-card__placeholder"></div>
+      <div class="blog-card__placeholder">
+        <span class="blog-card__placeholder-text">{post.title}</span>
+      </div>
     )}
   </div>
   <div class="blog-card__body">
@@ -73,7 +75,16 @@ const date = post.publishedAt
   }
   .blog-card__placeholder {
     width: 100%; height: 100%;
-    background: linear-gradient(135deg, var(--bg-alt), var(--bg-sand));
+    background: var(--bg-dark);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+  }
+  .blog-card__placeholder-text {
+    font-family: var(--font-heading);
+    font-size: 17px; font-weight: 400;
+    text-transform: uppercase; letter-spacing: 0.04em;
+    color: var(--text-cream); opacity: 0.45;
+    text-align: center; line-height: 1.35;
   }
 
   .blog-card__body {

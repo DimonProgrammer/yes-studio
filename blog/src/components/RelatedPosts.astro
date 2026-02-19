@@ -13,6 +13,7 @@ const { posts } = Astro.props
     <div class="container">
       <div class="related__header">
         <span class="related__label">Читай также</span>
+        <h2 class="related__title">Также может быть интересно</h2>
       </div>
       <div class="related__grid">
         {posts.map((post) => (
@@ -37,14 +38,22 @@ const { posts } = Astro.props
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--accent);
+    display: block;
+    margin-bottom: 12px;
+  }
+  .related__title {
+    font-family: var(--font-heading);
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--text);
+    line-height: 1.15;
   }
   .related__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
-  }
-  @media (max-width: 1024px) {
-    .related__grid { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 640px) {
     .related__grid { grid-template-columns: 1fr; }

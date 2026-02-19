@@ -16,6 +16,9 @@ export function Header() {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const isHomePage = location.pathname === '/';
+  const hasBackdrop = scrolled || !isHomePage;
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -71,13 +74,14 @@ export function Header() {
     <>
       {/* ═══════════ HEADER ═══════════ */}
       <header
-        className={`header header--transparent${scrolled ? ' header--scrolled' : ''}`}
+        className={`header header--transparent${hasBackdrop ? ' header--scrolled' : ''}`}
         id="header"
       >
         <div className="header-left">
           <Link
             to="/"
             className="header-logo"
+            aria-label="YES Studio — на главную"
             onClick={() => {
               if (location.pathname === '/') {
                 window.scrollTo({ top: 0, behavior: 'smooth' });

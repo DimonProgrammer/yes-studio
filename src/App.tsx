@@ -9,6 +9,9 @@ import Calculator from './pages/Calculator';
 import Gallery from './pages/Gallery';
 import FAQ from './pages/FAQ';
 import Contacts from './pages/Contacts';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import PersonalData from './pages/PersonalData';
 import NotFound from './pages/NotFound';
 
 export default function App() {
@@ -25,6 +28,9 @@ export default function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/personal-data" element={<PersonalData />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

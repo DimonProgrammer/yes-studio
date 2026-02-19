@@ -3,6 +3,13 @@
    created by client-side JavaScript (no Astro scope hash)
    ======================================================== */
 
+/* ── Layout ── */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+
 /* ── Blog card ── */
 .blog-card {
   background: var(--bg-card);
@@ -37,7 +44,22 @@
 .blog-card__placeholder {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--bg-alt), var(--bg-sand));
+  background: var(--bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.blog-card__placeholder-text {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-cream);
+  opacity: 0.45;
+  text-align: center;
+  line-height: 1.35;
 }
 .blog-card__body {
   padding: 20px 24px 24px;
