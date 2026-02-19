@@ -629,7 +629,7 @@ export default function Home() {
             </p>
 
             <div className="hero-ctas hero-enter hero-enter-5">
-              <a href="https://t.me/studio_yes" target="_blank" rel="noopener noreferrer" className="btn btn--cream">Начать зарабатывать <span className="btn-dot"></span></a>
+              <a href="#apply" className="btn btn--cream">Начать зарабатывать <span className="btn-dot"></span></a>
               <a href="#calc" className="btn btn--ghost-light">Рассчитать доход</a>
             </div>
 
@@ -724,7 +724,7 @@ export default function Home() {
                 </p>
 
                 <div className="hook-cta reveal">
-                  <a href="https://t.me/studio_yes" target="_blank" rel="noopener noreferrer" className="btn btn--accent">Хочу узнать больше <span className="btn-dot"></span></a>
+                  <a href="#apply" className="btn btn--accent">Хочу узнать больше <span className="btn-dot"></span></a>
                 </div>
               </div>
 
@@ -836,7 +836,7 @@ export default function Home() {
             </div>
 
             <div className="section-cta reveal">
-              <a href="https://t.me/studio_yes" target="_blank" rel="noopener noreferrer" className="btn btn--dark">Начать зарабатывать <span className="btn-dot"></span></a>
+              <a href="#apply" className="btn btn--dark">Начать зарабатывать <span className="btn-dot"></span></a>
             </div>
           </div>
         </section>
@@ -1015,7 +1015,7 @@ export default function Home() {
                   <div className="calc-result-sub">
                     При{'\u00A0'}графике <span>{shifts}</span> смен {'\u00D7'} <span>{hours}</span>ч {'\u00B7'} <span>{expLabel(experience)}</span>
                   </div>
-                  <a href="https://t.me/studio_yes" target="_blank" rel="noopener noreferrer" className="btn btn--accent">Хочу столько же <span className="btn-dot"></span></a>
+                  <a href="#apply" className="btn btn--accent">Хочу столько же <span className="btn-dot"></span></a>
                 </div>
               </div>
             </div>
@@ -1213,7 +1213,7 @@ export default function Home() {
             </div>
 
             <div className="section-cta reveal" style={{ marginTop: '56px' }}>
-              <a href="https://t.me/studio_yes" target="_blank" rel="noopener noreferrer" className="btn btn--dark">Я тоже хочу изменить свою жизнь <span className="btn-dot"></span></a>
+              <a href="#apply" className="btn btn--dark">Я тоже хочу изменить свою жизнь <span className="btn-dot"></span></a>
             </div>
           </div>
         </section>
@@ -1399,7 +1399,7 @@ export default function Home() {
             </div>
 
             <div className="section-cta reveal">
-              <a href="https://t.me/studio_yes" target="_blank" rel="noopener noreferrer" className="btn btn--accent">Оставить заявку <span className="btn-dot"></span></a>
+              <a href="#apply" className="btn btn--accent">Оставить заявку <span className="btn-dot"></span></a>
             </div>
           </div>
         </section>
@@ -1469,7 +1469,7 @@ export default function Home() {
             </div>
 
             <div className="section-cta reveal">
-              <a href="https://t.me/studio_yes" target="_blank" rel="noopener noreferrer" className="btn btn--accent">Подхожу! Хочу начать <span className="btn-dot"></span></a>
+              <a href="#apply" className="btn btn--accent">Подхожу! Хочу начать <span className="btn-dot"></span></a>
             </div>
           </div>
         </section>
@@ -1566,7 +1566,7 @@ export default function Home() {
                     {(v as any).note && (
                       <p className="vacancy-note">{(v as any).note}</p>
                     )}
-                    <a href="https://t.me/studio_yes" target="_blank" rel="noopener noreferrer" className="btn btn--accent">Откликнуться <span className="btn-dot"></span></a>
+                    <a href="#apply" className="btn btn--accent">Откликнуться <span className="btn-dot"></span></a>
                   </div>
                 </div>
               ))}
