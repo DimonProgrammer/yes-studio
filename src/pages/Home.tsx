@@ -25,6 +25,25 @@ function sanityImageUrl(ref: string, width = 600): string {
 }
 
 /* ──────────────────────────────────────────────
+   Month helpers (prepositional case for "В <месяце>")
+   ────────────────────────────────────────────── */
+const MONTHS_PREP = [
+  'январе','феврале','марте','апреле','мае','июне',
+  'июле','августе','сентябре','октябре','ноябре','декабре',
+];
+
+/* ──────────────────────────────────────────────
+   Studio photos for lightbox
+   ────────────────────────────────────────────── */
+const studioPhotos = [
+  { src: '/photos/studio-room-3.jpg', alt: 'Элегантная комната студии YES' },
+  { src: '/photos/studio-room-2.jpg', alt: 'Зелёная зона студии' },
+  { src: '/photos/studio-room-1.jpg', alt: 'Уютная комната с книжным шкафом' },
+  { src: '/photos/studio-room-5.jpg', alt: 'Тропическая комната' },
+  { src: '/photos/studio-room-4.jpg', alt: 'Комната с неоновым дизайном' },
+];
+
+/* ──────────────────────────────────────────────
    FAQ data
    ────────────────────────────────────────────── */
 const faqItems = [
@@ -108,7 +127,7 @@ const vacancies = [
    Calculator helper
    ────────────────────────────────────────────── */
 function calcIncome(shifts: number, hours: number, experience: number) {
-  const base = shifts * hours * 4 * 700;
+  const base = shifts * hours * 4 * 900;
   const min = Math.round(base * experience * 0.8 / 1000) * 1000;
   const max = Math.round(base * experience * 1.2 / 1000) * 1000;
   return { min, max };
@@ -119,8 +138,8 @@ function formatRub(n: number): string {
 }
 
 function expLabel(v: number): string {
-  if (v <= 0.7) return 'новичок';
-  if (v <= 1) return 'опытная';
+  if (v <= 1.0) return 'новичок';
+  if (v <= 1.3) return 'опытная';
   return 'профи';
 }
 
@@ -136,7 +155,7 @@ export default function Home() {
   // Calculator
   const [shifts, setShifts] = useState(5);
   const [hours, setHours] = useState(7);
-  const [experience, setExperience] = useState(0.7);
+  const [experience, setExperience] = useState(1.0);
 
   // Video
   const [videoPlaying, setVideoPlaying] = useState(false);
@@ -145,13 +164,19 @@ export default function Home() {
   // Sticky widget
   const [stickyVisible, setStickyVisible] = useState(false);
 
+  // Lightbox
+  const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
+
+  // Calculator ring visibility (for entry animation)
+  const [ringVisible, setRingVisible] = useState(false);
+
   // Blog posts
   const [blogPosts, setBlogPosts] = useState<SanityPost[]>([]);
   const [blogLoading, setBlogLoading] = useState(true);
 
   /* ── Derived ── */
   const income = calcIncome(shifts, hours, experience);
-  const maxPossible = calcIncome(6, 8, 1.4);
+  const maxPossible = calcIncome(6, 8, 1.7);
   const ringPercent = Math.round(((income.min + income.max) / 2) / ((maxPossible.min + maxPossible.max) / 2) * 100);
   const circumference = 2 * Math.PI * 54;
   const ringOffset = circumference - (ringPercent / 100) * circumference;
@@ -214,6 +239,23 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
+  /* ── Calculator ring: track visibility for entry animation ── */
+  useEffect(() => {
+    const el = document.getElementById('calcRing');
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setRingVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   /* ── Animated counters ── */
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -251,7 +293,7 @@ export default function Home() {
 
   /* ── Parallax for diversity-visual & photo-strip ── */
   useEffect(() => {
-    const parallaxEls = document.querySelectorAll('.diversity-visual, .photo-strip');
+    const parallaxEls = document.querySelectorAll('.photo-strip');
     if (!parallaxEls.length) return;
 
     let ticking = false;
@@ -337,6 +379,22 @@ export default function Home() {
       .catch(() => {})
       .finally(() => setBlogLoading(false));
   }, []);
+
+  /* ── Lightbox keyboard navigation + scroll lock ── */
+  useEffect(() => {
+    if (lightboxIdx === null) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightboxIdx(null);
+      if (e.key === 'ArrowRight') setLightboxIdx(i => ((i ?? 0) + 1) % studioPhotos.length);
+      if (e.key === 'ArrowLeft') setLightboxIdx(i => ((i ?? 0) - 1 + studioPhotos.length) % studioPhotos.length);
+    };
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleKey);
+    return () => {
+      window.removeEventListener('keydown', handleKey);
+      document.body.style.overflow = '';
+    };
+  }, [lightboxIdx]);
 
   /* ── Text Split Animation ── */
   useEffect(() => {
@@ -483,7 +541,7 @@ export default function Home() {
     '@type': 'Organization',
     name: 'YES Studio',
     url: 'https://yes-studio.agency',
-    logo: 'https://yes-studio.agency/photos/studio-room-3.jpg',
+    logo: 'https://yes-studio.agency/images/logos/yes-studio-logo.png',
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+7-963-938-02-67',
@@ -524,6 +582,9 @@ export default function Home() {
     })),
   };
 
+  /* ── Current month (prepositional) ── */
+  const currentMonth = MONTHS_PREP[new Date().getMonth()];
+
   /* ── Current vacancy ── */
   const currentVacancy = vacancies[activeVacancy];
 
@@ -538,7 +599,7 @@ export default function Home() {
         <meta property="og:description" content="Зарабатывай на общении от 90 000 ₽ в месяц. Ежедневные выплаты." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://yes-studio.agency/" />
-        <meta property="og:image" content="https://yes-studio.agency/photos/studio-room-3.jpg" />
+        <meta property="og:image" content="https://yes-studio.agency/photos/og-cover.jpg" />
         <meta property="og:site_name" content="YES Studio" />
         <link rel="canonical" href="https://yes-studio.agency/" />
         <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
@@ -807,22 +868,22 @@ export default function Home() {
 
             {/* Mosaic Photo Grid */}
             <div className="studio-mosaic">
-              <div className="studio-mosaic__item studio-mosaic__hero reveal">
+              <div className="studio-mosaic__item studio-mosaic__hero reveal" onClick={() => setLightboxIdx(0)}>
                 <img src="/photos/studio-room-3.jpg" alt="Элегантная комната студии YES" loading="lazy" />
                 <div className="studio-mosaic__overlay">
                   <span className="studio-mosaic__tag">5 уникальных комнат</span>
                 </div>
               </div>
-              <div className="studio-mosaic__item studio-mosaic__tall reveal reveal-delay-1">
+              <div className="studio-mosaic__item studio-mosaic__tall reveal reveal-delay-1" onClick={() => setLightboxIdx(1)}>
                 <img src="/photos/studio-room-2.jpg" alt="Зелёная зона студии" loading="lazy" />
               </div>
-              <div className="studio-mosaic__item reveal reveal-delay-2">
+              <div className="studio-mosaic__item reveal reveal-delay-2" onClick={() => setLightboxIdx(2)}>
                 <img src="/photos/studio-room-1.jpg" alt="Уютная комната с книжным шкафом" loading="lazy" />
               </div>
-              <div className="studio-mosaic__item reveal reveal-delay-3">
+              <div className="studio-mosaic__item reveal reveal-delay-3" onClick={() => setLightboxIdx(3)}>
                 <img src="/photos/studio-room-5.jpg" alt="Тропическая комната" loading="lazy" />
               </div>
-              <div className="studio-mosaic__item studio-mosaic__wide reveal reveal-delay-4">
+              <div className="studio-mosaic__item studio-mosaic__wide reveal reveal-delay-4" onClick={() => setLightboxIdx(4)}>
                 <img src="/photos/studio-room-4.jpg" alt="Комната с неоновым дизайном" loading="lazy" />
               </div>
             </div>
@@ -914,9 +975,9 @@ export default function Home() {
                       <div className="calc-group-label">Опыт</div>
                       <div className="calc-tabs" id="expGroup">
                         {[
-                          { value: 0.7, label: 'Новичок' },
-                          { value: 1, label: 'Опытная' },
-                          { value: 1.4, label: 'Профи' },
+                          { value: 1.0, label: 'Новичок' },
+                          { value: 1.3, label: 'Опытная' },
+                          { value: 1.7, label: 'Профи' },
                         ].map((item) => (
                           <button
                             key={item.value}
@@ -938,8 +999,7 @@ export default function Home() {
                         cx="60"
                         cy="60"
                         r="54"
-                        strokeDasharray={circumference}
-                        strokeDashoffset={ringOffset}
+                        style={{ strokeDashoffset: ringVisible ? ringOffset : circumference }}
                       />
                     </svg>
                     <div className="calc-ring-value">{ringPercent}%</div>
@@ -1045,7 +1105,7 @@ export default function Home() {
             <div className="stories-grid">
               <div className="story-card reveal reveal-delay-1">
                 <div className="story-photo">
-                  <img src="/photos/story-natural-1.png" alt="Дарья" />
+                  <div className="placeholder"></div>
                 </div>
                 <div className="story-body">
                   <div className="story-name">Дарья, 24 года</div>
@@ -1072,7 +1132,7 @@ export default function Home() {
 
               <div className="story-card reveal reveal-delay-2">
                 <div className="story-photo">
-                  <img src="/photos/story-natural-2.png" alt="Алина" />
+                  <div className="placeholder"></div>
                 </div>
                 <div className="story-body">
                   <div className="story-name">Алина, 21 год</div>
@@ -1099,7 +1159,7 @@ export default function Home() {
 
               <div className="story-card reveal reveal-delay-3">
                 <div className="story-photo">
-                  <img src="/photos/story-natural-3.png" alt="Кристина" />
+                  <div className="placeholder"></div>
                 </div>
                 <div className="story-body">
                   <div className="story-name">Кристина, 26 лет</div>
@@ -1126,7 +1186,7 @@ export default function Home() {
 
               <div className="story-card reveal reveal-delay-4">
                 <div className="story-photo">
-                  <img src="/photos/story-natural-4.png" alt="Виктория" />
+                  <div className="placeholder"></div>
                 </div>
                 <div className="story-body">
                   <div className="story-name">Виктория, 23 года</div>
@@ -1158,6 +1218,51 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ═══════════ CTA FORM ═══════════ */}
+        <section className="section section--dark" id="apply" style={{ position: 'relative', overflow: 'hidden' }}>
+          <div className="cursor-glow" id="applyGlow"></div>
+          <div className="container">
+
+            <div className="cta-form-badge reveal">
+              <span className="cta-form-badge-dot"></span>
+              В{'\u00A0'}{currentMonth} осталось <strong>3 из 5</strong> мест
+            </div>
+
+            <div className="cta-form-layout">
+              {/* Текст */}
+              <div className="cta-form-text reveal">
+                <h2 className="cta-form-title">
+                  Хочешь — отправим<br />
+                  <em>подробности</em><br />
+                  в Telegram?
+                </h2>
+                <p className="cta-form-subtitle">Только девушки 18+</p>
+                <p className="cta-form-desc">
+                  Оставь заявку — перезвоним <strong>за{'\u00A0'}час</strong> и{'\u00A0'}пригласим на{'\u00A0'}встречу в{'\u00A0'}студии.
+                </p>
+                <div className="cta-form-trust">
+                  <div className="cta-form-trust-item">
+                    <div className="cta-form-trust-icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <span>Конфиденциально — данные защищены</span>
+                  </div>
+                  <div className="cta-form-trust-item">
+                    <div className="cta-form-trust-icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <span>Перезвоним в{'\u00A0'}течение 1{'\u00A0'}часа</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Форма */}
+              <CTAForm />
+            </div>
+
+          </div>
+        </section>
+
         {/* ═══════════ DIVERSITY ═══════════ */}
         <section className="section" id="diversity">
           <div className="container">
@@ -1172,7 +1277,7 @@ export default function Home() {
 
             <div className="diversity-layout reveal">
               <div className="diversity-visual reveal">
-                <img src="/photos/diversity-friends.png" alt="Модели YES Studio" className="diversity-photo" style={{ aspectRatio: '4/3' }} />
+                <div className="placeholder" style={{ aspectRatio: '4/3' }}></div>
               </div>
 
               <div className="diversity-right">
@@ -1369,64 +1474,25 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ═══════════ CTA FORM ═══════════ */}
-        <section className="section section--dark" id="apply" style={{ position: 'relative', overflow: 'hidden' }}>
-          <div className="cursor-glow" id="applyGlow"></div>
-          <div className="container">
-
-            <div className="cta-form-badge reveal">
-              <span className="cta-form-badge-dot"></span>
-              В{'\u00A0'}феврале осталось <strong>3 из 5</strong> мест
-            </div>
-
-            <div className="cta-form-layout">
-              {/* Текст */}
-              <div className="cta-form-text reveal">
-                <h2 className="cta-form-title">
-                  ХОЧЕШЬ, ОТПРАВИМ<br />
-                  <em>подробности</em><br />
-                  В ТЕЛЕГРАМ?
-                </h2>
-                <p className="cta-form-subtitle">Только девушки 18+</p>
-                <p className="cta-form-desc">
-                  Оставь заявку — перезвоним <strong>за{'\u00A0'}час</strong> и{'\u00A0'}пригласим на{'\u00A0'}встречу в{'\u00A0'}студии.
-                </p>
-                <div className="cta-form-trust">
-                  <div className="cta-form-trust-item">
-                    <div className="cta-form-trust-icon">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    </div>
-                    <span>Конфиденциально — данные защищены</span>
-                  </div>
-                  <div className="cta-form-trust-item">
-                    <div className="cta-form-trust-icon">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    </div>
-                    <span>Перезвоним в{'\u00A0'}течение 1{'\u00A0'}часа</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Форма */}
-              <CTAForm />
-            </div>
-
-          </div>
-        </section>
-
         {/* ═══════════ FAQ ═══════════ */}
         <section className="section section--alt" id="faq">
           <div className="container">
             <div className="section-header reveal">
               <div className="label label--accent">вопросы</div>
-              <h2 className="h2 split-text">FAQ</h2>
-              <h3 style={{ fontFamily: 'var(--font-body)', fontSize: '18px', fontWeight: 400, color: 'var(--text-muted)', marginTop: '8px' }}>Ответы на{'\u00A0'}часто задаваемые вопросы</h3>
+              <h2 className="h2 split-text">Вопросы и ответы</h2>
             </div>
 
-            <div className="faq-list">
+            <div className="faq-list reveal">
               {faqItems.map((item, i) => (
-                <div key={i} className={`faq-item reveal${openFaq === i ? ' open' : ''}`}>
-                  <div className="faq-question" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
+                <div key={i} className={`faq-item${openFaq === i ? ' open' : ''}`}>
+                  <div
+                    className="faq-question"
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    role="button"
+                    tabIndex={0}
+                    aria-expanded={openFaq === i}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setOpenFaq(openFaq === i ? null : i); }}
+                  >
                     <h4>{item.q}</h4>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M12 5v14M5 12h14" /></svg>
                   </div>
@@ -1615,7 +1681,7 @@ export default function Home() {
         {/* ═══════════ STICKY WIDGET ═══════════ */}
         <div className={`sticky-widget${stickyVisible ? ' visible' : ''}`}>
           <span className="sticky-dot"></span>
-          В{'\u00A0'}феврале осталось <strong>3 из 5</strong> мест
+          В{'\u00A0'}{currentMonth} осталось <strong>3 из 5</strong> мест
           <a href="https://t.me/studio_yes" target="_blank" rel="noopener noreferrer" className="sticky-cta">
             Занять своё место{' '}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
@@ -1623,6 +1689,42 @@ export default function Home() {
         </div>
 
       </main>
+
+      {/* ═══════════ LIGHTBOX ═══════════ */}
+      {lightboxIdx !== null && (
+        <div
+          className="lightbox"
+          onClick={() => setLightboxIdx(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Просмотр фото студии"
+        >
+          <button className="lightbox__close" onClick={() => setLightboxIdx(null)} aria-label="Закрыть">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M18 6L6 18M6 6l12 12" /></svg>
+          </button>
+          <button
+            className="lightbox__nav lightbox__nav--prev"
+            onClick={(e) => { e.stopPropagation(); setLightboxIdx((lightboxIdx - 1 + studioPhotos.length) % studioPhotos.length); }}
+            aria-label="Предыдущее фото"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M15 18l-6-6 6-6" /></svg>
+          </button>
+          <img
+            src={studioPhotos[lightboxIdx].src}
+            alt={studioPhotos[lightboxIdx].alt}
+            className="lightbox__img"
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button
+            className="lightbox__nav lightbox__nav--next"
+            onClick={(e) => { e.stopPropagation(); setLightboxIdx((lightboxIdx + 1) % studioPhotos.length); }}
+            aria-label="Следующее фото"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M9 18l6-6-6-6" /></svg>
+          </button>
+          <div className="lightbox__counter">{lightboxIdx + 1} / {studioPhotos.length}</div>
+        </div>
+      )}
     </>
   );
 }
