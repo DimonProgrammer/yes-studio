@@ -681,140 +681,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ═══════════ STORIES / SOCIAL PROOF ═══════════ */}
-        <section className="section section--alt section--textured" id="stories">
-          <div className="container">
-            <div className="section-header reveal">
-              <div className="label label--accent">реальные истории</div>
-              <h2 className="h2 split-text">
-                <span className="h-accent">Они были</span><br />
-                на{'\u00A0'}твоём месте
-              </h2>
-              <p className="section-lead">
-                Истории наших моделей, которые изменили свою жизнь с{'\u00A0'}помощью YES Studio
-              </p>
-            </div>
-
-            <div className="stories-grid">
-              {/* Дарья */}
-              <div className="story-card reveal reveal-delay-1">
-                <div className="story-photo">
-                  <img src="/photos/story-natural-1.png" alt="Дарья" />
-                </div>
-                <div className="story-body">
-                  <div className="story-name">Дарья, 24 года</div>
-                  <div className="story-before-after">
-                    <div className="story-ba-item story-ba-before">
-                      <span className="story-ba-label">Было</span>
-                      Долг 400 000 ₽, зависимость от{'\u00A0'}парня
-                    </div>
-                    <div className="story-ba-item story-ba-after">
-                      <span className="story-ba-label">Стало</span>
-                      Доход 200 000+ ₽/мес, путешествия, свобода
-                    </div>
-                  </div>
-                  <div className="story-expandable" data-expanded={storyExpanded[0] ? 'true' : 'false'}>
-                    <div className="story-full-text">
-                      {'\u00AB'}Я взяла кредит на{'\u00A0'}своего парня, думала, что он вернёт. Не{'\u00A0'}вернул. Осталась с{'\u00A0'}долгом в 400 тысяч и{'\u00A0'}без поддержки. Было страшно и{'\u00A0'}обидно. В YES я пришла из{'\u00A0'}отчаяния. Первые две недели казались сложными, но{'\u00A0'}куратор поддерживала каждый день. <strong>За 4 месяца я полностью закрыла кредит</strong> и{'\u00A0'}поняла, что могу полагаться только на{'\u00A0'}себя. Теперь мой доход 200 000+ в{'\u00A0'}месяц, я путешествую и{'\u00A0'}живу для{'\u00A0'}себя{'\u00BB'}.
-                    </div>
-                    <button className="story-toggle" onClick={() => toggleStory(0)}>
-                      {storyExpanded[0] ? 'Свернуть' : 'Читать историю'}
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Алина */}
-              <div className="story-card reveal reveal-delay-2">
-                <div className="story-photo">
-                  <img src="/photos/story-natural-2.png" alt="Алина" />
-                </div>
-                <div className="story-body">
-                  <div className="story-name">Алина, 21 год</div>
-                  <div className="story-before-after">
-                    <div className="story-ba-item story-ba-before">
-                      <span className="story-ba-label">Было</span>
-                      Родители контролировали каждый шаг, ноль своих денег
-                    </div>
-                    <div className="story-ba-item story-ba-after">
-                      <span className="story-ba-label">Стало</span>
-                      Своя квартира, 120 000 ₽ в{'\u00A0'}первый месяц
-                    </div>
-                  </div>
-                  <div className="story-expandable" data-expanded={storyExpanded[1] ? 'true' : 'false'}>
-                    <div className="story-full-text">
-                      {'\u00AB'}Я жила с{'\u00A0'}родителями, которые контролировали абсолютно всё: куда иду, с{'\u00A0'}кем общаюсь, сколько трачу. Своих денег не{'\u00A0'}было, я чувствовала себя как в{'\u00A0'}клетке. Работу в{'\u00A0'}студии нашла случайно. Сначала боялась сказать родителям, но{'\u00A0'}когда <strong>через месяц принесла домой 120 тысяч</strong>, их отношение изменилось. Сейчас я снимаю свою квартиру, финансово независима и{'\u00A0'}сама решаю, как жить{'\u00BB'}.
-                    </div>
-                    <button className="story-toggle" onClick={() => toggleStory(1)}>
-                      {storyExpanded[1] ? 'Свернуть' : 'Читать историю'}
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Кристина */}
-              <div className="story-card reveal reveal-delay-3">
-                <div className="story-photo">
-                  <img src="/photos/story-natural-3.png" alt="Кристина" />
-                </div>
-                <div className="story-body">
-                  <div className="story-name">Кристина, 26 лет</div>
-                  <div className="story-before-after">
-                    <div className="story-ba-item story-ba-before">
-                      <span className="story-ba-label">Было</span>
-                      Зарплата 45 000 ₽, всё уходило на{'\u00A0'}долги
-                    </div>
-                    <div className="story-ba-item story-ba-after">
-                      <span className="story-ba-label">Стало</span>
-                      180–250 000 ₽/мес, все долги закрыты за{'\u00A0'}полгода
-                    </div>
-                  </div>
-                  <div className="story-expandable" data-expanded={storyExpanded[2] ? 'true' : 'false'}>
-                    <div className="story-full-text">
-                      {'\u00AB'}Я работала администратором за 45 тысяч. Из{'\u00A0'}них 30 уходило на{'\u00A0'}кредиты и{'\u00A0'}долги знакомым. Потом снова занимала — замкнутый круг. В YES я начала зарабатывать с{'\u00A0'}первой недели. <strong>За{'\u00A0'}полгода закрыла все долги</strong> — это была лучшая победа в{'\u00A0'}моей жизни. Теперь зарабатываю 180-250 тысяч, откладываю и{'\u00A0'}впервые чувствую, что контролирую свою жизнь{'\u00BB'}.
-                    </div>
-                    <button className="story-toggle" onClick={() => toggleStory(2)}>
-                      {storyExpanded[2] ? 'Свернуть' : 'Читать историю'}
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Виктория */}
-              <div className="story-card reveal reveal-delay-4">
-                <div className="story-photo">
-                  <img src="/photos/story-natural-4.png" alt="Виктория" />
-                </div>
-                <div className="story-body">
-                  <div className="story-name">Виктория, 23 года</div>
-                  <div className="story-before-after">
-                    <div className="story-ba-item story-ba-before">
-                      <span className="story-ba-label">Было</span>
-                      Финансовая зависимость от{'\u00A0'}парня, токсичные отношения
-                    </div>
-                    <div className="story-ba-item story-ba-after">
-                      <span className="story-ba-label">Стало</span>
-                      150–200 000 ₽/мес, независимость, своя жизнь
-                    </div>
-                  </div>
-                  <div className="story-expandable" data-expanded={storyExpanded[3] ? 'true' : 'false'}>
-                    <div className="story-full-text">
-                      {'\u00AB'}Я не{'\u00A0'}работала, зависела от{'\u00A0'}парня финансово. Каждая покупка — это просьба и{'\u00A0'}объяснения. Отношения были токсичными, но{'\u00A0'}уйти было некуда. Студия стала моим спасением. Уже <strong>в{'\u00A0'}первый месяц заработала 95 тысяч</strong> и{'\u00A0'}съехала от{'\u00A0'}него. Сейчас мой доход стабильно 150-200 тысяч, я независима и{'\u00A0'}счастлива. Это было лучшее решение в{'\u00A0'}моей жизни{'\u00BB'}.
-                    </div>
-                    <button className="story-toggle" onClick={() => toggleStory(3)}>
-                      {storyExpanded[3] ? 'Свернуть' : 'Читать историю'}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="section-cta reveal" style={{ marginTop: '56px' }}>
-              <a href="https://t.me/studio_yes" target="_blank" rel="noopener noreferrer" className="btn btn--dark">Я тоже хочу изменить свою жизнь <span className="btn-dot"></span></a>
-            </div>
-          </div>
-        </section>
-
         {/* ═══════════ MARQUEE TICKER ═══════════ */}
         <div className="marquee">
           <div className="marquee-track">
@@ -1096,6 +962,202 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ═══════════ ABOUT WORK ═══════════ */}
+        <section className="section section--dark" id="about-work">
+          <div className="container">
+            <div className="section-header reveal">
+              <div className="label" style={{ color: 'rgba(245,240,235,0.3)' }}>условия</div>
+              <h2 className="h2 split-text" style={{ color: 'var(--text-cream)' }}>
+                <span className="h-accent">О{'\u00A0'}работе</span><br />
+                в{'\u00A0'}нашей компании
+              </h2>
+              <p className="section-lead" style={{ color: 'rgba(245,240,235,0.6)' }}>
+                Выбирая нас, ты выбираешь:
+              </p>
+            </div>
+
+            <div className="about-work-grid">
+              <div className="about-work-card reveal reveal-delay-1">
+                <div className="about-work-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z" /><path d="M9 12l2 2 4-4" /></svg>
+                </div>
+                <h3>Non-Nude навсегда</h3>
+                <p>Наши модели не{'\u00A0'}раздеваются. Мы зарабатываем на{'\u00A0'}харизме, атмосфере и{'\u00A0'}позитиве. <strong>Никакого давления на nude</strong> — никогда. Твои границы — закон</p>
+              </div>
+
+              <div className="about-work-card reveal reveal-delay-2">
+                <div className="about-work-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" /><circle cx="12" cy="12" r="5" /></svg>
+                </div>
+                <h3>Честные проценты</h3>
+                <p>Ты получаешь <strong>50-60% дохода</strong>. Без{'\u00A0'}скрытых комиссий и{'\u00A0'}штрафов. Твой аккаунт — твой навсегда. Выплаты наличными ежедневно или раз в{'\u00A0'}неделю — <strong>без{'\u00A0'}задержек</strong></p>
+              </div>
+
+              <div className="about-work-card reveal reveal-delay-3">
+                <div className="about-work-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><path d="M22 4L12 14.01l-3-3" /></svg>
+                </div>
+                <h3>Безопасный старт</h3>
+                <p>Оплачиваемый тест 1-5 дней. Даже если решишь не{'\u00A0'}продолжать — мы заплатим</p>
+              </div>
+
+              <div className="about-work-card reveal reveal-delay-1">
+                <div className="about-work-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg>
+                </div>
+                <h3>Гибкость</h3>
+                <p>Сама выбираешь график. Совмещай с{'\u00A0'}учёбой или основной работой</p>
+              </div>
+
+              <div className="about-work-card reveal reveal-delay-2">
+                <div className="about-work-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17.5 19H9a7 7 0 110-14h9.09" /><path d="M14 16l4 3-4 3" /></svg>
+                </div>
+                <h3>Отдых</h3>
+                <p>Отпуск каждые 3 месяца, чтобы ты не{'\u00A0'}выгорала и{'\u00A0'}путешествовала</p>
+              </div>
+
+              <div className="about-work-card reveal reveal-delay-3">
+                <div className="about-work-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0110 0v4" /></svg>
+                </div>
+                <h3>Гео-блок</h3>
+                <p>Строгая блокировка на{'\u00A0'}РФ и{'\u00A0'}СНГ — твои знакомые тебя не{'\u00A0'}увидят</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════ STORIES / SOCIAL PROOF ═══════════ */}
+        <section className="section section--alt section--textured" id="stories">
+          <div className="container">
+            <div className="section-header reveal">
+              <div className="label label--accent">реальные истории</div>
+              <h2 className="h2 split-text">
+                <span className="h-accent">Они были</span><br />
+                на{'\u00A0'}твоём месте
+              </h2>
+              <p className="section-lead">
+                Истории наших моделей, которые изменили свою жизнь с{'\u00A0'}помощью YES Studio
+              </p>
+            </div>
+
+            <div className="stories-grid">
+              <div className="story-card reveal reveal-delay-1">
+                <div className="story-photo">
+                  <img src="/photos/story-natural-1.png" alt="Дарья" />
+                </div>
+                <div className="story-body">
+                  <div className="story-name">Дарья, 24 года</div>
+                  <div className="story-before-after">
+                    <div className="story-ba-item story-ba-before">
+                      <span className="story-ba-label">Было</span>
+                      Долг 400 000 ₽, зависимость от{'\u00A0'}парня
+                    </div>
+                    <div className="story-ba-item story-ba-after">
+                      <span className="story-ba-label">Стало</span>
+                      Доход 200 000+ ₽/мес, путешествия, свобода
+                    </div>
+                  </div>
+                  <div className="story-expandable" data-expanded={storyExpanded[0] ? 'true' : 'false'}>
+                    <div className="story-full-text">
+                      {'\u00AB'}Я взяла кредит на{'\u00A0'}своего парня, думала, что он вернёт. Не{'\u00A0'}вернул. Осталась с{'\u00A0'}долгом в 400 тысяч и{'\u00A0'}без поддержки. Было страшно и{'\u00A0'}обидно. В YES я пришла из{'\u00A0'}отчаяния. Первые две недели казались сложными, но{'\u00A0'}куратор поддерживала каждый день. <strong>За 4 месяца я полностью закрыла кредит</strong> и{'\u00A0'}поняла, что могу полагаться только на{'\u00A0'}себя. Теперь мой доход 200 000+ в{'\u00A0'}месяц, я путешествую и{'\u00A0'}живу для{'\u00A0'}себя{'\u00BB'}.
+                    </div>
+                    <button className="story-toggle" onClick={() => toggleStory(0)}>
+                      {storyExpanded[0] ? 'Свернуть' : 'Читать историю'}
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="story-card reveal reveal-delay-2">
+                <div className="story-photo">
+                  <img src="/photos/story-natural-2.png" alt="Алина" />
+                </div>
+                <div className="story-body">
+                  <div className="story-name">Алина, 21 год</div>
+                  <div className="story-before-after">
+                    <div className="story-ba-item story-ba-before">
+                      <span className="story-ba-label">Было</span>
+                      Родители контролировали каждый шаг, ноль своих денег
+                    </div>
+                    <div className="story-ba-item story-ba-after">
+                      <span className="story-ba-label">Стало</span>
+                      Своя квартира, 120 000 ₽ в{'\u00A0'}первый месяц
+                    </div>
+                  </div>
+                  <div className="story-expandable" data-expanded={storyExpanded[1] ? 'true' : 'false'}>
+                    <div className="story-full-text">
+                      {'\u00AB'}Я жила с{'\u00A0'}родителями, которые контролировали абсолютно всё: куда иду, с{'\u00A0'}кем общаюсь, сколько трачу. Своих денег не{'\u00A0'}было, я чувствовала себя как в{'\u00A0'}клетке. Работу в{'\u00A0'}студии нашла случайно. Сначала боялась сказать родителям, но{'\u00A0'}когда <strong>через месяц принесла домой 120 тысяч</strong>, их отношение изменилось. Сейчас я снимаю свою квартиру, финансово независима и{'\u00A0'}сама решаю, как жить{'\u00BB'}.
+                    </div>
+                    <button className="story-toggle" onClick={() => toggleStory(1)}>
+                      {storyExpanded[1] ? 'Свернуть' : 'Читать историю'}
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="story-card reveal reveal-delay-3">
+                <div className="story-photo">
+                  <img src="/photos/story-natural-3.png" alt="Кристина" />
+                </div>
+                <div className="story-body">
+                  <div className="story-name">Кристина, 26 лет</div>
+                  <div className="story-before-after">
+                    <div className="story-ba-item story-ba-before">
+                      <span className="story-ba-label">Было</span>
+                      Зарплата 45 000 ₽, всё уходило на{'\u00A0'}долги
+                    </div>
+                    <div className="story-ba-item story-ba-after">
+                      <span className="story-ba-label">Стало</span>
+                      180–250 000 ₽/мес, все долги закрыты за{'\u00A0'}полгода
+                    </div>
+                  </div>
+                  <div className="story-expandable" data-expanded={storyExpanded[2] ? 'true' : 'false'}>
+                    <div className="story-full-text">
+                      {'\u00AB'}Я работала администратором за 45 тысяч. Из{'\u00A0'}них 30 уходило на{'\u00A0'}кредиты и{'\u00A0'}долги знакомым. Потом снова занимала — замкнутый круг. В YES я начала зарабатывать с{'\u00A0'}первой недели. <strong>За{'\u00A0'}полгода закрыла все долги</strong> — это была лучшая победа в{'\u00A0'}моей жизни. Теперь зарабатываю 180-250 тысяч, откладываю и{'\u00A0'}впервые чувствую, что контролирую свою жизнь{'\u00BB'}.
+                    </div>
+                    <button className="story-toggle" onClick={() => toggleStory(2)}>
+                      {storyExpanded[2] ? 'Свернуть' : 'Читать историю'}
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="story-card reveal reveal-delay-4">
+                <div className="story-photo">
+                  <img src="/photos/story-natural-4.png" alt="Виктория" />
+                </div>
+                <div className="story-body">
+                  <div className="story-name">Виктория, 23 года</div>
+                  <div className="story-before-after">
+                    <div className="story-ba-item story-ba-before">
+                      <span className="story-ba-label">Было</span>
+                      Финансовая зависимость от{'\u00A0'}парня, токсичные отношения
+                    </div>
+                    <div className="story-ba-item story-ba-after">
+                      <span className="story-ba-label">Стало</span>
+                      150–200 000 ₽/мес, независимость, своя жизнь
+                    </div>
+                  </div>
+                  <div className="story-expandable" data-expanded={storyExpanded[3] ? 'true' : 'false'}>
+                    <div className="story-full-text">
+                      {'\u00AB'}Я не{'\u00A0'}работала, зависела от{'\u00A0'}парня финансово. Каждая покупка — это просьба и{'\u00A0'}объяснения. Отношения были токсичными, но{'\u00A0'}уйти было некуда. Студия стала моим спасением. Уже <strong>в{'\u00A0'}первый месяц заработала 95 тысяч</strong> и{'\u00A0'}съехала от{'\u00A0'}него. Сейчас мой доход стабильно 150-200 тысяч, я независима и{'\u00A0'}счастлива. Это было лучшее решение в{'\u00A0'}моей жизни{'\u00BB'}.
+                    </div>
+                    <button className="story-toggle" onClick={() => toggleStory(3)}>
+                      {storyExpanded[3] ? 'Свернуть' : 'Читать историю'}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="section-cta reveal" style={{ marginTop: '56px' }}>
+              <a href="https://t.me/studio_yes" target="_blank" rel="noopener noreferrer" className="btn btn--dark">Я тоже хочу изменить свою жизнь <span className="btn-dot"></span></a>
+            </div>
+          </div>
+        </section>
+
         {/* ═══════════ DIVERSITY ═══════════ */}
         <section className="section" id="diversity">
           <div className="container">
@@ -1233,72 +1295,6 @@ export default function Home() {
 
             <div className="section-cta reveal">
               <a href="https://t.me/studio_yes" target="_blank" rel="noopener noreferrer" className="btn btn--accent">Оставить заявку <span className="btn-dot"></span></a>
-            </div>
-          </div>
-        </section>
-
-        {/* ═══════════ ABOUT WORK ═══════════ */}
-        <section className="section section--dark" id="about-work">
-          <div className="container">
-            <div className="section-header reveal">
-              <div className="label" style={{ color: 'rgba(245,240,235,0.3)' }}>условия</div>
-              <h2 className="h2 split-text" style={{ color: 'var(--text-cream)' }}>
-                <span className="h-accent">О{'\u00A0'}работе</span><br />
-                в{'\u00A0'}нашей компании
-              </h2>
-              <p className="section-lead" style={{ color: 'rgba(245,240,235,0.6)' }}>
-                Выбирая нас, ты выбираешь:
-              </p>
-            </div>
-
-            <div className="about-work-grid">
-              <div className="about-work-card reveal reveal-delay-1">
-                <div className="about-work-icon">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z" /><path d="M9 12l2 2 4-4" /></svg>
-                </div>
-                <h3>Non-Nude навсегда</h3>
-                <p>Наши модели не{'\u00A0'}раздеваются. Мы зарабатываем на{'\u00A0'}харизме, атмосфере и{'\u00A0'}позитиве. <strong>Никакого давления на nude</strong> — никогда. Твои границы — закон</p>
-              </div>
-
-              <div className="about-work-card reveal reveal-delay-2">
-                <div className="about-work-icon">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" /><circle cx="12" cy="12" r="5" /></svg>
-                </div>
-                <h3>Честные проценты</h3>
-                <p>Ты получаешь <strong>50-60% дохода</strong>. Без{'\u00A0'}скрытых комиссий и{'\u00A0'}штрафов. Твой аккаунт — твой навсегда. Выплаты наличными ежедневно или раз в{'\u00A0'}неделю — <strong>без{'\u00A0'}задержек</strong></p>
-              </div>
-
-              <div className="about-work-card reveal reveal-delay-3">
-                <div className="about-work-icon">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><path d="M22 4L12 14.01l-3-3" /></svg>
-                </div>
-                <h3>Безопасный старт</h3>
-                <p>Оплачиваемый тест 1-5 дней. Даже если решишь не{'\u00A0'}продолжать — мы заплатим</p>
-              </div>
-
-              <div className="about-work-card reveal reveal-delay-1">
-                <div className="about-work-icon">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg>
-                </div>
-                <h3>Гибкость</h3>
-                <p>Сама выбираешь график. Совмещай с{'\u00A0'}учёбой или основной работой</p>
-              </div>
-
-              <div className="about-work-card reveal reveal-delay-2">
-                <div className="about-work-icon">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17.5 19H9a7 7 0 110-14h9.09" /><path d="M14 16l4 3-4 3" /></svg>
-                </div>
-                <h3>Отдых</h3>
-                <p>Отпуск каждые 3 месяца, чтобы ты не{'\u00A0'}выгорала и{'\u00A0'}путешествовала</p>
-              </div>
-
-              <div className="about-work-card reveal reveal-delay-3">
-                <div className="about-work-icon">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0110 0v4" /></svg>
-                </div>
-                <h3>Гео-блок</h3>
-                <p>Строгая блокировка на{'\u00A0'}РФ и{'\u00A0'}СНГ — твои знакомые тебя не{'\u00A0'}увидят</p>
-              </div>
             </div>
           </div>
         </section>
