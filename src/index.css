@@ -506,7 +506,7 @@
     .section--alt { background: var(--bg-alt); }
     .section--sand { background: var(--bg-sand); }
 
-    .section-header { margin-bottom: 56px; }
+    .section-header { margin-bottom: 40px; }
     .section-header .label { margin-bottom: 12px; }
 
     .label {
@@ -2006,17 +2006,19 @@
       }
       .hook-right {
         position: static;
-        order: -1;
-        margin: 0 -20px 36px;
+        order: 1;
+        margin-top: 36px;
       }
       .hook-photo {
-        border-radius: 0;
-        box-shadow: none;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
       }
       .hook-photo img {
         aspect-ratio: 4 / 3;
         object-position: center 20%;
       }
+      .section-header { margin-bottom: 24px; }
     }
 
     /* ═══════════════════════════════════════════════════
